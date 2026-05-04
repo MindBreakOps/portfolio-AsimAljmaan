@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Asim Aljma'an — Systems Developer & Operations Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* ── TOKENS ── */
+  :root {
+    --ink:    #0c0c0a;
+    --paper:  #f2ede6;
+    --cream:  #e8e0d5;
+    --rust:   #c94a2a;
+    --rust2:  #a33820;
+    --gold:   #b8902a;
+    --muted:  #7a7268;
+    --border: rgba(12,12,10,0.15);
+    --ff-display: 'Bebas Neue', sans-serif;
+    --ff-serif:   'Playfair Display', serif;
+    --ff-mono:    'IBM Plex Mono', monospace;
+    --ff-body:    'Barlow', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--ff-body);
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* ── CUSTOM CURSOR ── */
+  #cursor {
+    position: fixed; top: 0; left: 0; z-index: 9999;
+    width: 10px; height: 10px;
+    background: var(--rust);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.15s ease, width 0.3s, height 0.3s, border-radius 0.3s;
+    transform: translate(-50%, -50%);
+  }
+  #cursor.expand {
+    width: 40px; height: 40px;
+    background: transparent;
+    border: 1.5px solid var(--rust);
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    mix-blend-mode: normal;
+  }
+  .nav-logo {
+    font-family: var(--ff-display);
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-links a {
+    font-family: var(--ff-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--rust); }
+  .nav-cta {
+    font-family: var(--ff-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--paper) !important;
+    background: var(--ink);
+    padding: 0.5rem 1.1rem;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--rust) !important; color: var(--paper) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    padding: 0 3rem;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding-bottom: 5rem;
+    padding-top: 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-rule {
+    position: absolute; top: 90px; left: 0; right: 0;
+    height: 1px; background: var(--border);
+  }
+
+  /* Marquee tape across hero */
+  .hero-tape {
+    position: absolute;
+    top: 38%;
+    left: 0; right: 0;
+    transform: rotate(-2.5deg);
+    background: var(--rust);
+    padding: 0.55rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  .hero-tape-inner {
+    display: inline-flex; gap: 4rem;
+    animation: marquee 18s linear infinite;
+  }
+  .hero-tape span {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--paper);
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .hero-eyebrow {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    position: relative; z-index: 2;
+  }
+  .hero-name {
+    font-family: var(--ff-display);
+    font-size: clamp(4rem, 11vw, 11rem);
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    position: relative; z-index: 2;
+    mix-blend-mode: normal;
+  }
+  .hero-name em {
+    font-family: var(--ff-serif);
+    font-style: italic;
+    font-size: 0.55em;
+    color: var(--rust);
+    display: block;
+    line-height: 1.2;
+    margin-top: 0.2em;
+  }
+
+  .hero-bottom {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-top: 4rem;
+    position: relative; z-index: 2;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+  .hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 400px;
+    font-weight: 300;
+  }
+  .hero-stats {
+    display: flex; gap: 3rem;
+  }
+  .hero-stat-num {
+    font-family: var(--ff-display);
+    font-size: 2.8rem;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .hero-stat-num sup { font-size: 0.45em; color: var(--rust); vertical-align: super; }
+  .hero-stat-label {
+    font-family: var(--ff-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .scroll-hint {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    z-index: 2;
+  }
+  .scroll-hint span {
+    font-family: var(--ff-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--rust), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50%       { opacity: 1;   transform: scaleY(1.2); }
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 7rem 3rem; }
+  .sec-label {
+    font-family: var(--ff-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .sec-label::before {
+    content: '';
+    display: block; width: 30px; height: 1px;
+    background: var(--rust);
+  }
+  .sec-title {
+    font-family: var(--ff-display);
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.92;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+
+  /* ── ABOUT / OPERIX INTRO ── */
+  #about {
+    background: var(--ink);
+    color: var(--paper);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  #about .sec-label { color: var(--rust); }
+  #about .sec-title { color: var(--paper); }
+  .about-body {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: rgba(242,237,230,0.65);
+    font-weight: 300;
+  }
+  .about-body strong { color: var(--paper); font-weight: 500; }
+  .about-right {
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+  .about-kpi {
+    border: 1px solid rgba(242,237,230,0.1);
+    padding: 1.5rem;
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    transition: border-color 0.3s;
+  }
+  .about-kpi:hover { border-color: var(--rust); }
+  .kpi-num {
+    font-family: var(--ff-display);
+    font-size: 3rem;
+    color: var(--rust);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .kpi-label {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: rgba(242,237,230,0.55);
+    margin-top: 6px;
+  }
+  .kpi-label strong { color: var(--paper); font-size: 0.88rem; display: block; margin-bottom: 2px; }
+
+  /* ── GALLERY / OPERIX MODULES ── */
+  #gallery { background: var(--cream); padding: 7rem 0; }
+  .gallery-header { padding: 0 3rem 3rem; }
+  .gallery-scroll-wrap {
+    overflow-x: auto;
+    padding: 0 3rem 2rem;
+    scroll-snap-type: x mandatory;
+    display: flex; gap: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--rust) transparent;
+  }
+  .gallery-card {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    background: var(--paper);
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    position: relative;
+  }
+  .gallery-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(12,12,10,0.12);
+  }
+  .gallery-img {
+    width: 100%; height: 220px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%) contrast(1.05);
+    transition: filter 0.4s, transform 0.4s;
+  }
+  .gallery-card:hover .gallery-img {
+    filter: grayscale(0%) contrast(1.1);
+    transform: scale(1.03);
+  }
+  .gallery-img-wrap { overflow: hidden; }
+  .gallery-body { padding: 1.5rem; }
+  .gallery-module-num {
+    font-family: var(--ff-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.5rem;
+  }
+  .gallery-title {
+    font-family: var(--ff-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    line-height: 1.25;
+  }
+  .gallery-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .gallery-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .gtag {
+    font-family: var(--ff-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  /* ── EXPERIENCE TIMELINE ── */
+  #experience { background: var(--paper); }
+  .timeline { margin-top: 4rem; position: relative; }
+  .timeline::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .tl-item {
+    padding-left: 3rem;
+    padding-bottom: 4rem;
+    position: relative;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot {
+    position: absolute; left: -5px; top: 6px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--rust);
+    transition: background 0.2s;
+  }
+  .tl-item:hover .tl-dot { background: var(--rust); }
+  .tl-date {
+    font-family: var(--ff-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .tl-role {
+    font-family: var(--ff-display);
+    font-size: 2rem;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .tl-company {
+    font-family: var(--ff-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--rust);
+    margin-bottom: 1.25rem;
+  }
+  .tl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+  .tl-bullet {
+    padding: 1rem 1.25rem;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--muted);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .tl-bullet:hover { background: var(--cream); color: var(--ink); }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--ink); padding: 7rem 3rem; }
+  #skills .sec-label { color: var(--rust); }
+  #skills .sec-title { color: var(--paper); margin-bottom: 4rem; }
+  .skills-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid rgba(242,237,230,0.08);
+  }
+  .skill-col {
+    padding: 2rem;
+    border-right: 1px solid rgba(242,237,230,0.08);
+  }
+  .skill-col:last-child { border-right: none; }
+  .skill-col-title {
+    font-family: var(--ff-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(242,237,230,0.08);
+  }
+  .skill-item {
+    font-size: 0.82rem;
+    color: rgba(242,237,230,0.55);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(242,237,230,0.05);
+    font-weight: 300;
+    transition: color 0.2s, padding-left 0.2s;
+    cursor: default;
+  }
+  .skill-item:hover { color: var(--paper); padding-left: 8px; }
+  .skill-item.highlight { color: var(--paper); font-weight: 500; }
+
+  /* ── EDUCATION ── */
+  #education { background: var(--cream); }
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
+  .edu-block {
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-block::after {
+    content: attr(data-label);
+    position: absolute; bottom: -0.5rem; right: -0.5rem;
+    font-family: var(--ff-display);
+    font-size: 5rem;
+    color: rgba(12,12,10,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .edu-block-title {
+    font-family: var(--ff-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .edu-school {
+    font-family: var(--ff-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 1.25rem;
+  }
+  .edu-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .edu-chip {
+    font-family: var(--ff-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .cert-list { display: flex; flex-direction: column; gap: 8px; }
+  .cert-row {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+  .cert-row:hover { color: var(--ink); }
+  .cert-bullet { width: 5px; height: 5px; flex-shrink: 0; background: var(--gold); border-radius: 50%; }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--ink);
+    min-height: 60vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 7rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-bg-text {
+    position: absolute;
+    bottom: -3rem; right: -2rem;
+    font-family: var(--ff-display);
+    font-size: 22vw;
+    color: rgba(242,237,230,0.03);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  #contact .sec-label { color: var(--rust); }
+  .contact-headline {
+    font-family: var(--ff-display);
+    font-size: clamp(3.5rem, 8vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+    color: var(--paper);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    position: relative; z-index: 1;
+  }
+  .contact-headline em {
+    font-family: var(--ff-serif);
+    font-style: italic;
+    color: var(--rust);
+  }
+  .contact-links {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    position: relative; z-index: 1;
+  }
+  .contact-link {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(242,237,230,0.55);
+    text-decoration: none;
+    border: 1px solid rgba(242,237,230,0.15);
+    padding: 0.75rem 1.5rem;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .contact-link:hover {
+    color: var(--paper);
+    border-color: var(--rust);
+    background: rgba(201,74,42,0.08);
+  }
+  .contact-link.primary {
+    background: var(--rust);
+    color: var(--paper);
+    border-color: var(--rust);
+  }
+  .contact-link.primary:hover { background: var(--rust2); }
+
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(242,237,230,0.08);
+    padding: 1.5rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer span {
+    font-family: var(--ff-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,237,230,0.25);
+  }
+
+  /* ── ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+  .stagger-1 { transition-delay: 0.05s; }
+  .stagger-2 { transition-delay: 0.12s; }
+  .stagger-3 { transition-delay: 0.19s; }
+  .stagger-4 { transition-delay: 0.26s; }
+  .stagger-5 { transition-delay: 0.33s; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    section { padding: 5rem 1.5rem; }
+    #hero { padding: 90px 1.5rem 4rem; }
+    #about { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+    .hero-stats { gap: 2rem; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; }
+    .hero-tape { top: 32%; }
+    .skills-layout { grid-template-columns: 1fr 1fr; }
+    .skill-col { border-bottom: 1px solid rgba(242,237,230,0.08); }
+    .edu-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .gallery-card { flex: 0 0 280px; }
+    #contact { padding: 5rem 1.5rem; }
+    footer { padding: 1.5rem; }
+    .contact-links { flex-direction: column; }
+    .tl-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .skills-layout { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: column; gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">A·A</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#gallery">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="https://mindbreakops.github.io/OPERIX_Eco-System_Network/" target="_blank" class="nav-cta">View OPERIX Live</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-rule"></div>
+
+  <div class="hero-tape" aria-hidden="true">
+    <div class="hero-tape-inner">
+      <span>Operations Architect</span><span>·</span>
+      <span>System Builder</span><span>·</span>
+      <span>OPERIX HRIS</span><span>·</span>
+      <span>Riyadh, KSA</span><span>·</span>
+      <span>Information Systems</span><span>·</span>
+      <span>Operations Architect</span><span>·</span>
+      <span>System Builder</span><span>·</span>
+      <span>OPERIX HRIS</span><span>·</span>
+      <span>Riyadh, KSA</span><span>·</span>
+      <span>Information Systems</span><span>·</span>
+      <span>Operations Architect</span><span>·</span>
+      <span>System Builder</span><span>·</span>
+      <span>OPERIX HRIS</span><span>·</span>
+      <span>Riyadh, KSA</span><span>·</span>
+      <span>Information Systems</span><span>·</span>
+    </div>
+  </div>
+
+  <div class="hero-eyebrow reveal">Operations Management · Information Systems</div>
+  <h1 class="hero-name reveal stagger-1">
+    ASIM<br>ALJMA'AN
+    <em>Systems Developer & Operations Manager</em>
+  </h1>
+
+  <div class="hero-bottom reveal stagger-2">
+    <p class="hero-desc">
+      I don't just manage operations — I build the systems, tools, and teams
+      that keep running without me. Currently transforming enterprise operations
+      through the OPERIX ecosystem.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">3<sup>×</sup></div>
+        <div class="hero-stat-label">Workforce growth</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label">OPERIX modules</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">0</div>
+        <div class="hero-stat-label">Daily supervision needed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT / DARK PANEL -->
+<section id="about">
+  <div>
+    <div class="sec-label reveal">01 — Who I Am</div>
+    <h2 class="sec-title reveal stagger-1" style="margin-bottom:2rem;">THE<br>OPERATOR</h2>
+    <p class="about-body reveal stagger-2">
+      Operations-focused IS graduate from Bayan University, with a 3.06 GPA
+      and A grades across every management course. I specialize in
+      <strong>operations recovery</strong> — walking into chaos and building
+      self-sustaining workflows that outlast my presence.
+      <br><br>
+      My flagship project, <strong>OPERIX Solutions</strong>, is a fully custom
+      ERP ecosystem I designed and built from the ground up — replacing
+      fragmented, paper-based processes with one unified, secure, and
+      intelligent platform.
+    </p>
+  </div>
+  <div class="about-right">
+    <div class="about-kpi reveal stagger-1">
+      <div class="kpi-num">40+</div>
+      <div class="kpi-label">
+        <strong>Active workforce rebuilt</strong>
+        Grew from 12 employees (10% presence) to a structured, 40+ person
+        operation within two months.
+      </div>
+    </div>
+    <div class="about-kpi reveal stagger-2">
+      <div class="kpi-num">100%</div>
+      <div class="kpi-label">
+        <strong>Compliance achieved</strong>
+        Uniform compliance, attendance accuracy, and client satisfaction all
+        brought to full operational standard.
+      </div>
+    </div>
+    <div class="about-kpi reveal stagger-3">
+      <div class="kpi-num">4/5</div>
+      <div class="kpi-label">
+        <strong>Leaders activated</strong>
+        Trained and assessed 5 supervisors — 4 passed full performance
+        evaluations and lead independently.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY — OPERIX MODULES (HORIZONTAL SCROLL) -->
+<section id="gallery">
+  <div class="gallery-header">
+    <div class="sec-label reveal">02 — OPERIX Ecosystem</div>
+    <h2 class="sec-title reveal stagger-1">THE<br>MODULES</h2>
+  </div>
+  <div class="gallery-scroll-wrap">
+
+    <div class="gallery-card reveal stagger-1">
+      <div class="gallery-img-wrap">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=640&q=80" alt="HRIS Module"/>
+      </div>
+      <div class="gallery-body">
+        <div class="gallery-module-num">Module · 01</div>
+        <div class="gallery-title">HR Information System</div>
+        <div class="gallery-desc">Real-time GPS-fenced attendance, auto salary deductions, and an employee self-service portal — workforce management fully automated.</div>
+        <div class="gallery-tags">
+          <span class="gtag">GPS Fence</span>
+          <span class="gtag">Auto Payroll</span>
+          <span class="gtag">Self-Service</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-card reveal stagger-2">
+      <div class="gallery-img-wrap">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&q=80" alt="ANPR Module"/>
+      </div>
+      <div class="gallery-body">
+        <div class="gallery-module-num">Module · 02</div>
+        <div class="gallery-title">ANPR Parking & Valet</div>
+        <div class="gallery-desc">Live camera plate recognition, dynamic pricing, QR invoicing, and individual valet performance tracking — all digitized.</div>
+        <div class="gallery-tags">
+          <span class="gtag">Live ANPR</span>
+          <span class="gtag">QR Tickets</span>
+          <span class="gtag">Revenue KPIs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-card reveal stagger-3">
+      <div class="gallery-img-wrap">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&q=80" alt="Accounting Module"/>
+      </div>
+      <div class="gallery-body">
+        <div class="gallery-module-num">Module · 03</div>
+        <div class="gallery-title">Financial MIS</div>
+        <div class="gallery-desc">Admin-only financial hub. Net balance calculated live: Assets − Salaries − Expenses. One-click Excel/CSV export with project-level filtering.</div>
+        <div class="gallery-tags">
+          <span class="gtag">Admin Only</span>
+          <span class="gtag">Live KPIs</span>
+          <span class="gtag">Export</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-card reveal stagger-4">
+      <div class="gallery-img-wrap">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&q=80" alt="Analytics Module"/>
+      </div>
+      <div class="gallery-body">
+        <div class="gallery-module-num">Module · 04</div>
+        <div class="gallery-title">Admin Control & Analytics</div>
+        <div class="gallery-desc">Staff directory, role-based access, 60-day compliance alerts for Iqama and licenses, and cross-module interactive dashboards.</div>
+        <div class="gallery-tags">
+          <span class="gtag">RBAC</span>
+          <span class="gtag">Compliance Alerts</span>
+          <span class="gtag">Analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-card reveal stagger-5">
+      <div class="gallery-img-wrap">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=640&q=80" alt="Document Studio"/>
+      </div>
+      <div class="gallery-body">
+        <div class="gallery-module-num">Module · 05</div>
+        <div class="gallery-title">Document Studio & ID Cards</div>
+        <div class="gallery-desc">One-click branded employee ID cards in PNG or PDF. Centralized hub for contracts, invoices, and standardized administrative letters.</div>
+        <div class="gallery-tags">
+          <span class="gtag">ID Generator</span>
+          <span class="gtag">PDF Export</span>
+          <span class="gtag">Templates</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience">
+  <div class="sec-label reveal">03 — Career</div>
+  <h2 class="sec-title reveal stagger-1">TIME<br>LINE</h2>
+
+  <div class="timeline">
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Mar 2026 — Present</div>
+      <div class="tl-role">Systems Developer & Operations Manager</div>
+      <div class="tl-company">OPERIX Solutions · Riyadh, KSA</div>
+      <div class="tl-grid">
+        <div class="tl-bullet">Developed and deployed the comprehensive OPERIX Solutions ERP ecosystem from the ground up, functioning as lead Systems Developer and Ops Manager.</div>
+        <div class="tl-bullet">Engineered a multi-workspace Operations and Management platform featuring a modern UI, real-time dashboards, and role-based access control.</div>
+        <div class="tl-bullet">Built a robust HRIS board for shift scheduling, real-time GPS-tracked attendance, and automated salary calculations with dynamic deductions.</div>
+        <div class="tl-bullet">Created an ANPR parking management system featuring live camera scanning, gate logging, and automated ticket generation.</div>
+        <div class="tl-bullet">Developed a Finance MIS for tracking project-specific salaries, expenses, assets, and clearances with automated Excel/CSV reporting.</div>
+        <div class="tl-bullet">Maintained system security and stability by actively troubleshooting frontend JavaScript logic and complex authentication modules.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal stagger-1">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Aug 2025 — Feb 2026</div>
+      <div class="tl-role">Deputy Operations Manager (Part-Time)</div>
+      <div class="tl-company">LINK Expert · Majdoul Tower Project · Riyadh, KSA</div>
+      <div class="tl-grid">
+        <div class="tl-bullet">Took over operations for a project facing severe staffing, performance, and client satisfaction issues.</div>
+        <div class="tl-bullet">Designed and developed a member vehicles query system utilized by both operational staff and clients to streamline vehicle tracking.</div>
+        <div class="tl-bullet">Built a comprehensive vehicle inventory and registration system for client use, improving data accuracy and enhancing the customer experience.</div>
+        <div class="tl-bullet">Grew active workforce from 12 to 40+ employees within two months through structured recruitment and engagement plans.</div>
+        <div class="tl-bullet">Rebuilt and stabilized the attendance management process, designing a digital part-time attendance system to eliminate manual errors.</div>
+        <div class="tl-bullet">Trained and assessed 5 supervisors — 4 passed full performance evaluations and now lead their teams independently.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal stagger-2">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Mar 2018 — Mar 2020</div>
+      <div class="tl-role">Analysis Intern</div>
+      <div class="tl-company">Alrefaa Printing Center · Khartoum, Sudan</div>
+      <div class="tl-grid">
+        <div class="tl-bullet">Performed data collection and structured analysis using SPSS across research and operational reporting streams.</div>
+        <div class="tl-bullet">Gained foundational exposure to project management workflows, task coordination, and operational decision-making under real conditions.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label reveal">04 — Capabilities</div>
+  <h2 class="sec-title reveal stagger-1">SKILL<br>SET</h2>
+  <div class="skills-layout">
+    <div class="skill-col reveal stagger-1">
+      <div class="skill-col-title">Operations</div>
+      <div class="skill-item highlight">Workforce Management</div>
+      <div class="skill-item highlight">Attendance Systems</div>
+      <div class="skill-item">Process Improvement</div>
+      <div class="skill-item">Client Relations</div>
+      <div class="skill-item">Operations Planning</div>
+      <div class="skill-item">Team Leadership</div>
+    </div>
+    <div class="skill-col reveal stagger-2">
+      <div class="skill-col-title">Development</div>
+      <div class="skill-item highlight">HTML / CSS / JS</div>
+      <div class="skill-item highlight">React</div>
+      <div class="skill-item">Java · Python</div>
+      <div class="skill-item">Oracle SQL</div>
+      <div class="skill-item">Supabase</div>
+    </div>
+    <div class="skill-col reveal stagger-3">
+      <div class="skill-col-title">Analytics</div>
+      <div class="skill-item highlight">Power BI</div>
+      <div class="skill-item">SPSS</div>
+      <div class="skill-item">Excel (Advanced)</div>
+      <div class="skill-item">Database Design</div>
+      <div class="skill-item">SQL Queries</div>
+      <div class="skill-item">Data Visualization</div>
+    </div>
+    <div class="skill-col reveal stagger-4">
+      <div class="skill-col-title">Platforms</div>
+      <div class="skill-item highlight">Monday.com</div>
+      <div class="skill-item highlight">ClickUp</div>
+      <div class="skill-item">Odoo ERP</div>
+      <div class="skill-item">MS Office Suite</div>
+      <div class="skill-item">Google Workspace</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-label reveal">05 — Academic</div>
+  <h2 class="sec-title reveal stagger-1">EDUCA<br>TION</h2>
+  <div class="edu-grid">
+
+    <div class="edu-block reveal stagger-1" data-label="IS">
+      <div class="edu-block-title">Bachelor of Honours in Information Systems</div>
+      <div class="edu-school">Bayan University of Science and Technology · 2019–2024</div>
+      <div class="edu-meta">
+        <span class="edu-chip">GPA 3.06 / 4.00</span>
+        <span class="edu-chip">Very Good</span>
+        <span class="edu-chip">A in all management courses</span>
+      </div>
+      <p style="font-size:0.8rem; color:var(--muted); line-height:1.7;">
+        Strong academic focus on systems analysis, operations planning, data management, and process optimization. Achieved A grades across all management-related subjects including Production & Operations Management.
+      </p>
+    </div>
+
+    <div class="edu-block reveal stagger-2" data-label="05">
+      <div class="edu-block-title">Professional Certifications</div>
+      <div class="edu-school">Wasm Almarefa Training Center · Apr–May 2025 · GOTEVOT Accredited</div>
+      <div class="cert-list">
+        <div class="cert-row"><div class="cert-bullet"></div>Fundamentals of Cybersecurity</div>
+        <div class="cert-row"><div class="cert-bullet"></div>Data Analysis using Power BI</div>
+        <div class="cert-row"><div class="cert-bullet"></div>Quality Specialist</div>
+        <div class="cert-row"><div class="cert-bullet"></div>Writing Reports & Administrative Letters</div>
+        <div class="cert-row"><div class="cert-bullet"></div>Administrative Communication</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-bg-text" aria-hidden="true">OPS</div>
+  <div class="sec-label reveal">06 — Contact</div>
+  <h2 class="contact-headline reveal stagger-1">
+    LET'S<br>BUILD<br><em>TOGETHER</em>
+  </h2>
+  <div class="contact-links reveal stagger-2">
+    <a href="mailto:asim.moh7ed@gmail.com" class="contact-link primary">Email Asim</a>
+    <a href="tel:+966500823643" class="contact-link">+966 500 823 643</a>
+    <a href="https://linkedin.com/in/asim-a-alnushaib" target="_blank" class="contact-link">LinkedIn ↗</a>
+    <span class="contact-link" style="cursor:default;">Riyadh, Saudi Arabia</span>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Asim Aljma'an — All rights reserved</span>
+  <span>Operations Architect · System Builder · ERP Designer</span>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+  /* Custom cursor */
+  const cur = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cur.style.left = e.clientX + 'px';
+    cur.style.top  = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button, .gallery-card, .about-kpi, .tl-bullet, label').forEach(el => {
+    el.addEventListener('mouseenter', () => cur.classList.add('expand'));
+    el.addEventListener('mouseleave', () => cur.classList.remove('expand'));
+  });
+
+  /* Intersection Observer for reveals */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
+
+  /* Animate hero immediately */
+  setTimeout(() => {
+    document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+  }, 100);
+</script>
+
+</body>
+</html>
