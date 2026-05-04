@@ -6,892 +6,905 @@
 <title>Asim Aljma'an — Systems Developer & Operations Manager</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
 <style>
-  /* ── TOKENS ── */
-  :root {
-    --ink:    #0c0c0a;
-    --paper:  #f2ede6;
-    --cream:  #e8e0d5;
-    --rust:   #c94a2a;
-    --rust2:  #a33820;
-    --gold:   #b8902a;
-    --muted:  #7a7268;
-    --border: rgba(12,12,10,0.15);
-    --ff-display: 'Bebas Neue', sans-serif;
-    --ff-serif:   'Playfair Display', serif;
-    --ff-mono:    'IBM Plex Mono', monospace;
-    --ff-body:    'Barlow', sans-serif;
-  }
+:root {
+  --ink:#0c0c0a; --paper:#f2ede6; --cream:#e8e0d5;
+  --rust:#c94a2a; --rust2:#a33820; --gold:#b8902a; --muted:#7a7268;
+  --border:rgba(12,12,10,0.15);
+  --ff-d:'Bebas Neue',sans-serif; --ff-s:'Playfair Display',serif;
+  --ff-m:'IBM Plex Mono',monospace; --ff-b:'Barlow',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-b);background:var(--paper);color:var(--ink);overflow-x:hidden;cursor:none}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* CURSOR */
+#cur{position:fixed;top:0;left:0;z-index:9999;width:10px;height:10px;background:var(--rust);border-radius:50%;pointer-events:none;transition:width .25s,height .25s,background .25s,border-radius .25s;transform:translate(-50%,-50%)}
+#cur.x{width:36px;height:36px;background:transparent;border:1.5px solid var(--rust)}
 
-  html { scroll-behavior: smooth; font-size: 16px; }
+/* GRAIN */
+body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03}
 
-  body {
-    font-family: var(--ff-body);
-    background: var(--paper);
-    color: var(--ink);
-    overflow-x: hidden;
-    cursor: none;
-  }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:var(--paper);border-bottom:1px solid var(--border)}
+.nl{font-family:var(--ff-d);font-size:1.4rem;letter-spacing:.12em;color:var(--ink);text-decoration:none}
+.nr{display:flex;gap:2rem;align-items:center}
+.nr a{font-family:var(--ff-m);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nr a:hover{color:var(--rust)}
+.nc{color:var(--paper)!important;background:var(--ink);padding:.45rem 1.1rem;transition:background .2s!important}
+.nc:hover{background:var(--rust)!important}
 
-  /* ── CUSTOM CURSOR ── */
-  #cursor {
-    position: fixed; top: 0; left: 0; z-index: 9999;
-    width: 10px; height: 10px;
-    background: var(--rust);
-    border-radius: 50%;
-    pointer-events: none;
-    transition: transform 0.15s ease, width 0.3s, height 0.3s, border-radius 0.3s;
-    transform: translate(-50%, -50%);
-  }
-  #cursor.expand {
-    width: 40px; height: 40px;
-    background: transparent;
-    border: 1.5px solid var(--rust);
-  }
+/* HERO */
+#hero{min-height:100vh;padding:90px 3rem 5rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.hr{position:absolute;top:90px;left:0;right:0;height:1px;background:var(--border)}
+.ht{position:absolute;top:38%;left:0;right:0;transform:rotate(-2.5deg);background:var(--rust);padding:.5rem 0;overflow:hidden;white-space:nowrap;z-index:1}
+.hti{display:inline-flex;gap:3rem;animation:mq 22s linear infinite}
+.hti span{font-family:var(--ff-m);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--paper)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.heyb{font-family:var(--ff-m);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;position:relative;z-index:2}
+.hn{font-family:var(--ff-d);font-size:clamp(4rem,11vw,11rem);line-height:.9;color:var(--ink);position:relative;z-index:2}
+.hn em{font-family:var(--ff-s);font-style:italic;font-size:.52em;color:var(--rust);display:block;line-height:1.3;margin-top:.25em}
+.hb{display:flex;justify-content:space-between;align-items:flex-end;margin-top:4rem;position:relative;z-index:2;border-top:1px solid var(--border);padding-top:2rem;flex-wrap:wrap;gap:1.5rem}
+.hd{font-size:.9rem;line-height:1.8;color:var(--muted);max-width:400px;font-weight:300}
+.hs{display:flex;gap:3rem}
+.hsn{font-family:var(--ff-d);font-size:2.8rem;color:var(--ink);line-height:1}
+.hsn sup{font-size:.45em;color:var(--rust);vertical-align:super}
+.hsl{font-family:var(--ff-m);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.sh{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.sh span{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.sl{width:1px;height:48px;background:linear-gradient(to bottom,var(--rust),transparent);animation:sp 2s ease-in-out infinite}
+@keyframes sp{0%,100%{opacity:.4}50%{opacity:1}}
 
-  /* ── NOISE OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed; inset: 0; z-index: 9998; pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-    opacity: 0.028;
-  }
+/* SECTIONS */
+section{padding:7rem 3rem}
+.slb{font-family:var(--ff-m);font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:1rem;display:flex;align-items:center;gap:12px}
+.slb::before{content:'';display:block;width:28px;height:1px;background:var(--rust)}
+.st{font-family:var(--ff-d);font-size:clamp(3rem,6vw,6rem);line-height:.92;letter-spacing:.01em;color:var(--ink)}
 
-  /* ── NAVIGATION ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.25rem 3rem;
-    background: var(--paper);
-    border-bottom: 1px solid var(--border);
-    mix-blend-mode: normal;
-  }
-  .nav-logo {
-    font-family: var(--ff-display);
-    font-size: 1.4rem;
-    letter-spacing: 0.12em;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
-  .nav-links a {
-    font-family: var(--ff-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--rust); }
-  .nav-cta {
-    font-family: var(--ff-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--paper) !important;
-    background: var(--ink);
-    padding: 0.5rem 1.1rem;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--rust) !important; color: var(--paper) !important; }
+/* ABOUT */
+#about{background:var(--ink);color:var(--paper);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+#about .slb{color:var(--rust)}
+#about .st{color:var(--paper)}
+.ab{font-size:.95rem;line-height:1.85;color:rgba(242,237,230,.65);font-weight:300}
+.ab strong{color:var(--paper);font-weight:500}
+.ar{display:flex;flex-direction:column;gap:1.5rem}
+.ak{border:1px solid rgba(242,237,230,.1);padding:1.5rem;display:flex;gap:1.5rem;align-items:flex-start;transition:border-color .3s}
+.ak:hover{border-color:var(--rust)}
+.akn{font-family:var(--ff-d);font-size:3rem;color:var(--rust);line-height:1;flex-shrink:0}
+.akl{font-size:.82rem;line-height:1.7;color:rgba(242,237,230,.55);margin-top:6px}
+.akl strong{color:var(--paper);font-size:.88rem;display:block;margin-bottom:2px}
 
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    padding: 0 3rem;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding-bottom: 5rem;
-    padding-top: 90px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-rule {
-    position: absolute; top: 90px; left: 0; right: 0;
-    height: 1px; background: var(--border);
-  }
+/* ECOSYSTEM OVERVIEW */
+#ecosystem{background:var(--ink);padding:5rem 3rem 7rem}
+#ecosystem .slb{color:var(--rust)}
+#ecosystem .st{color:var(--paper);margin-bottom:1rem}
+.eco-sub{font-size:.88rem;color:rgba(242,237,230,.45);font-family:var(--ff-m);margin-bottom:3rem;max-width:500px}
+.eco-arch{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(242,237,230,.06);border:1px solid rgba(242,237,230,.06)}
+.eco-node{background:var(--ink);padding:1.25rem 1.5rem;transition:background .25s}
+.eco-node:hover{background:rgba(201,74,42,.08)}
+.eco-node-id{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.eco-node-name{font-family:var(--ff-d);font-size:1.1rem;letter-spacing:.05em;color:var(--paper);margin-bottom:.3rem}
+.eco-node-desc{font-size:.72rem;color:rgba(242,237,230,.4);line-height:1.5}
+.eco-center{grid-column:2;grid-row:1/4;background:rgba(201,74,42,.06)!important;border:1px solid rgba(201,74,42,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+.eco-server-icon{margin-bottom:1rem}
+.eco-center-title{font-family:var(--ff-d);font-size:1.6rem;letter-spacing:.08em;color:var(--rust);margin-bottom:.5rem}
+.eco-center-desc{font-size:.72rem;color:rgba(242,237,230,.4);line-height:1.6}
 
-  /* Marquee tape across hero */
-  .hero-tape {
-    position: absolute;
-    top: 38%;
-    left: 0; right: 0;
-    transform: rotate(-2.5deg);
-    background: var(--rust);
-    padding: 0.55rem 0;
-    overflow: hidden;
-    white-space: nowrap;
-    z-index: 1;
-  }
-  .hero-tape-inner {
-    display: inline-flex; gap: 4rem;
-    animation: marquee 18s linear infinite;
-  }
-  .hero-tape span {
-    font-family: var(--ff-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--paper);
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
+/* GALLERY */
+#gallery{background:var(--cream);padding:7rem 0}
+.gh{padding:0 3rem 3rem}
+.gsw{overflow-x:auto;padding:0 3rem 2rem;scroll-snap-type:x mandatory;display:flex;gap:1.5rem;scrollbar-width:thin;scrollbar-color:var(--rust) transparent}
+.gc{flex:0 0 340px;scroll-snap-align:start;border:1px solid var(--border);overflow:hidden;background:var(--paper);transition:transform .3s,box-shadow .3s;position:relative}
+.gc:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(12,12,10,.12)}
 
-  .hero-eyebrow {
-    font-family: var(--ff-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-    position: relative; z-index: 2;
-  }
-  .hero-name {
-    font-family: var(--ff-display);
-    font-size: clamp(4rem, 11vw, 11rem);
-    line-height: 0.9;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    position: relative; z-index: 2;
-    mix-blend-mode: normal;
-  }
-  .hero-name em {
-    font-family: var(--ff-serif);
-    font-style: italic;
-    font-size: 0.55em;
-    color: var(--rust);
-    display: block;
-    line-height: 1.2;
-    margin-top: 0.2em;
-  }
+/* SVG ILLUSTRATION AREA */
+.gi{width:100%;height:210px;display:block;position:relative;overflow:hidden}
+.gi svg{width:100%;height:100%}
 
-  .hero-bottom {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-top: 4rem;
-    position: relative; z-index: 2;
-    border-top: 1px solid var(--border);
-    padding-top: 2rem;
-    flex-wrap: wrap; gap: 1.5rem;
-  }
-  .hero-desc {
-    font-size: 0.9rem;
-    line-height: 1.8;
-    color: var(--muted);
-    max-width: 400px;
-    font-weight: 300;
-  }
-  .hero-stats {
-    display: flex; gap: 3rem;
-  }
-  .hero-stat-num {
-    font-family: var(--ff-display);
-    font-size: 2.8rem;
-    color: var(--ink);
-    line-height: 1;
-  }
-  .hero-stat-num sup { font-size: 0.45em; color: var(--rust); vertical-align: super; }
-  .hero-stat-label {
-    font-family: var(--ff-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 4px;
-  }
+.gbody{padding:1.4rem}
+.gmn{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rust);margin-bottom:.4rem}
+.gtitle{font-family:var(--ff-s);font-size:1.1rem;font-weight:700;margin-bottom:.5rem;line-height:1.2}
+.gdesc{font-size:.78rem;color:var(--muted);line-height:1.7;margin-bottom:.85rem}
+.gfeats{display:flex;flex-direction:column;gap:4px;margin-bottom:.9rem}
+.gfeat{font-family:var(--ff-m);font-size:.62rem;color:var(--muted);padding-left:.9rem;position:relative}
+.gfeat::before{content:'→';position:absolute;left:0;color:var(--rust);font-size:.55rem}
+.gtags{display:flex;flex-wrap:wrap;gap:4px}
+.gtag{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--border);color:var(--muted)}
 
-  .scroll-hint {
-    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    z-index: 2;
-  }
-  .scroll-hint span {
-    font-family: var(--ff-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .scroll-line {
-    width: 1px; height: 50px;
-    background: linear-gradient(to bottom, var(--rust), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.4; transform: scaleY(1); }
-    50%       { opacity: 1;   transform: scaleY(1.2); }
-  }
+/* TIMELINE */
+#experience{background:var(--paper)}
+.tl{margin-top:4rem;position:relative}
+.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.ti{padding-left:3rem;padding-bottom:4rem;position:relative}
+.ti:last-child{padding-bottom:0}
+.td{position:absolute;left:-5px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--rust);transition:background .2s}
+.ti:hover .td{background:var(--rust)}
+.tdate{font-family:var(--ff-m);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.trole{font-family:var(--ff-d);font-size:2rem;letter-spacing:.03em;color:var(--ink);line-height:1.1;margin-bottom:.3rem}
+.tco{font-family:var(--ff-s);font-style:italic;font-size:.92rem;color:var(--rust);margin-bottom:1.2rem}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid var(--border)}
+.tb{padding:1rem 1.2rem;font-size:.8rem;line-height:1.65;color:var(--muted);border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background .2s}
+.tb:hover{background:var(--cream);color:var(--ink)}
 
-  /* ── SECTION COMMONS ── */
-  section { padding: 7rem 3rem; }
-  .sec-label {
-    font-family: var(--ff-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .sec-label::before {
-    content: '';
-    display: block; width: 30px; height: 1px;
-    background: var(--rust);
-  }
-  .sec-title {
-    font-family: var(--ff-display);
-    font-size: clamp(3rem, 6vw, 6rem);
-    line-height: 0.92;
-    letter-spacing: 0.01em;
-    color: var(--ink);
-  }
+/* SKILLS */
+#skills{background:var(--ink);padding:7rem 3rem}
+#skills .slb{color:var(--rust)}
+#skills .st{color:var(--paper);margin-bottom:4rem}
+.skl{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(242,237,230,.08)}
+.skc{padding:2rem;border-right:1px solid rgba(242,237,230,.08)}
+.skc:last-child{border-right:none}
+.skt{font-family:var(--ff-m);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rust);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(242,237,230,.08)}
+.ski{font-size:.8rem;color:rgba(242,237,230,.5);padding:.45rem 0;border-bottom:1px solid rgba(242,237,230,.05);font-weight:300;transition:color .2s,padding-left .2s;cursor:default}
+.ski:hover{color:var(--paper);padding-left:8px}
+.ski.hi{color:var(--paper);font-weight:500}
 
-  /* ── ABOUT / OPERIX INTRO ── */
-  #about {
-    background: var(--ink);
-    color: var(--paper);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-  #about .sec-label { color: var(--rust); }
-  #about .sec-title { color: var(--paper); }
-  .about-body {
-    font-size: 0.95rem;
-    line-height: 1.85;
-    color: rgba(242,237,230,0.65);
-    font-weight: 300;
-  }
-  .about-body strong { color: var(--paper); font-weight: 500; }
-  .about-right {
-    display: flex; flex-direction: column; gap: 1.5rem;
-  }
-  .about-kpi {
-    border: 1px solid rgba(242,237,230,0.1);
-    padding: 1.5rem;
-    display: flex; gap: 1.5rem; align-items: flex-start;
-    transition: border-color 0.3s;
-  }
-  .about-kpi:hover { border-color: var(--rust); }
-  .kpi-num {
-    font-family: var(--ff-display);
-    font-size: 3rem;
-    color: var(--rust);
-    line-height: 1;
-    flex-shrink: 0;
-  }
-  .kpi-label {
-    font-size: 0.82rem;
-    line-height: 1.7;
-    color: rgba(242,237,230,0.55);
-    margin-top: 6px;
-  }
-  .kpi-label strong { color: var(--paper); font-size: 0.88rem; display: block; margin-bottom: 2px; }
+/* EDUCATION */
+#education{background:var(--cream)}
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:4rem}
+.eb{border:1px solid var(--border);padding:2.5rem;position:relative;overflow:hidden}
+.eb::after{content:attr(data-l);position:absolute;bottom:-.5rem;right:-.5rem;font-family:var(--ff-d);font-size:5rem;color:rgba(12,12,10,.04);line-height:1;pointer-events:none}
+.ebt{font-family:var(--ff-s);font-size:1.1rem;font-weight:700;margin-bottom:.3rem}
+.ebs{font-family:var(--ff-m);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-bottom:1.2rem}
+.em{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem}
+.ec{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--border);color:var(--muted)}
+.cl{display:flex;flex-direction:column;gap:8px}
+.cr{display:flex;align-items:center;gap:10px;font-size:.78rem;color:var(--muted);padding:.45rem 0;border-bottom:1px solid var(--border);transition:color .2s}
+.cr:hover{color:var(--ink)}
+.cb{width:5px;height:5px;flex-shrink:0;background:var(--gold);border-radius:50%}
 
-  /* ── GALLERY / OPERIX MODULES ── */
-  #gallery { background: var(--cream); padding: 7rem 0; }
-  .gallery-header { padding: 0 3rem 3rem; }
-  .gallery-scroll-wrap {
-    overflow-x: auto;
-    padding: 0 3rem 2rem;
-    scroll-snap-type: x mandatory;
-    display: flex; gap: 1.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--rust) transparent;
-  }
-  .gallery-card {
-    flex: 0 0 320px;
-    scroll-snap-align: start;
-    border: 1px solid var(--border);
-    overflow: hidden;
-    background: var(--paper);
-    transition: transform 0.3s ease, box-shadow 0.3s;
-    position: relative;
-  }
-  .gallery-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 60px rgba(12,12,10,0.12);
-  }
-  .gallery-img {
-    width: 100%; height: 220px;
-    object-fit: cover;
-    display: block;
-    filter: grayscale(20%) contrast(1.05);
-    transition: filter 0.4s, transform 0.4s;
-  }
-  .gallery-card:hover .gallery-img {
-    filter: grayscale(0%) contrast(1.1);
-    transform: scale(1.03);
-  }
-  .gallery-img-wrap { overflow: hidden; }
-  .gallery-body { padding: 1.5rem; }
-  .gallery-module-num {
-    font-family: var(--ff-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 0.5rem;
-  }
-  .gallery-title {
-    font-family: var(--ff-serif);
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
-    line-height: 1.25;
-  }
-  .gallery-desc {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 1rem;
-  }
-  .gallery-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .gtag {
-    font-family: var(--ff-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border: 1px solid var(--border);
-    color: var(--muted);
-  }
+/* CONTACT */
+#contact{background:var(--ink);min-height:60vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 3rem;position:relative;overflow:hidden}
+.cbg{position:absolute;bottom:-3rem;right:-2rem;font-family:var(--ff-d);font-size:22vw;color:rgba(242,237,230,.03);line-height:1;pointer-events:none;user-select:none}
+#contact .slb{color:var(--rust)}
+.ch{font-family:var(--ff-d);font-size:clamp(3.5rem,8vw,9rem);line-height:.9;color:var(--paper);margin-bottom:3rem;max-width:700px;position:relative;z-index:1}
+.ch em{font-family:var(--ff-s);font-style:italic;color:var(--rust)}
+.clinks{display:flex;flex-wrap:wrap;gap:1rem;position:relative;z-index:1}
+.cl2{font-family:var(--ff-m);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,230,.5);text-decoration:none;border:1px solid rgba(242,237,230,.15);padding:.7rem 1.4rem;transition:color .2s,border-color .2s,background .2s}
+.cl2:hover{color:var(--paper);border-color:var(--rust);background:rgba(201,74,42,.08)}
+.cl2.p{background:var(--rust);color:var(--paper);border-color:var(--rust)}
+.cl2.p:hover{background:var(--rust2)}
 
-  /* ── EXPERIENCE TIMELINE ── */
-  #experience { background: var(--paper); }
-  .timeline { margin-top: 4rem; position: relative; }
-  .timeline::before {
-    content: ''; position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 1px; background: var(--border);
-  }
-  .tl-item {
-    padding-left: 3rem;
-    padding-bottom: 4rem;
-    position: relative;
-  }
-  .tl-item:last-child { padding-bottom: 0; }
-  .tl-dot {
-    position: absolute; left: -5px; top: 6px;
-    width: 11px; height: 11px;
-    border-radius: 50%;
-    background: var(--paper);
-    border: 2px solid var(--rust);
-    transition: background 0.2s;
-  }
-  .tl-item:hover .tl-dot { background: var(--rust); }
-  .tl-date {
-    font-family: var(--ff-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-  .tl-role {
-    font-family: var(--ff-display);
-    font-size: 2rem;
-    letter-spacing: 0.03em;
-    color: var(--ink);
-    line-height: 1.1;
-    margin-bottom: 0.3rem;
-  }
-  .tl-company {
-    font-family: var(--ff-serif);
-    font-style: italic;
-    font-size: 0.95rem;
-    color: var(--rust);
-    margin-bottom: 1.25rem;
-  }
-  .tl-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 0;
-    border: 1px solid var(--border);
-  }
-  .tl-bullet {
-    padding: 1rem 1.25rem;
-    font-size: 0.82rem;
-    line-height: 1.65;
-    color: var(--muted);
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    transition: background 0.2s;
-  }
-  .tl-bullet:hover { background: var(--cream); color: var(--ink); }
+footer{background:var(--ink);border-top:1px solid rgba(242,237,230,.08);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer span{font-family:var(--ff-m);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,237,230,.22)}
 
-  /* ── SKILLS ── */
-  #skills { background: var(--ink); padding: 7rem 3rem; }
-  #skills .sec-label { color: var(--rust); }
-  #skills .sec-title { color: var(--paper); margin-bottom: 4rem; }
-  .skills-layout {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border: 1px solid rgba(242,237,230,0.08);
-  }
-  .skill-col {
-    padding: 2rem;
-    border-right: 1px solid rgba(242,237,230,0.08);
-  }
-  .skill-col:last-child { border-right: none; }
-  .skill-col-title {
-    font-family: var(--ff-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(242,237,230,0.08);
-  }
-  .skill-item {
-    font-size: 0.82rem;
-    color: rgba(242,237,230,0.55);
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(242,237,230,0.05);
-    font-weight: 300;
-    transition: color 0.2s, padding-left 0.2s;
-    cursor: default;
-  }
-  .skill-item:hover { color: var(--paper); padding-left: 8px; }
-  .skill-item.highlight { color: var(--paper); font-weight: 500; }
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.on{opacity:1;transform:translateY(0)}
+.s1{transition-delay:.05s}.s2{transition-delay:.12s}.s3{transition-delay:.19s}.s4{transition-delay:.26s}.s5{transition-delay:.33s}.s6{transition-delay:.4s}.s7{transition-delay:.47s}.s8{transition-delay:.54s}.s9{transition-delay:.61s}
 
-  /* ── EDUCATION ── */
-  #education { background: var(--cream); }
-  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
-  .edu-block {
-    border: 1px solid var(--border);
-    padding: 2.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .edu-block::after {
-    content: attr(data-label);
-    position: absolute; bottom: -0.5rem; right: -0.5rem;
-    font-family: var(--ff-display);
-    font-size: 5rem;
-    color: rgba(12,12,10,0.04);
-    line-height: 1;
-    pointer-events: none;
-  }
-  .edu-block-title {
-    font-family: var(--ff-serif);
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-  }
-  .edu-school {
-    font-family: var(--ff-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 1.25rem;
-  }
-  .edu-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
-  .edu-chip {
-    font-family: var(--ff-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 3px 9px;
-    border: 1px solid var(--border);
-    color: var(--muted);
-  }
-  .cert-list { display: flex; flex-direction: column; gap: 8px; }
-  .cert-row {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 0.8rem;
-    color: var(--muted);
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border);
-    transition: color 0.2s;
-  }
-  .cert-row:hover { color: var(--ink); }
-  .cert-bullet { width: 5px; height: 5px; flex-shrink: 0; background: var(--gold); border-radius: 50%; }
-
-  /* ── CONTACT ── */
-  #contact {
-    background: var(--ink);
-    min-height: 60vh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 7rem 3rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .contact-bg-text {
-    position: absolute;
-    bottom: -3rem; right: -2rem;
-    font-family: var(--ff-display);
-    font-size: 22vw;
-    color: rgba(242,237,230,0.03);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-  }
-  #contact .sec-label { color: var(--rust); }
-  .contact-headline {
-    font-family: var(--ff-display);
-    font-size: clamp(3.5rem, 8vw, 9rem);
-    line-height: 0.9;
-    letter-spacing: 0.01em;
-    color: var(--paper);
-    margin-bottom: 3rem;
-    max-width: 700px;
-    position: relative; z-index: 1;
-  }
-  .contact-headline em {
-    font-family: var(--ff-serif);
-    font-style: italic;
-    color: var(--rust);
-  }
-  .contact-links {
-    display: flex; flex-wrap: wrap; gap: 1rem;
-    position: relative; z-index: 1;
-  }
-  .contact-link {
-    font-family: var(--ff-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(242,237,230,0.55);
-    text-decoration: none;
-    border: 1px solid rgba(242,237,230,0.15);
-    padding: 0.75rem 1.5rem;
-    transition: color 0.2s, border-color 0.2s, background 0.2s;
-  }
-  .contact-link:hover {
-    color: var(--paper);
-    border-color: var(--rust);
-    background: rgba(201,74,42,0.08);
-  }
-  .contact-link.primary {
-    background: var(--rust);
-    color: var(--paper);
-    border-color: var(--rust);
-  }
-  .contact-link.primary:hover { background: var(--rust2); }
-
-  footer {
-    background: var(--ink);
-    border-top: 1px solid rgba(242,237,230,0.08);
-    padding: 1.5rem 3rem;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 1rem;
-  }
-  footer span {
-    font-family: var(--ff-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(242,237,230,0.25);
-  }
-
-  /* ── ANIMATIONS ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
-  }
-  .reveal-left.visible { opacity: 1; transform: translateX(0); }
-
-  .stagger-1 { transition-delay: 0.05s; }
-  .stagger-2 { transition-delay: 0.12s; }
-  .stagger-3 { transition-delay: 0.19s; }
-  .stagger-4 { transition-delay: 0.26s; }
-  .stagger-5 { transition-delay: 0.33s; }
-
-  /* ── MOBILE ── */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.2rem; }
-    .nav-links a:not(.nav-cta) { display: none; }
-    section { padding: 5rem 1.5rem; }
-    #hero { padding: 90px 1.5rem 4rem; }
-    #about { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
-    .hero-stats { gap: 2rem; }
-    .hero-bottom { flex-direction: column; align-items: flex-start; }
-    .hero-tape { top: 32%; }
-    .skills-layout { grid-template-columns: 1fr 1fr; }
-    .skill-col { border-bottom: 1px solid rgba(242,237,230,0.08); }
-    .edu-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .gallery-card { flex: 0 0 280px; }
-    #contact { padding: 5rem 1.5rem; }
-    footer { padding: 1.5rem; }
-    .contact-links { flex-direction: column; }
-    .tl-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 480px) {
-    .skills-layout { grid-template-columns: 1fr; }
-    .hero-stats { flex-direction: column; gap: 1.5rem; }
-  }
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem} .nr a:not(.nc){display:none}
+  section{padding:5rem 1.5rem} #hero{padding:90px 1.5rem 4rem}
+  #about{grid-template-columns:1fr;gap:3rem;padding:5rem 1.5rem}
+  .hb{flex-direction:column;align-items:flex-start} .hs{gap:2rem} .ht{top:30%}
+  .skl{grid-template-columns:1fr 1fr} .skc{border-bottom:1px solid rgba(242,237,230,.08)}
+  .eg{grid-template-columns:1fr;gap:1.5rem} .gc{flex:0 0 290px}
+  .eco-arch{grid-template-columns:1fr} .eco-center{grid-column:1;grid-row:auto}
+  #contact{padding:5rem 1.5rem} .clinks{flex-direction:column} footer{padding:1.5rem}
+  .tg{grid-template-columns:1fr} #ecosystem{padding:5rem 1.5rem}
+}
+@media(max-width:480px){.skl{grid-template-columns:1fr}.hs{flex-direction:column;gap:1.5rem}}
 </style>
 </head>
 <body>
-
-<div id="cursor"></div>
+<div id="cur"></div>
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">A·A</a>
-  <div class="nav-links">
+  <a href="#hero" class="nl">A·A</a>
+  <div class="nr">
     <a href="#about">About</a>
-    <a href="#gallery">Work</a>
-    <a href="#experience">Experience</a>
-    <a href="https://mindbreakops.github.io/OPERIX_Eco-System_Network/" target="_blank" class="nav-cta">View OPERIX Live</a>
+    <a href="#ecosystem">OPERIX</a>
+    <a href="#experience">Career</a>
+    <a href="https://www.aljmaan.dpdns.org/OPERIX_Eco-System_Network/" target="_blank" class="nc">View OPERIX Live ↗</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-rule"></div>
-
-  <div class="hero-tape" aria-hidden="true">
-    <div class="hero-tape-inner">
-      <span>Operations Architect</span><span>·</span>
-      <span>System Builder</span><span>·</span>
-      <span>OPERIX HRIS</span><span>·</span>
-      <span>Riyadh, KSA</span><span>·</span>
-      <span>Information Systems</span><span>·</span>
-      <span>Operations Architect</span><span>·</span>
-      <span>System Builder</span><span>·</span>
-      <span>OPERIX HRIS</span><span>·</span>
-      <span>Riyadh, KSA</span><span>·</span>
-      <span>Information Systems</span><span>·</span>
-      <span>Operations Architect</span><span>·</span>
-      <span>System Builder</span><span>·</span>
-      <span>OPERIX HRIS</span><span>·</span>
-      <span>Riyadh, KSA</span><span>·</span>
-      <span>Information Systems</span><span>·</span>
+  <div class="hr"></div>
+  <div class="ht" aria-hidden="true">
+    <div class="hti">
+      <span>OPERIX Operations</span><span>·</span><span>OPERIX HRIS</span><span>·</span>
+      <span>OPERIX FMIS</span><span>·</span><span>OPERIX IT</span><span>·</span>
+      <span>OPERIX Executive Suite</span><span>·</span><span>OPERIX Planner</span><span>·</span>
+      <span>OPERIX Fields</span><span>·</span><span>OPERIX Marketing</span><span>·</span>
+      <span>OPERIX Code Studio</span><span>·</span><span>Systems Developer</span><span>·</span>
+      <span>OPERIX Operations</span><span>·</span><span>OPERIX HRIS</span><span>·</span>
+      <span>OPERIX FMIS</span><span>·</span><span>OPERIX IT</span><span>·</span>
+      <span>OPERIX Executive Suite</span><span>·</span><span>OPERIX Planner</span><span>·</span>
+      <span>OPERIX Fields</span><span>·</span><span>OPERIX Marketing</span><span>·</span>
+      <span>OPERIX Code Studio</span><span>·</span><span>Systems Developer</span><span>·</span>
     </div>
   </div>
-
-  <div class="hero-eyebrow reveal">Operations Management · Information Systems</div>
-  <h1 class="hero-name reveal stagger-1">
-    ASIM<br>ALJMA'AN
-    <em>Systems Developer & Operations Manager</em>
-  </h1>
-
-  <div class="hero-bottom reveal stagger-2">
-    <p class="hero-desc">
-      I don't just manage operations — I build the systems, tools, and teams
-      that keep running without me. Currently transforming enterprise operations
-      through the OPERIX ecosystem.
-    </p>
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-num">3<sup>×</sup></div>
-        <div class="hero-stat-label">Workforce growth</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">5</div>
-        <div class="hero-stat-label">OPERIX modules</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">0</div>
-        <div class="hero-stat-label">Daily supervision needed</div>
-      </div>
+  <div class="heyb rv">Systems Developer · Operations Manager · ERP Architect</div>
+  <h1 class="hn rv s1">ASIM<br>ALJMA'AN<em>Builder of Systems. Tamer of Operations.</em></h1>
+  <div class="hb rv s2">
+    <p class="hd">I don't just manage operations — I build the systems, tools, and teams that keep running without me. The OPERIX ecosystem is a 9-module ERP platform I designed and built from the ground up, running live.</p>
+    <div class="hs">
+      <div><div class="hsn">9</div><div class="hsl">OPERIX modules</div></div>
+      <div><div class="hsn">3<sup>×</sup></div><div class="hsl">Workforce growth</div></div>
+      <div><div class="hsn">0</div><div class="hsl">Daily supervision</div></div>
     </div>
   </div>
-
-  <div class="scroll-hint" aria-hidden="true">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
+  <div class="sh" aria-hidden="true"><span>Scroll</span><div class="sl"></div></div>
 </section>
 
-<!-- ABOUT / DARK PANEL -->
+<!-- ABOUT -->
 <section id="about">
   <div>
-    <div class="sec-label reveal">01 — Who I Am</div>
-    <h2 class="sec-title reveal stagger-1" style="margin-bottom:2rem;">THE<br>OPERATOR</h2>
-    <p class="about-body reveal stagger-2">
-      Operations-focused IS graduate from Bayan University, with a 3.06 GPA
-      and A grades across every management course. I specialize in
-      <strong>operations recovery</strong> — walking into chaos and building
-      self-sustaining workflows that outlast my presence.
-      <br><br>
-      My flagship project, <strong>OPERIX Solutions</strong>, is a fully custom
-      ERP ecosystem I designed and built from the ground up — replacing
-      fragmented, paper-based processes with one unified, secure, and
-      intelligent platform.
+    <div class="slb rv">01 — Who I Am</div>
+    <h2 class="st rv s1" style="margin-bottom:2rem">THE<br>OPERATOR</h2>
+    <p class="ab rv s2">
+      Operations-focused IS graduate from Bayan University with a 3.06 GPA and A grades across every management course. I specialize in <strong>operations recovery</strong> — walking into broken environments and building self-sustaining systems that outlast my presence.<br><br>
+      <strong>OPERIX Solutions</strong> is a fully custom, 9-module ERP ecosystem I architected and built from scratch — a unified, secure, and intelligent operational platform connected to a single shared server, serving real organizations in Riyadh.
     </p>
   </div>
-  <div class="about-right">
-    <div class="about-kpi reveal stagger-1">
-      <div class="kpi-num">40+</div>
-      <div class="kpi-label">
-        <strong>Active workforce rebuilt</strong>
-        Grew from 12 employees (10% presence) to a structured, 40+ person
-        operation within two months.
-      </div>
+  <div class="ar">
+    <div class="ak rv s1"><div class="akn">40+</div><div class="akl"><strong>Active workforce rebuilt</strong>Grew from 12 employees (10% presence) to a structured 40+ operation in two months.</div></div>
+    <div class="ak rv s2"><div class="akn">100%</div><div class="akl"><strong>Compliance achieved</strong>Uniform compliance, attendance accuracy, and client satisfaction brought to full standard.</div></div>
+    <div class="ak rv s3"><div class="akn">4/5</div><div class="akl"><strong>Leaders activated</strong>Trained 5 supervisors — 4 passed full performance evaluations, now leading independently.</div></div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM ARCHITECTURE -->
+<section id="ecosystem">
+  <div class="slb rv">02 — Platform Architecture</div>
+  <h2 class="st rv s1">THE<br>ECOSYSTEM</h2>
+  <p class="eco-sub rv s2">9 specialized modules · 1 unified server · Real-time sync · Role-based access across all workspaces</p>
+  <div class="eco-arch rv s3">
+    <!-- Row 1 -->
+    <div class="eco-node">
+      <div class="eco-node-id">Module · 01</div>
+      <div class="eco-node-name">OPERIX HRIS</div>
+      <div class="eco-node-desc">HR, attendance, payroll &amp; workforce management</div>
     </div>
-    <div class="about-kpi reveal stagger-2">
-      <div class="kpi-num">100%</div>
-      <div class="kpi-label">
-        <strong>Compliance achieved</strong>
-        Uniform compliance, attendance accuracy, and client satisfaction all
-        brought to full operational standard.
+    <div class="eco-node eco-center">
+      <div class="eco-server-icon">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <rect x="4" y="8" width="40" height="10" rx="2" stroke="#c94a2a" stroke-width="1.5"/>
+          <rect x="4" y="22" width="40" height="10" rx="2" stroke="#c94a2a" stroke-width="1.5"/>
+          <rect x="4" y="36" width="40" height="10" rx="2" stroke="#c94a2a" stroke-width="1.5"/>
+          <circle cx="38" cy="13" r="2" fill="#c94a2a"/>
+          <circle cx="38" cy="27" r="2" fill="#c94a2a"/>
+          <circle cx="38" cy="41" r="2" fill="#c94a2a"/>
+        </svg>
       </div>
+      <div class="eco-center-title">CENTRAL SERVER</div>
+      <div class="eco-center-desc">All 9 modules connect to a single unified backend. Real-time data sync, shared authentication, and cross-module analytics.</div>
     </div>
-    <div class="about-kpi reveal stagger-3">
-      <div class="kpi-num">4/5</div>
-      <div class="kpi-label">
-        <strong>Leaders activated</strong>
-        Trained and assessed 5 supervisors — 4 passed full performance
-        evaluations and lead independently.
-      </div>
+    <div class="eco-node">
+      <div class="eco-node-id">Module · 02</div>
+      <div class="eco-node-name">OPERIX Operations</div>
+      <div class="eco-node-desc">Core ops management, ANPR, valet &amp; field control</div>
+    </div>
+    <!-- Row 2 -->
+    <div class="eco-node">
+      <div class="eco-node-id">Module · 03</div>
+      <div class="eco-node-name">OPERIX FMIS</div>
+      <div class="eco-node-desc">Financial management, budgets, P&amp;L &amp; reporting</div>
+    </div>
+    <div class="eco-node">
+      <div class="eco-node-id">Module · 04</div>
+      <div class="eco-node-name">OPERIX IT</div>
+      <div class="eco-node-desc">IT asset management, ticketing &amp; infrastructure</div>
+    </div>
+    <!-- Row 3 -->
+    <div class="eco-node">
+      <div class="eco-node-id">Module · 05</div>
+      <div class="eco-node-name">OPERIX Executive</div>
+      <div class="eco-node-desc">C-level dashboards, KPI oversight &amp; board reports</div>
+    </div>
+    <div class="eco-node">
+      <div class="eco-node-id">Module · 06</div>
+      <div class="eco-node-name">OPERIX Planner</div>
+      <div class="eco-node-desc">Project planning, task boards &amp; milestone tracking</div>
+    </div>
+    <!-- Row 4 -->
+    <div class="eco-node">
+      <div class="eco-node-id">Module · 07</div>
+      <div class="eco-node-name">OPERIX Fields</div>
+      <div class="eco-node-desc">Field team dispatch, GPS tracking &amp; job completion</div>
+    </div>
+    <div class="eco-node">
+      <div class="eco-node-id">Module · 08</div>
+      <div class="eco-node-name">OPERIX Marketing</div>
+      <div class="eco-node-desc">Campaign management, analytics &amp; lead tracking</div>
+    </div>
+    <div class="eco-node">
+      <div class="eco-node-id">Module · 09</div>
+      <div class="eco-node-name">OPERIX Code Studio</div>
+      <div class="eco-node-desc">Internal dev tools, scripts, templates &amp; automation</div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY — OPERIX MODULES (HORIZONTAL SCROLL) -->
+<!-- MODULES GALLERY -->
 <section id="gallery">
-  <div class="gallery-header">
-    <div class="sec-label reveal">02 — OPERIX Ecosystem</div>
-    <h2 class="sec-title reveal stagger-1">THE<br>MODULES</h2>
+  <div class="gh">
+    <div class="slb rv">03 — Module Showcase</div>
+    <h2 class="st rv s1">THE<br>MODULES</h2>
   </div>
-  <div class="gallery-scroll-wrap">
+  <div class="gsw">
 
-    <div class="gallery-card reveal stagger-1">
-      <div class="gallery-img-wrap">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=640&q=80" alt="HRIS Module"/>
+    <!-- 01 HRIS -->
+    <div class="gc rv s1">
+      <div class="gi">
+        <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="210" fill="#0c0c0a"/>
+          <!-- Grid lines -->
+          <line x1="0" y1="30" x2="340" y2="30" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <line x1="0" y1="60" x2="340" y2="60" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <line x1="0" y1="90" x2="340" y2="90" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <line x1="0" y1="120" x2="340" y2="120" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <line x1="0" y1="150" x2="340" y2="150" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <line x1="0" y1="180" x2="340" y2="180" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <!-- Header bar -->
+          <rect x="12" y="12" width="316" height="20" rx="2" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="20" y="26" font-family="IBM Plex Mono" font-size="8" fill="rgba(201,74,42,.9)" letter-spacing="2">OPERIX HRIS · WORKFORCE BOARD</text>
+          <!-- Attendance rows -->
+          <rect x="12" y="40" width="316" height="18" rx="1" fill="rgba(242,237,230,.03)"/>
+          <circle cx="26" cy="49" r="5" fill="rgba(201,74,42,.4)"/>
+          <text x="38" y="53" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Ahmad K.</text>
+          <rect x="120" y="43" width="40" height="12" rx="1" fill="rgba(16,185,129,.2)" stroke="rgba(16,185,129,.4)" stroke-width="1"/>
+          <text x="128" y="53" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(16,185,129,.9)">CHECK IN</text>
+          <text x="175" y="53" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.35)">08:02 AM</text>
+          <text x="240" y="53" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.35)">SAR 280/day</text>
+          <rect x="12" y="62" width="316" height="18" rx="1" fill="rgba(242,237,230,.03)"/>
+          <circle cx="26" cy="71" r="5" fill="rgba(201,74,42,.4)"/>
+          <text x="38" y="75" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Sara M.</text>
+          <rect x="120" y="65" width="40" height="12" rx="1" fill="rgba(239,68,68,.15)" stroke="rgba(239,68,68,.3)" stroke-width="1"/>
+          <text x="126" y="75" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(239,68,68,.9)">ABSENT</text>
+          <text x="175" y="75" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.35)">—</text>
+          <text x="240" y="75" font-family="IBM Plex Mono" font-size="7" fill="rgba(239,68,68,.6)">-SAR 280</text>
+          <rect x="12" y="84" width="316" height="18" rx="1" fill="rgba(242,237,230,.03)"/>
+          <circle cx="26" cy="93" r="5" fill="rgba(201,74,42,.4)"/>
+          <text x="38" y="97" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Omar F.</text>
+          <rect x="120" y="87" width="40" height="12" rx="1" fill="rgba(245,158,11,.15)" stroke="rgba(245,158,11,.3)" stroke-width="1"/>
+          <text x="130" y="97" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(245,158,11,.9)">LATE</text>
+          <text x="175" y="97" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.35)">09:14 AM</text>
+          <text x="240" y="97" font-family="IBM Plex Mono" font-size="7" fill="rgba(245,158,11,.6)">-SAR 30</text>
+          <!-- GPS indicator -->
+          <rect x="12" y="118" width="150" height="50" rx="2" fill="rgba(201,74,42,.06)" stroke="rgba(201,74,42,.2)" stroke-width="1"/>
+          <text x="20" y="131" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.7)" letter-spacing="1.5">GPS FENCE STATUS</text>
+          <circle cx="30" cy="150" r="8" fill="none" stroke="rgba(201,74,42,.4)" stroke-width="1" stroke-dasharray="3,2"/>
+          <circle cx="30" cy="150" r="4" fill="rgba(16,185,129,.5)"/>
+          <text x="45" y="148" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.5)">Site A · Active</text>
+          <text x="45" y="160" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)">Radius: 200m</text>
+          <!-- Salary summary -->
+          <rect x="175" y="118" width="153" height="50" rx="2" fill="rgba(201,74,42,.06)" stroke="rgba(201,74,42,.2)" stroke-width="1"/>
+          <text x="183" y="131" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.7)" letter-spacing="1.5">PAYROLL ESTIMATE</text>
+          <text x="183" y="148" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.5)">Total:</text>
+          <text x="220" y="148" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.9)">SAR 42,800</text>
+          <text x="183" y="162" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.5)">Deductions:</text>
+          <text x="240" y="162" font-family="IBM Plex Mono" font-size="7" fill="rgba(239,68,68,.7)">-1,240</text>
+          <!-- Bottom bar -->
+          <rect x="0" y="195" width="340" height="15" fill="rgba(201,74,42,.08)"/>
+          <text x="12" y="205" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">LIVE · 42 EMPLOYEES · AUTO-DEDUCTION ON</text>
+        </svg>
       </div>
-      <div class="gallery-body">
-        <div class="gallery-module-num">Module · 01</div>
-        <div class="gallery-title">HR Information System</div>
-        <div class="gallery-desc">Real-time GPS-fenced attendance, auto salary deductions, and an employee self-service portal — workforce management fully automated.</div>
-        <div class="gallery-tags">
-          <span class="gtag">GPS Fence</span>
-          <span class="gtag">Auto Payroll</span>
-          <span class="gtag">Self-Service</span>
+      <div class="gbody">
+        <div class="gmn">Module · 01</div>
+        <div class="gtitle">OPERIX HRIS</div>
+        <div class="gdesc">Complete HR automation — from GPS-enforced attendance to automated payroll deductions and employee self-service, replacing spreadsheets with a live workforce command center.</div>
+        <div class="gfeats">
+          <div class="gfeat">Real-time GPS-fenced check-in / check-out enforcement</div>
+          <div class="gfeat">Auto salary deduction engine (late, absent, violations)</div>
+          <div class="gfeat">Shift scheduling board with drag-and-drop assignment</div>
+          <div class="gfeat">Employee self-service: leaves, complaints, payslips</div>
+          <div class="gfeat">Part-time attendance via digital forms → master sheet</div>
         </div>
+        <div class="gtags"><span class="gtag">GPS</span><span class="gtag">Payroll</span><span class="gtag">Supabase</span><span class="gtag">Self-Service</span></div>
       </div>
     </div>
 
-    <div class="gallery-card reveal stagger-2">
-      <div class="gallery-img-wrap">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&q=80" alt="ANPR Module"/>
+    <!-- 02 OPERATIONS -->
+    <div class="gc rv s2">
+      <div class="gi">
+        <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="210" fill="#0c0c0a"/>
+          <line x1="0" y1="30" x2="340" y2="30" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <rect x="12" y="12" width="316" height="20" rx="2" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="20" y="26" font-family="IBM Plex Mono" font-size="8" fill="rgba(201,74,42,.9)" letter-spacing="2">OPERIX OPERATIONS · ANPR LIVE</text>
+          <!-- Camera feed mock -->
+          <rect x="12" y="40" width="150" height="90" rx="2" fill="rgba(201,74,42,.04)" stroke="rgba(201,74,42,.2)" stroke-width="1"/>
+          <text x="20" y="55" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">CAM 01 · GATE A</text>
+          <!-- Car silhouette -->
+          <rect x="35" y="78" width="90" height="28" rx="4" fill="rgba(242,237,230,.07)" stroke="rgba(242,237,230,.15)" stroke-width="1"/>
+          <rect x="50" y="68" width="60" height="22" rx="2" fill="rgba(242,237,230,.05)" stroke="rgba(242,237,230,.1)" stroke-width="1"/>
+          <circle cx="55" cy="108" r="7" fill="rgba(242,237,230,.12)" stroke="rgba(242,237,230,.2)" stroke-width="1"/>
+          <circle cx="105" cy="108" r="7" fill="rgba(242,237,230,.12)" stroke="rgba(242,237,230,.2)" stroke-width="1"/>
+          <!-- Scan lines -->
+          <rect x="20" y="90" width="130" height="2" fill="rgba(201,74,42,.4)"/>
+          <rect x="20" y="94" width="130" height="1" fill="rgba(201,74,42,.2)"/>
+          <!-- Plate reading -->
+          <rect x="45" y="82" width="70" height="14" rx="1" fill="#f2ede6"/>
+          <text x="53" y="93" font-family="IBM Plex Mono" font-size="8" fill="#0c0c0a" font-weight="600">ABC 1234</text>
+          <!-- Ticket panel -->
+          <rect x="172" y="40" width="156" height="90" rx="2" fill="rgba(16,185,129,.04)" stroke="rgba(16,185,129,.2)" stroke-width="1"/>
+          <text x="180" y="55" font-family="IBM Plex Mono" font-size="6" fill="rgba(16,185,129,.7)" letter-spacing="1">TICKET GENERATED</text>
+          <text x="180" y="70" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.5)">Plate:</text>
+          <text x="210" y="70" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.9)">ABC 1234</text>
+          <text x="180" y="84" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.5)">Entry:</text>
+          <text x="210" y="84" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.9)">14:32</text>
+          <text x="180" y="98" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.5)">Valet:</text>
+          <text x="210" y="98" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.9)">Khalid A.</text>
+          <text x="180" y="112" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.5)">Status:</text>
+          <rect x="210" y="105" width="45" height="11" rx="1" fill="rgba(16,185,129,.2)" stroke="rgba(16,185,129,.4)" stroke-width=".5"/>
+          <text x="216" y="114" font-family="IBM Plex Mono" font-size="6" fill="rgba(16,185,129,.9)">PARKED</text>
+          <!-- Valet stats -->
+          <rect x="12" y="140" width="316" height="40" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <text x="20" y="153" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.35)" letter-spacing="1">VALET PERFORMANCE TODAY</text>
+          <text x="20" y="168" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Khalid A.</text><text x="80" y="168" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,74,42,.8)">14 ops</text><text x="120" y="168" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.4)">SAR 420</text>
+          <text x="180" y="168" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Faisal M.</text><text x="240" y="168" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,74,42,.8)">11 ops</text><text x="280" y="168" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.4)">SAR 330</text>
+          <rect x="0" y="195" width="340" height="15" fill="rgba(201,74,42,.08)"/>
+          <text x="12" y="205" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">LIVE ANPR · GATE AUTO-LOG · QR INVOICING ACTIVE</text>
+        </svg>
       </div>
-      <div class="gallery-body">
-        <div class="gallery-module-num">Module · 02</div>
-        <div class="gallery-title">ANPR Parking & Valet</div>
-        <div class="gallery-desc">Live camera plate recognition, dynamic pricing, QR invoicing, and individual valet performance tracking — all digitized.</div>
-        <div class="gallery-tags">
-          <span class="gtag">Live ANPR</span>
-          <span class="gtag">QR Tickets</span>
-          <span class="gtag">Revenue KPIs</span>
+      <div class="gbody">
+        <div class="gmn">Module · 02</div>
+        <div class="gtitle">OPERIX Operations</div>
+        <div class="gdesc">Core operations hub covering ANPR parking, valet management, and field operations — turning manual logbooks into a live, automated operations center.</div>
+        <div class="gfeats">
+          <div class="gfeat">Live ANPR camera feed with instant plate recognition</div>
+          <div class="gfeat">Automated parking ticket + QR invoice generation</div>
+          <div class="gfeat">Dynamic pricing by duration and vehicle type</div>
+          <div class="gfeat">Valet performance tracking per operator</div>
+          <div class="gfeat">Gate entry/exit logging with timestamps</div>
         </div>
+        <div class="gtags"><span class="gtag">ANPR</span><span class="gtag">Valet</span><span class="gtag">QR</span><span class="gtag">Live</span></div>
       </div>
     </div>
 
-    <div class="gallery-card reveal stagger-3">
-      <div class="gallery-img-wrap">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&q=80" alt="Accounting Module"/>
+    <!-- 03 FMIS -->
+    <div class="gc rv s3">
+      <div class="gi">
+        <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="210" fill="#0c0c0a"/>
+          <rect x="12" y="12" width="316" height="20" rx="2" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="20" y="26" font-family="IBM Plex Mono" font-size="8" fill="rgba(201,74,42,.9)" letter-spacing="2">OPERIX FMIS · FINANCIAL DASHBOARD</text>
+          <!-- KPI Cards -->
+          <rect x="12" y="40" width="95" height="44" rx="2" fill="rgba(16,185,129,.06)" stroke="rgba(16,185,129,.2)" stroke-width="1"/>
+          <text x="20" y="54" font-family="IBM Plex Mono" font-size="6" fill="rgba(16,185,129,.6)" letter-spacing="1">ASSETS</text>
+          <text x="20" y="72" font-family="IBM Plex Mono" font-size="13" fill="rgba(16,185,129,.9)" font-weight="600">248K</text>
+          <rect x="117" y="40" width="95" height="44" rx="2" fill="rgba(239,68,68,.06)" stroke="rgba(239,68,68,.2)" stroke-width="1"/>
+          <text x="125" y="54" font-family="IBM Plex Mono" font-size="6" fill="rgba(239,68,68,.6)" letter-spacing="1">SALARIES</text>
+          <text x="125" y="72" font-family="IBM Plex Mono" font-size="13" fill="rgba(239,68,68,.9)" font-weight="600">142K</text>
+          <rect x="222" y="40" width="106" height="44" rx="2" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.2)" stroke-width="1"/>
+          <text x="230" y="54" font-family="IBM Plex Mono" font-size="6" fill="rgba(245,158,11,.6)" letter-spacing="1">EXPENSES</text>
+          <text x="230" y="72" font-family="IBM Plex Mono" font-size="13" fill="rgba(245,158,11,.9)" font-weight="600">38K</text>
+          <!-- Net balance -->
+          <rect x="12" y="92" width="316" height="22" rx="2" fill="rgba(201,74,42,.08)" stroke="rgba(201,74,42,.25)" stroke-width="1"/>
+          <text x="20" y="107" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,74,42,.7)">NET BALANCE (Assets − Salaries − Expenses):</text>
+          <text x="270" y="107" font-family="IBM Plex Mono" font-size="8" fill="rgba(242,237,230,.9)">68K</text>
+          <!-- Bar chart -->
+          <text x="12" y="128" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">MONTHLY TREND</text>
+          <rect x="12" y="148" width="18" height="35" rx="1" fill="rgba(16,185,129,.3)"/>
+          <rect x="36" y="140" width="18" height="43" rx="1" fill="rgba(16,185,129,.4)"/>
+          <rect x="60" y="133" width="18" height="50" rx="1" fill="rgba(16,185,129,.5)"/>
+          <rect x="84" y="125" width="18" height="58" rx="1" fill="rgba(16,185,129,.6)"/>
+          <rect x="108" y="120" width="18" height="63" rx="1" fill="rgba(16,185,129,.7)"/>
+          <rect x="132" y="130" width="18" height="53" rx="1" fill="rgba(16,185,129,.55)"/>
+          <rect x="156" y="115" width="18" height="68" rx="1" fill="rgba(201,74,42,.8)"/>
+          <!-- Export buttons -->
+          <rect x="220" y="128" width="60" height="20" rx="2" fill="rgba(16,185,129,.12)" stroke="rgba(16,185,129,.3)" stroke-width="1"/>
+          <text x="229" y="141" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(16,185,129,.9)">↓ EXCEL</text>
+          <rect x="286" y="128" width="42" height="20" rx="2" fill="rgba(201,74,42,.12)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="294" y="141" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(201,74,42,.9)">↓ CSV</text>
+          <rect x="0" y="195" width="340" height="15" fill="rgba(201,74,42,.08)"/>
+          <text x="12" y="205" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">ADMIN ONLY · PROJECT-FILTERED · AUTO-REPORT READY</text>
+        </svg>
       </div>
-      <div class="gallery-body">
-        <div class="gallery-module-num">Module · 03</div>
-        <div class="gallery-title">Financial MIS</div>
-        <div class="gallery-desc">Admin-only financial hub. Net balance calculated live: Assets − Salaries − Expenses. One-click Excel/CSV export with project-level filtering.</div>
-        <div class="gallery-tags">
-          <span class="gtag">Admin Only</span>
-          <span class="gtag">Live KPIs</span>
-          <span class="gtag">Export</span>
+      <div class="gbody">
+        <div class="gmn">Module · 03</div>
+        <div class="gtitle">OPERIX FMIS</div>
+        <div class="gdesc">Financial Management Information System — admin-only access with real-time P&L, project-level budget tracking, and one-click automated financial reporting.</div>
+        <div class="gfeats">
+          <div class="gfeat">Live net balance: Assets − Salaries − Expenses</div>
+          <div class="gfeat">Project-filtered financial views and drill-downs</div>
+          <div class="gfeat">Budget tracking with threshold alerts</div>
+          <div class="gfeat">One-click Excel/CSV export with full detail</div>
+          <div class="gfeat">Clearance and asset lifecycle management</div>
         </div>
+        <div class="gtags"><span class="gtag">Finance</span><span class="gtag">Admin</span><span class="gtag">Export</span><span class="gtag">Live KPIs</span></div>
       </div>
     </div>
 
-    <div class="gallery-card reveal stagger-4">
-      <div class="gallery-img-wrap">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&q=80" alt="Analytics Module"/>
+    <!-- 04 IT -->
+    <div class="gc rv s4">
+      <div class="gi">
+        <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="210" fill="#0c0c0a"/>
+          <rect x="12" y="12" width="316" height="20" rx="2" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="20" y="26" font-family="IBM Plex Mono" font-size="8" fill="rgba(201,74,42,.9)" letter-spacing="2">OPERIX IT · ASSET &amp; TICKET BOARD</text>
+          <!-- Ticket list -->
+          <rect x="12" y="40" width="190" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="20" y="54" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">OPEN TICKETS</text>
+          <rect x="18" y="58" width="178" height="20" rx="1" fill="rgba(239,68,68,.07)" stroke="rgba(239,68,68,.2)" stroke-width=".5"/>
+          <text x="25" y="69" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(239,68,68,.8)">HIGH</text>
+          <text x="55" y="69" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.6)">Server timeout on module 4</text>
+          <rect x="18" y="82" width="178" height="20" rx="1" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.15)" stroke-width=".5"/>
+          <text x="25" y="93" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(245,158,11,.8)">MED</text>
+          <text x="55" y="93" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.6)">Laptop SN-0042 screen fault</text>
+          <rect x="18" y="106" width="178" height="20" rx="1" fill="rgba(242,237,230,.03)" stroke="rgba(242,237,230,.07)" stroke-width=".5"/>
+          <text x="25" y="117" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.4)">LOW</text>
+          <text x="55" y="117" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.6)">Printer queue stuck · Bay 2</text>
+          <rect x="18" y="130" width="178" height="20" rx="1" fill="rgba(16,185,129,.05)" stroke="rgba(16,185,129,.15)" stroke-width=".5"/>
+          <text x="25" y="141" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(16,185,129,.8)">DONE</text>
+          <text x="55" y="141" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.4)">WiFi AP replaced · Floor 3</text>
+          <!-- Asset panel -->
+          <rect x="212" y="40" width="116" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="220" y="54" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">ASSET REGISTRY</text>
+          <text x="220" y="70" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Laptops</text><text x="285" y="70" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,74,42,.8)">24</text>
+          <line x1="218" y1="75" x2="322" y2="75" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <text x="220" y="88" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Monitors</text><text x="285" y="88" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,74,42,.8)">18</text>
+          <line x1="218" y1="93" x2="322" y2="93" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <text x="220" y="106" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Phones</text><text x="285" y="106" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,74,42,.8)">31</text>
+          <line x1="218" y1="111" x2="322" y2="111" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <text x="220" y="124" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Servers</text><text x="285" y="124" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,74,42,.8)">3</text>
+          <line x1="218" y1="129" x2="322" y2="129" stroke="rgba(242,237,230,.06)" stroke-width="1"/>
+          <text x="220" y="142" font-family="IBM Plex Mono" font-size="7" fill="rgba(242,237,230,.6)">Printers</text><text x="285" y="142" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,74,42,.8)">8</text>
+          <rect x="0" y="195" width="340" height="15" fill="rgba(201,74,42,.08)"/>
+          <text x="12" y="205" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">TICKETING · ASSET TRACKING · INFRASTRUCTURE MGMT</text>
+        </svg>
       </div>
-      <div class="gallery-body">
-        <div class="gallery-module-num">Module · 04</div>
-        <div class="gallery-title">Admin Control & Analytics</div>
-        <div class="gallery-desc">Staff directory, role-based access, 60-day compliance alerts for Iqama and licenses, and cross-module interactive dashboards.</div>
-        <div class="gallery-tags">
-          <span class="gtag">RBAC</span>
-          <span class="gtag">Compliance Alerts</span>
-          <span class="gtag">Analytics</span>
+      <div class="gbody">
+        <div class="gmn">Module · 04</div>
+        <div class="gtitle">OPERIX IT</div>
+        <div class="gdesc">IT asset management and support ticketing in one place — full hardware registry, priority-based issue tracking, and infrastructure lifecycle management.</div>
+        <div class="gfeats">
+          <div class="gfeat">IT support ticket board with priority triage (High/Med/Low)</div>
+          <div class="gfeat">Complete hardware asset registry with serial numbers</div>
+          <div class="gfeat">Maintenance scheduling and service history log</div>
+          <div class="gfeat">License expiry and renewal tracking</div>
+          <div class="gfeat">Infrastructure health dashboard</div>
         </div>
+        <div class="gtags"><span class="gtag">Tickets</span><span class="gtag">Assets</span><span class="gtag">IT Ops</span></div>
       </div>
     </div>
 
-    <div class="gallery-card reveal stagger-5">
-      <div class="gallery-img-wrap">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=640&q=80" alt="Document Studio"/>
+    <!-- 05 EXECUTIVE SUITE -->
+    <div class="gc rv s5">
+      <div class="gi">
+        <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="210" fill="#0c0c0a"/>
+          <rect x="12" y="12" width="316" height="20" rx="2" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="20" y="26" font-family="IBM Plex Mono" font-size="8" fill="rgba(201,74,42,.9)" letter-spacing="2">OPERIX EXECUTIVE · C-LEVEL OVERVIEW</text>
+          <!-- Gauge meters -->
+          <text x="12" y="54" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">OPERATIONAL HEALTH</text>
+          <!-- Meter 1 -->
+          <circle cx="45" cy="100" r="28" fill="none" stroke="rgba(242,237,230,.06)" stroke-width="6"/>
+          <circle cx="45" cy="100" r="28" fill="none" stroke="rgba(16,185,129,.6)" stroke-width="6" stroke-dasharray="106 176" stroke-dashoffset="44" transform="rotate(-90 45 100)"/>
+          <text x="45" y="97" font-family="IBM Plex Mono" font-size="8" fill="rgba(242,237,230,.9)" text-anchor="middle">87%</text>
+          <text x="45" y="108" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(242,237,230,.35)" text-anchor="middle">ATTENDANCE</text>
+          <!-- Meter 2 -->
+          <circle cx="120" cy="100" r="28" fill="none" stroke="rgba(242,237,230,.06)" stroke-width="6"/>
+          <circle cx="120" cy="100" r="28" fill="none" stroke="rgba(201,74,42,.7)" stroke-width="6" stroke-dasharray="132 176" stroke-dashoffset="44" transform="rotate(-90 120 100)"/>
+          <text x="120" y="97" font-family="IBM Plex Mono" font-size="8" fill="rgba(242,237,230,.9)" text-anchor="middle">75%</text>
+          <text x="120" y="108" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(242,237,230,.35)" text-anchor="middle">OPS KPIs</text>
+          <!-- Meter 3 -->
+          <circle cx="195" cy="100" r="28" fill="none" stroke="rgba(242,237,230,.06)" stroke-width="6"/>
+          <circle cx="195" cy="100" r="28" fill="none" stroke="rgba(245,158,11,.6)" stroke-width="6" stroke-dasharray="92 176" stroke-dashoffset="44" transform="rotate(-90 195 100)"/>
+          <text x="195" y="97" font-family="IBM Plex Mono" font-size="8" fill="rgba(242,237,230,.9)" text-anchor="middle">52%</text>
+          <text x="195" y="108" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(242,237,230,.35)" text-anchor="middle">BUDGET</text>
+          <!-- Alert panel -->
+          <rect x="240" y="58" width="88" height="70" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="248" y="71" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">ALERTS</text>
+          <rect x="246" y="76" width="76" height="12" rx="1" fill="rgba(239,68,68,.1)"/>
+          <text x="250" y="85" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(239,68,68,.8)">3 Iqama expiring</text>
+          <rect x="246" y="92" width="76" height="12" rx="1" fill="rgba(245,158,11,.08)"/>
+          <text x="250" y="101" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(245,158,11,.8)">Budget 60% used</text>
+          <rect x="246" y="108" width="76" height="12" rx="1" fill="rgba(16,185,129,.08)"/>
+          <text x="250" y="117" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(16,185,129,.8)">Payroll processed</text>
+          <!-- Board report line -->
+          <rect x="12" y="145" width="316" height="20" rx="2" fill="rgba(201,74,42,.06)" stroke="rgba(201,74,42,.15)" stroke-width="1"/>
+          <text x="20" y="159" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(201,74,42,.7)">Board Report · May 2026 · Auto-generated</text>
+          <rect x="270" y="149" width="52" height="12" rx="1" fill="rgba(201,74,42,.2)"/>
+          <text x="278" y="158" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.9)">↓ PDF</text>
+          <rect x="0" y="195" width="340" height="15" fill="rgba(201,74,42,.08)"/>
+          <text x="12" y="205" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">EXECUTIVE ACCESS · REAL-TIME · BOARD REPORT READY</text>
+        </svg>
       </div>
-      <div class="gallery-body">
-        <div class="gallery-module-num">Module · 05</div>
-        <div class="gallery-title">Document Studio & ID Cards</div>
-        <div class="gallery-desc">One-click branded employee ID cards in PNG or PDF. Centralized hub for contracts, invoices, and standardized administrative letters.</div>
-        <div class="gallery-tags">
-          <span class="gtag">ID Generator</span>
-          <span class="gtag">PDF Export</span>
-          <span class="gtag">Templates</span>
+      <div class="gbody">
+        <div class="gmn">Module · 05</div>
+        <div class="gtitle">OPERIX Executive Suite</div>
+        <div class="gdesc">C-level command center with real-time operational health gauges, cross-module KPI aggregation, and automated board reports — decision-making at a glance.</div>
+        <div class="gfeats">
+          <div class="gfeat">Live operational health gauges across all modules</div>
+          <div class="gfeat">Cross-module KPI aggregation and trend lines</div>
+          <div class="gfeat">Automated board report generation (PDF)</div>
+          <div class="gfeat">Priority alert feed: compliance, budget, workforce</div>
+          <div class="gfeat">Secure executive-only access layer</div>
         </div>
+        <div class="gtags"><span class="gtag">C-Level</span><span class="gtag">KPIs</span><span class="gtag">Reports</span></div>
       </div>
     </div>
 
-  </div>
+    <!-- 06 PLANNER -->
+    <div class="gc rv s6">
+      <div class="gi">
+        <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="210" fill="#0c0c0a"/>
+          <rect x="12" y="12" width="316" height="20" rx="2" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="20" y="26" font-family="IBM Plex Mono" font-size="8" fill="rgba(201,74,42,.9)" letter-spacing="2">OPERIX PLANNER · PROJECT BOARDS</text>
+          <!-- Kanban columns -->
+          <rect x="12" y="38" width="72" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="20" y="51" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">BACKLOG</text>
+          <rect x="16" y="56" width="64" height="22" rx="1" fill="rgba(242,237,230,.04)" stroke="rgba(242,237,230,.08)" stroke-width=".5"/>
+          <text x="20" y="66" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.5)">Module testing</text>
+          <text x="20" y="74" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(242,237,230,.25)">Code Studio</text>
+          <rect x="16" y="82" width="64" height="22" rx="1" fill="rgba(242,237,230,.04)" stroke="rgba(242,237,230,.08)" stroke-width=".5"/>
+          <text x="20" y="92" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.5)">UI audit Q3</text>
+          <text x="20" y="100" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(242,237,230,.25)">HRIS</text>
+
+          <rect x="92" y="38" width="72" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="100" y="51" font-family="IBM Plex Mono" font-size="6" fill="rgba(245,158,11,.5)" letter-spacing="1">IN PROGRESS</text>
+          <rect x="96" y="56" width="64" height="22" rx="1" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.15)" stroke-width=".5"/>
+          <text x="100" y="66" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.5)">ANPR upgrade</text>
+          <text x="100" y="74" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(245,158,11,.4)">Operations</text>
+          <rect x="96" y="82" width="64" height="22" rx="1" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.15)" stroke-width=".5"/>
+          <text x="100" y="92" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.5)">Report gen v2</text>
+          <text x="100" y="100" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(245,158,11,.4)">FMIS</text>
+
+          <rect x="172" y="38" width="72" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="180" y="51" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">REVIEW</text>
+          <rect x="176" y="56" width="64" height="22" rx="1" fill="rgba(201,74,42,.06)" stroke="rgba(201,74,42,.15)" stroke-width=".5"/>
+          <text x="180" y="66" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.5)">Field GPS v3</text>
+          <text x="180" y="74" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,74,42,.4)">Fields</text>
+
+          <rect x="252" y="38" width="76" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="260" y="51" font-family="IBM Plex Mono" font-size="6" fill="rgba(16,185,129,.5)" letter-spacing="1">DONE</text>
+          <rect x="256" y="56" width="68" height="22" rx="1" fill="rgba(16,185,129,.06)" stroke="rgba(16,185,129,.15)" stroke-width=".5"/>
+          <text x="260" y="66" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.5)">HRIS launch</text>
+          <text x="260" y="74" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(16,185,129,.4)">HRIS ✓</text>
+          <rect x="256" y="82" width="68" height="22" rx="1" fill="rgba(16,185,129,.06)" stroke="rgba(16,185,129,.15)" stroke-width=".5"/>
+          <text x="260" y="92" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.5)">Auth system</text>
+          <text x="260" y="100" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(16,185,129,.4)">Core ✓</text>
+          <rect x="0" y="195" width="340" height="15" fill="rgba(201,74,42,.08)"/>
+          <text x="12" y="205" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">KANBAN · MILESTONES · CROSS-TEAM TASK BOARDS</text>
+        </svg>
+      </div>
+      <div class="gbody">
+        <div class="gmn">Module · 06</div>
+        <div class="gtitle">OPERIX Planner</div>
+        <div class="gdesc">Project and task management built for operations teams — Kanban boards, milestone tracking, and cross-module task assignment with full accountability trails.</div>
+        <div class="gfeats">
+          <div class="gfeat">Kanban board: Backlog → In Progress → Review → Done</div>
+          <div class="gfeat">Milestone and deadline tracking with alerts</div>
+          <div class="gfeat">Cross-module task assignment and ownership</div>
+          <div class="gfeat">Sprint planning and workload balancing</div>
+          <div class="gfeat">Progress reports and completion analytics</div>
+        </div>
+        <div class="gtags"><span class="gtag">Kanban</span><span class="gtag">Milestones</span><span class="gtag">Tasks</span></div>
+      </div>
+    </div>
+
+    <!-- 07 MARKETING -->
+    <div class="gc rv s7">
+      <div class="gi">
+        <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="210" fill="#0c0c0a"/>
+          <rect x="12" y="12" width="316" height="20" rx="2" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="20" y="26" font-family="IBM Plex Mono" font-size="8" fill="rgba(201,74,42,.9)" letter-spacing="2">OPERIX MARKETING · CAMPAIGN BOARD</text>
+          <!-- Funnel -->
+          <text x="12" y="52" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">LEAD FUNNEL</text>
+          <rect x="12" y="58" width="140" height="18" rx="1" fill="rgba(201,74,42,.25)"/>
+          <text x="18" y="70" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.8)">Awareness · 1,240 reached</text>
+          <rect x="22" y="80" width="120" height="16" rx="1" fill="rgba(201,74,42,.2)"/>
+          <text x="28" y="91" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.7)">Interest · 420 engaged</text>
+          <rect x="32" y="100" width="100" height="16" rx="1" fill="rgba(201,74,42,.15)"/>
+          <text x="38" y="111" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.6)">Leads · 96 converted</text>
+          <rect x="42" y="120" width="80" height="16" rx="1" fill="rgba(201,74,42,.1)"/>
+          <text x="48" y="131" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.5)">Clients · 38 signed</text>
+          <!-- Campaign list -->
+          <rect x="166" y="40" width="162" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="174" y="53" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">ACTIVE CAMPAIGNS</text>
+          <rect x="170" y="58" width="154" height="18" rx="1" fill="rgba(16,185,129,.06)" stroke="rgba(16,185,129,.15)" stroke-width=".5"/>
+          <text x="176" y="69" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.6)">Summer Parking Promo</text>
+          <rect x="304" y="61" width="14" height="10" rx="1" fill="rgba(16,185,129,.2)"/>
+          <text x="306" y="69" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(16,185,129,.8)">ON</text>
+          <rect x="170" y="80" width="154" height="18" rx="1" fill="rgba(245,158,11,.05)" stroke="rgba(245,158,11,.1)" stroke-width=".5"/>
+          <text x="176" y="91" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.6)">HRIS B2B Outreach</text>
+          <rect x="170" y="102" width="154" height="18" rx="1" fill="rgba(201,74,42,.05)" stroke="rgba(201,74,42,.1)" stroke-width=".5"/>
+          <text x="176" y="113" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.6)">Q3 Operations Pitch Deck</text>
+          <text x="174" y="135" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)">Conversion rate:</text>
+          <text x="264" y="135" font-family="IBM Plex Mono" font-size="7" fill="rgba(16,185,129,.8)">3.06%</text>
+          <text x="174" y="150" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)">Avg. deal value:</text>
+          <text x="264" y="150" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,74,42,.8)">SAR 24K</text>
+          <rect x="0" y="195" width="340" height="15" fill="rgba(201,74,42,.08)"/>
+          <text x="12" y="205" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">CAMPAIGNS · LEADS · FUNNEL ANALYTICS</text>
+        </svg>
+      </div>
+      <div class="gbody">
+        <div class="gmn">Module · 07</div>
+        <div class="gtitle">OPERIX Marketing</div>
+        <div class="gdesc">Campaign management and lead pipeline tracking — from awareness to signed client. Built to give operations and sales teams a unified view of every prospect.</div>
+        <div class="gfeats">
+          <div class="gfeat">Lead funnel: Awareness → Interest → Lead → Client</div>
+          <div class="gfeat">Campaign creation, scheduling and status tracking</div>
+          <div class="gfeat">Conversion rate and deal value analytics</div>
+          <div class="gfeat">Contact management and follow-up logging</div>
+          <div class="gfeat">Pitch deck and proposal asset library</div>
+        </div>
+        <div class="gtags"><span class="gtag">Campaigns</span><span class="gtag">Leads</span><span class="gtag">CRM</span></div>
+      </div>
+    </div>
+
+    <!-- 08 FIELDS -->
+    <div class="gc rv s8">
+      <div class="gi">
+        <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="210" fill="#0c0c0a"/>
+          <rect x="12" y="12" width="316" height="20" rx="2" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="20" y="26" font-family="IBM Plex Mono" font-size="8" fill="rgba(201,74,42,.9)" letter-spacing="2">OPERIX FIELDS · DISPATCH &amp; TRACKING</text>
+          <!-- Map grid -->
+          <rect x="12" y="40" width="180" height="130" rx="2" fill="rgba(201,74,42,.03)" stroke="rgba(201,74,42,.15)" stroke-width="1"/>
+          <line x1="12" y1="70" x2="192" y2="70" stroke="rgba(242,237,230,.04)" stroke-width="1"/>
+          <line x1="12" y1="100" x2="192" y2="100" stroke="rgba(242,237,230,.04)" stroke-width="1"/>
+          <line x1="12" y1="130" x2="192" y2="130" stroke="rgba(242,237,230,.04)" stroke-width="1"/>
+          <line x1="52" y1="40" x2="52" y2="170" stroke="rgba(242,237,230,.04)" stroke-width="1"/>
+          <line x1="102" y1="40" x2="102" y2="170" stroke="rgba(242,237,230,.04)" stroke-width="1"/>
+          <line x1="152" y1="40" x2="152" y2="170" stroke="rgba(242,237,230,.04)" stroke-width="1"/>
+          <!-- Agent pins -->
+          <circle cx="60" cy="65" r="5" fill="rgba(16,185,129,.6)"/>
+          <line x1="60" y1="60" x2="60" y2="50" stroke="rgba(16,185,129,.4)" stroke-width="1"/>
+          <text x="64" y="63" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(242,237,230,.6)">A1</text>
+          <circle cx="130" cy="95" r="5" fill="rgba(201,74,42,.8)"/>
+          <line x1="130" y1="90" x2="130" y2="80" stroke="rgba(201,74,42,.4)" stroke-width="1"/>
+          <text x="134" y="93" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(242,237,230,.6)">A2</text>
+          <circle cx="70" cy="140" r="5" fill="rgba(245,158,11,.7)"/>
+          <text x="74" y="138" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(242,237,230,.6)">A3</text>
+          <!-- Job marker -->
+          <rect x="100" y="55" width="42" height="18" rx="1" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width=".5"/>
+          <text x="105" y="65" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.9)">JOB #14</text>
+          <text x="20" y="57" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(242,237,230,.25)">LIVE MAP</text>
+          <!-- Job panel -->
+          <rect x="202" y="40" width="126" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="210" y="53" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">ACTIVE JOBS</text>
+          <rect x="206" y="58" width="118" height="24" rx="1" fill="rgba(16,185,129,.06)" stroke="rgba(16,185,129,.15)" stroke-width=".5"/>
+          <text x="212" y="68" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.7)">Job #13 · Site A</text>
+          <text x="212" y="78" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(16,185,129,.6)">Agent 1 · Complete</text>
+          <rect x="206" y="86" width="118" height="24" rx="1" fill="rgba(201,74,42,.06)" stroke="rgba(201,74,42,.15)" stroke-width=".5"/>
+          <text x="212" y="96" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.7)">Job #14 · Site B</text>
+          <text x="212" y="106" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,74,42,.6)">Agent 2 · En Route</text>
+          <rect x="206" y="114" width="118" height="24" rx="1" fill="rgba(245,158,11,.05)" stroke="rgba(245,158,11,.1)" stroke-width=".5"/>
+          <text x="212" y="124" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.7)">Job #15 · Site C</text>
+          <text x="212" y="134" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(245,158,11,.6)">Agent 3 · Pending</text>
+          <text x="210" y="155" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)">SLA compliance</text>
+          <text x="280" y="155" font-family="IBM Plex Mono" font-size="7" fill="rgba(16,185,129,.8)">91%</text>
+          <rect x="0" y="195" width="340" height="15" fill="rgba(201,74,42,.08)"/>
+          <text x="12" y="205" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">GPS DISPATCH · JOB TRACKING · SLA MONITORING</text>
+        </svg>
+      </div>
+      <div class="gbody">
+        <div class="gmn">Module · 08</div>
+        <div class="gtitle">OPERIX Fields</div>
+        <div class="gdesc">Field team command center — real-time GPS agent tracking, job dispatch, completion verification, and SLA compliance monitoring for on-site operations.</div>
+        <div class="gfeats">
+          <div class="gfeat">Live map with GPS-tracked field agent positions</div>
+          <div class="gfeat">Job dispatch with priority routing</div>
+          <div class="gfeat">Job status: Pending → En Route → Complete</div>
+          <div class="gfeat">SLA compliance tracking and breach alerts</div>
+          <div class="gfeat">Field agent productivity and job history reports</div>
+        </div>
+        <div class="gtags"><span class="gtag">GPS</span><span class="gtag">Dispatch</span><span class="gtag">SLA</span><span class="gtag">Field Ops</span></div>
+      </div>
+    </div>
+
+    <!-- 09 CODE STUDIO -->
+    <div class="gc rv s9">
+      <div class="gi">
+        <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="210" fill="#0c0c0a"/>
+          <rect x="12" y="12" width="316" height="20" rx="2" fill="rgba(201,74,42,.15)" stroke="rgba(201,74,42,.3)" stroke-width="1"/>
+          <text x="20" y="26" font-family="IBM Plex Mono" font-size="8" fill="rgba(201,74,42,.9)" letter-spacing="2">OPERIX CODE STUDIO · DEV WORKSPACE</text>
+          <!-- Code editor mock -->
+          <rect x="12" y="40" width="200" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <!-- Line numbers -->
+          <rect x="12" y="40" width="22" height="130" fill="rgba(242,237,230,.03)"/>
+          <text x="16" y="55" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.2)">1</text>
+          <text x="16" y="65" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.2)">2</text>
+          <text x="16" y="75" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.2)">3</text>
+          <text x="16" y="85" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.2)">4</text>
+          <text x="16" y="95" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.2)">5</text>
+          <text x="16" y="105" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.2)">6</text>
+          <text x="16" y="115" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.2)">7</text>
+          <text x="16" y="125" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.2)">8</text>
+          <text x="16" y="135" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.2)">9</text>
+          <!-- Code -->
+          <text x="38" y="55" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(201,74,42,.8)">async function</text>
+          <text x="105" y="55" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(245,158,11,.8)"> calcPayroll</text>
+          <text x="168" y="55" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.5)">(emp) {"{}"}</text>
+          <text x="38" y="65" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.3)">  const base = emp.rate * emp.days;</text>
+          <text x="38" y="75" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.3)">  const deduct = await</text>
+          <text x="38" y="85" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(16,185,129,.6)">    getDeductions</text>
+          <text x="38" y="85" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.4)">(emp.id);</text>
+          <text x="38" y="95" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(201,74,42,.5)">  // GPS late penalty</text>
+          <text x="38" y="105" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.3)">  return base - deduct;</text>
+          <text x="38" y="115" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(242,237,230,.5)">{"}"}</text>
+          <!-- Cursor blink -->
+          <rect x="55" y="118" width="1" height="9" fill="rgba(201,74,42,.8)"/>
+          <!-- Template panel -->
+          <rect x="222" y="40" width="106" height="130" rx="2" fill="rgba(242,237,230,.02)" stroke="rgba(242,237,230,.07)" stroke-width="1"/>
+          <text x="230" y="53" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.3)" letter-spacing="1">TEMPLATES</text>
+          <rect x="226" y="58" width="98" height="14" rx="1" fill="rgba(201,74,42,.08)"/>
+          <text x="232" y="68" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.7)">Payroll Engine v2</text>
+          <rect x="226" y="76" width="98" height="14" rx="1" fill="rgba(242,237,230,.03)"/>
+          <text x="232" y="86" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.4)">Attendance Sync</text>
+          <rect x="226" y="94" width="98" height="14" rx="1" fill="rgba(242,237,230,.03)"/>
+          <text x="232" y="104" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.4)">ANPR Parser</text>
+          <rect x="226" y="112" width="98" height="14" rx="1" fill="rgba(242,237,230,.03)"/>
+          <text x="232" y="122" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.4)">Report Builder</text>
+          <rect x="226" y="130" width="98" height="14" rx="1" fill="rgba(242,237,230,.03)"/>
+          <text x="232" y="140" font-family="IBM Plex Mono" font-size="6" fill="rgba(242,237,230,.4)">SMS Notifier</text>
+          <rect x="0" y="195" width="340" height="15" fill="rgba(201,74,42,.08)"/>
+          <text x="12" y="205" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,74,42,.6)" letter-spacing="1">JS · SCRIPTS · AUTOMATION TEMPLATES · DEV TOOLS</text>
+        </svg>
+      </div>
+      <div class="gbody">
+        <div class="gmn">Module · 09</div>
+        <div class="gtitle">OPERIX Code Studio</div>
+        <div class="gdesc">Internal development workspace for building, testing, and managing automation scripts, reusable templates, and custom tools that power the rest of the OPERIX ecosystem.</div>
+        <div class="gfeats">
+          <div class="gfeat">In-browser code editor for internal script management</div>
+          <div class="gfeat">Reusable template library (payroll, ANPR, reports)</div>
+          <div class="gfeat">Automation builder for cross-module triggers</div>
+          <div class="gfeat">Version-controlled script storage</div>
+          <div class="gfeat">Live test runner with output console</div>
+        </div>
+        <div class="gtags"><span class="gtag">JS</span><span class="gtag">Automation</span><span class="gtag">Templates</span><span class="gtag">Dev Tools</span></div>
+      </div>
+    </div>
+
+  </div><!-- end gsw -->
 </section>
 
-<!-- EXPERIENCE TIMELINE -->
+<!-- TIMELINE -->
 <section id="experience">
-  <div class="sec-label reveal">03 — Career</div>
-  <h2 class="sec-title reveal stagger-1">TIME<br>LINE</h2>
+  <div class="slb rv">04 — Career</div>
+  <h2 class="st rv s1">TIME<br>LINE</h2>
+  <div class="tl">
 
-  <div class="timeline">
-
-    <div class="tl-item reveal">
-      <div class="tl-dot"></div>
-      <div class="tl-date">Mar 2026 — Present</div>
-      <div class="tl-role">Systems Developer & Operations Manager</div>
-      <div class="tl-company">OPERIX Solutions · Riyadh, KSA</div>
-      <div class="tl-grid">
-        <div class="tl-bullet">Developed and deployed the comprehensive OPERIX Solutions ERP ecosystem from the ground up, functioning as lead Systems Developer and Ops Manager.</div>
-        <div class="tl-bullet">Engineered a multi-workspace Operations and Management platform featuring a modern UI, real-time dashboards, and role-based access control.</div>
-        <div class="tl-bullet">Built a robust HRIS board for shift scheduling, real-time GPS-tracked attendance, and automated salary calculations with dynamic deductions.</div>
-        <div class="tl-bullet">Created an ANPR parking management system featuring live camera scanning, gate logging, and automated ticket generation.</div>
-        <div class="tl-bullet">Developed a Finance MIS for tracking project-specific salaries, expenses, assets, and clearances with automated Excel/CSV reporting.</div>
-        <div class="tl-bullet">Maintained system security and stability by actively troubleshooting frontend JavaScript logic and complex authentication modules.</div>
+    <div class="ti rv">
+      <div class="td"></div>
+      <div class="tdate">Mar 2026 — Present</div>
+      <div class="trole">Systems Developer & Operations Manager</div>
+      <div class="tco">OPERIX Solutions · Riyadh, KSA</div>
+      <div class="tg">
+        <div class="tb">Designed, architected, and deployed the full 9-module OPERIX ERP ecosystem from the ground up — sole developer and operations lead.</div>
+        <div class="tb">Engineered a unified multi-workspace platform with a single shared server, real-time dashboards, and role-based access control across all modules.</div>
+        <div class="tb">Built the HRIS board: GPS-fenced check-in, automated salary deduction engine, shift scheduling, and employee self-service portal.</div>
+        <div class="tb">Developed the ANPR Operations module: live camera plate recognition, gate auto-logging, QR ticket generation, and valet performance tracking.</div>
+        <div class="tb">Created FMIS with project-level P&L, budget tracking, clearance management, and one-click Excel/CSV reporting for admin-only access.</div>
+        <div class="tb">Maintained system security, resolved frontend logic issues, and iterated on authentication modules across all workspaces.</div>
       </div>
     </div>
 
-    <div class="tl-item reveal stagger-1">
-      <div class="tl-dot"></div>
-      <div class="tl-date">Aug 2025 — Feb 2026</div>
-      <div class="tl-role">Deputy Operations Manager (Part-Time)</div>
-      <div class="tl-company">LINK Expert · Majdoul Tower Project · Riyadh, KSA</div>
-      <div class="tl-grid">
-        <div class="tl-bullet">Took over operations for a project facing severe staffing, performance, and client satisfaction issues.</div>
-        <div class="tl-bullet">Designed and developed a member vehicles query system utilized by both operational staff and clients to streamline vehicle tracking.</div>
-        <div class="tl-bullet">Built a comprehensive vehicle inventory and registration system for client use, improving data accuracy and enhancing the customer experience.</div>
-        <div class="tl-bullet">Grew active workforce from 12 to 40+ employees within two months through structured recruitment and engagement plans.</div>
-        <div class="tl-bullet">Rebuilt and stabilized the attendance management process, designing a digital part-time attendance system to eliminate manual errors.</div>
-        <div class="tl-bullet">Trained and assessed 5 supervisors — 4 passed full performance evaluations and now lead their teams independently.</div>
+    <div class="ti rv s1">
+      <div class="td"></div>
+      <div class="tdate">Aug 2025 — Feb 2026</div>
+      <div class="trole">Deputy Operations Manager</div>
+      <div class="tco">LINK Expert · Majdoul Tower Project · Riyadh, KSA</div>
+      <div class="tg">
+        <div class="tb">Took over a project in critical failure — severe staffing gaps, compliance breaches, and collapsed client trust.</div>
+        <div class="tb">Built a member vehicles query and registration system used by both operations staff and clients, improving data accuracy end-to-end.</div>
+        <div class="tb">Grew active workforce from 12 (10% presence) to 40+ employees in two months through structured recruitment and engagement.</div>
+        <div class="tb">Rebuilt attendance management from near-zero accuracy; deployed a digital part-time attendance system linked to automated master spreadsheet.</div>
+        <div class="tb">Resolved all pending client requirements, closing operational gaps that had damaged client trust.</div>
+        <div class="tb">Trained 5 supervisors — 4 of 5 passed full performance evaluations and now lead independently without daily oversight.</div>
       </div>
     </div>
 
-    <div class="tl-item reveal stagger-2">
-      <div class="tl-dot"></div>
-      <div class="tl-date">Mar 2018 — Mar 2020</div>
-      <div class="tl-role">Analysis Intern</div>
-      <div class="tl-company">Alrefaa Printing Center · Khartoum, Sudan</div>
-      <div class="tl-grid">
-        <div class="tl-bullet">Performed data collection and structured analysis using SPSS across research and operational reporting streams.</div>
-        <div class="tl-bullet">Gained foundational exposure to project management workflows, task coordination, and operational decision-making under real conditions.</div>
+    <div class="ti rv s2">
+      <div class="td"></div>
+      <div class="tdate">Mar 2018 — Mar 2020</div>
+      <div class="trole">Analysis Intern</div>
+      <div class="tco">Alrefaa Printing Center · Khartoum, Sudan</div>
+      <div class="tg">
+        <div class="tb">Performed structured data collection and analysis using SPSS across research and operational reporting streams.</div>
+        <div class="tb">Gained foundational exposure to project management, workflow coordination, and operational decision-making under real conditions.</div>
       </div>
     </div>
 
@@ -900,130 +913,109 @@
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="sec-label reveal">04 — Capabilities</div>
-  <h2 class="sec-title reveal stagger-1">SKILL<br>SET</h2>
-  <div class="skills-layout">
-    <div class="skill-col reveal stagger-1">
-      <div class="skill-col-title">Operations</div>
-      <div class="skill-item highlight">Workforce Management</div>
-      <div class="skill-item highlight">Attendance Systems</div>
-      <div class="skill-item">Process Improvement</div>
-      <div class="skill-item">Client Relations</div>
-      <div class="skill-item">Operations Planning</div>
-      <div class="skill-item">Team Leadership</div>
+  <div class="slb rv">05 — Capabilities</div>
+  <h2 class="st rv s1">SKILL<br>SET</h2>
+  <div class="skl">
+    <div class="skc rv s1">
+      <div class="skt">Operations</div>
+      <div class="ski hi">Workforce Management</div>
+      <div class="ski hi">Attendance Systems</div>
+      <div class="ski">Process Improvement</div>
+      <div class="ski">Client Relations</div>
+      <div class="ski">Operations Planning</div>
+      <div class="ski">Team Leadership</div>
     </div>
-    <div class="skill-col reveal stagger-2">
-      <div class="skill-col-title">Development</div>
-      <div class="skill-item highlight">HTML / CSS / JS</div>
-      <div class="skill-item highlight">React</div>
-      <div class="skill-item">Java · Python</div>
-      <div class="skill-item">Oracle SQL</div>
-      <div class="skill-item">Supabase</div>
+    <div class="skc rv s2">
+      <div class="skt">Development</div>
+      <div class="ski hi">HTML / CSS / JavaScript</div>
+      <div class="ski hi">React</div>
+      <div class="ski">Java · Python</div>
+      <div class="ski">Oracle SQL</div>
+      <div class="ski">Supabase</div>
     </div>
-    <div class="skill-col reveal stagger-3">
-      <div class="skill-col-title">Analytics</div>
-      <div class="skill-item highlight">Power BI</div>
-      <div class="skill-item">SPSS</div>
-      <div class="skill-item">Excel (Advanced)</div>
-      <div class="skill-item">Database Design</div>
-      <div class="skill-item">SQL Queries</div>
-      <div class="skill-item">Data Visualization</div>
+    <div class="skc rv s3">
+      <div class="skt">Analytics</div>
+      <div class="ski hi">Power BI</div>
+      <div class="ski">SPSS</div>
+      <div class="ski">Excel (Advanced)</div>
+      <div class="ski">Database Design</div>
+      <div class="ski">SQL Queries</div>
+      <div class="ski">Data Visualization</div>
     </div>
-    <div class="skill-col reveal stagger-4">
-      <div class="skill-col-title">Platforms</div>
-      <div class="skill-item highlight">Monday.com</div>
-      <div class="skill-item highlight">ClickUp</div>
-      <div class="skill-item">Odoo ERP</div>
-      <div class="skill-item">MS Office Suite</div>
-      <div class="skill-item">Google Workspace</div>
+    <div class="skc rv s4">
+      <div class="skt">Platforms</div>
+      <div class="ski hi">Monday.com</div>
+      <div class="ski hi">ClickUp</div>
+      <div class="ski">Odoo ERP</div>
+      <div class="ski">MS Office Suite</div>
+      <div class="ski">Google Workspace</div>
     </div>
   </div>
 </section>
 
 <!-- EDUCATION -->
 <section id="education">
-  <div class="sec-label reveal">05 — Academic</div>
-  <h2 class="sec-title reveal stagger-1">EDUCA<br>TION</h2>
-  <div class="edu-grid">
-
-    <div class="edu-block reveal stagger-1" data-label="IS">
-      <div class="edu-block-title">Bachelor of Honours in Information Systems</div>
-      <div class="edu-school">Bayan University of Science and Technology · 2019–2024</div>
-      <div class="edu-meta">
-        <span class="edu-chip">GPA 3.06 / 4.00</span>
-        <span class="edu-chip">Very Good</span>
-        <span class="edu-chip">A in all management courses</span>
-      </div>
-      <p style="font-size:0.8rem; color:var(--muted); line-height:1.7;">
-        Strong academic focus on systems analysis, operations planning, data management, and process optimization. Achieved A grades across all management-related subjects including Production & Operations Management.
-      </p>
+  <div class="slb rv">06 — Academic</div>
+  <h2 class="st rv s1">EDUCA<br>TION</h2>
+  <div class="eg">
+    <div class="eb rv s1" data-l="IS">
+      <div class="ebt">Bachelor of Honours in Information Systems</div>
+      <div class="ebs">Bayan University of Science and Technology · 2019–2024</div>
+      <div class="em"><span class="ec">GPA 3.06 / 4.00</span><span class="ec">Very Good</span><span class="ec">A in all management courses</span></div>
+      <p style="font-size:.8rem;color:var(--muted);line-height:1.7">Focus on systems analysis, operations planning, data management, and process optimization. A grades across all management-related subjects including Production & Operations Management.</p>
     </div>
-
-    <div class="edu-block reveal stagger-2" data-label="05">
-      <div class="edu-block-title">Professional Certifications</div>
-      <div class="edu-school">Wasm Almarefa Training Center · Apr–May 2025 · GOTEVOT Accredited</div>
-      <div class="cert-list">
-        <div class="cert-row"><div class="cert-bullet"></div>Fundamentals of Cybersecurity</div>
-        <div class="cert-row"><div class="cert-bullet"></div>Data Analysis using Power BI</div>
-        <div class="cert-row"><div class="cert-bullet"></div>Quality Specialist</div>
-        <div class="cert-row"><div class="cert-bullet"></div>Writing Reports & Administrative Letters</div>
-        <div class="cert-row"><div class="cert-bullet"></div>Administrative Communication</div>
+    <div class="eb rv s2" data-l="05">
+      <div class="ebt">Professional Certifications</div>
+      <div class="ebs">Wasm Almarefa Training Center · Apr–May 2025 · GOTEVOT Accredited</div>
+      <div class="cl">
+        <div class="cr"><div class="cb"></div>Fundamentals of Cybersecurity</div>
+        <div class="cr"><div class="cb"></div>Data Analysis using Power BI</div>
+        <div class="cr"><div class="cb"></div>Quality Specialist</div>
+        <div class="cr"><div class="cb"></div>Writing Reports & Administrative Letters</div>
+        <div class="cr"><div class="cb"></div>Administrative Communication</div>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-bg-text" aria-hidden="true">OPS</div>
-  <div class="sec-label reveal">06 — Contact</div>
-  <h2 class="contact-headline reveal stagger-1">
-    LET'S<br>BUILD<br><em>TOGETHER</em>
-  </h2>
-  <div class="contact-links reveal stagger-2">
-    <a href="mailto:asim@aljmaan.dpdns.org" class="contact-link primary">Email Asim</a>
-    <a href="tel:+966500823643" class="contact-link">WhatsApp</a>
-    <a href="https://linkedin.com/in/asim-aljmaan" target="_blank" class="contact-link">LinkedIn ↗</a>
-    <span class="contact-link" style="cursor:default;">Riyadh, Saudi Arabia</span>
+  <div class="cbg" aria-hidden="true">OPS</div>
+  <div class="slb rv">07 — Contact</div>
+  <h2 class="ch rv s1">LET'S<br>BUILD<br><em>TOGETHER</em></h2>
+  <div class="clinks rv s2">
+    <a href="mailto:asim@aljmaan.dpdns.org" class="cl2 p">Email Asim</a>
+    <a href="tel:+966500823643" class="cl2">WhatsApp</a>
+    <a href="https://linkedin.com/in/asim-aljmaan" target="_blank" class="cl2">LinkedIn ↗</a>
+    <a href="https://www.aljmaan.dpdns.org/OPERIX_Eco-System_Network/" target="_blank" class="cl2">OPERIX Live ↗</a>
+    <span class="cl2" style="cursor:default">Riyadh, Saudi Arabia</span>
   </div>
 </section>
 
 <footer>
   <span>© 2026 Asim Aljma'an — All rights reserved</span>
-  <span>Operations Architect · System Builder · ERP Designer</span>
+  <span>Systems Developer · Operations Manager · ERP Architect</span>
 </footer>
 
-<!-- SCRIPTS -->
 <script>
-  /* Custom cursor */
-  const cur = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
-    cur.style.left = e.clientX + 'px';
-    cur.style.top  = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, button, .gallery-card, .about-kpi, .tl-bullet, label').forEach(el => {
-    el.addEventListener('mouseenter', () => cur.classList.add('expand'));
-    el.addEventListener('mouseleave', () => cur.classList.remove('expand'));
-  });
+const cur = document.getElementById('cur');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a,button,.gc,.ak,.tb').forEach(el => {
+  el.addEventListener('mouseenter', () => cur.classList.add('x'));
+  el.addEventListener('mouseleave', () => cur.classList.remove('x'));
+});
 
-  /* Intersection Observer for reveals */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); }});
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
 
-  document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
-
-  /* Animate hero immediately */
-  setTimeout(() => {
-    document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
-  }, 100);
+setTimeout(() => {
+  document.querySelectorAll('#hero .rv').forEach(el => el.classList.add('on'));
+}, 80);
 </script>
-
 </body>
 </html>
