@@ -274,6 +274,35 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
 /* ─── KEYFRAMES ─── */
 @keyframes fadeup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes gold-pulse{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 30px rgba(201,168,76,.3)}}
+/* ─── FLAWLESS LIGHT MODE (Respects System Settings) ─── */
+@media (prefers-color-scheme: light) {
+  html {
+    /* Set html background to match body so we don't get dark bars at the bottom */
+    background: var(--navy); 
+    
+    /* Mathematically invert all colors, but rotate the hue so Gold stays Gold */
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  /* Un-invert the profile picture so you don't look like an alien negative! */
+  .photo-inner img {
+    filter: invert(1) hue-rotate(180deg) sepia(.15) contrast(1.05) !important;
+  }
+  
+  /* Preserve your cool hover effect on the photo */
+  .photo-frame:hover .photo-inner img {
+    filter: invert(1) hue-rotate(180deg) sepia(0) contrast(1.1) !important;
+  }
+
+  /* Soften the stars and noise slightly for a cleaner light mode look */
+  #starfield { 
+    opacity: 0.15; 
+  }
+  body::before { 
+    opacity: 0.015; 
+  }
+}
+  
 </style>
 </head>
 <body>
