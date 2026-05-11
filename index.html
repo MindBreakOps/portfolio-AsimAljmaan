@@ -274,35 +274,8 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
 /* ─── KEYFRAMES ─── */
 @keyframes fadeup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes gold-pulse{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 30px rgba(201,168,76,.3)}}
-/* ─── FLAWLESS LIGHT MODE (Respects System Settings) ─── */
-@media (prefers-color-scheme: light) {
-  html {
-    /* Set html background to match body so we don't get dark bars at the bottom */
-    background: var(--navy); 
-    
-    /* Mathematically invert all colors, but rotate the hue so Gold stays Gold */
-    filter: invert(1) hue-rotate(180deg);
-  }
 
-  /* Un-invert the profile picture so you don't look like an alien negative! */
-  .photo-inner img {
-    filter: invert(1) hue-rotate(180deg) sepia(.15) contrast(1.05) !important;
-  }
-  
-  /* Preserve your cool hover effect on the photo */
-  .photo-frame:hover .photo-inner img {
-    filter: invert(1) hue-rotate(180deg) sepia(0) contrast(1.1) !important;
-  }
 
-  /* Soften the stars and noise slightly for a cleaner light mode look */
-  #starfield { 
-    opacity: 0.15; 
-  }
-  body::before { 
-    opacity: 0.015; 
-  }
-}
-  
 </style>
 </head>
 <body>
@@ -331,6 +304,7 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
     <a href="#about">About</a>
     <a href="#ecosystem">OPERIX</a>
     <a href="#gallery">Modules</a>
+    <a href="#volunteer-projects">Projects</a>
     <a href="#experience">Career</a>
     <a href="https://www.aljmaan.dpdns.org/OPERIX_Eco-System_Network/" target="_blank" class="nav-cta">View Live ↗</a>
   </div>
@@ -376,6 +350,116 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
       <span class="photo-orb">GPS/ANPR</span>
     </div>
   </div>
+</section>
+  
+    <section id="volunteer-projects" style="background: var(--navy2); padding-top: 0;">
+      <div class="gallery-header">
+        <div class="sec-eyebrow rv">Community Work</div>
+        <h2 class="sec-title rv d1">VOLUNTEER<br><em>PROJECTS</em></h2>
+      </div>
+      
+      <div class="gallery-scroll">
+    
+        <div class="gcard rv d1">
+          <div class="gcard-screen">
+            <svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
+              <rect width="350" height="220" fill="#070b18"/>
+              <rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/>
+              <text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">ALNASEEM CITY · INTERACTIVE MAP</text>
+    
+              <rect x="10" y="36" width="160" height="130" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.07)" stroke-width=".8"/>
+              <rect x="20" y="46" width="40" height="30" rx="1" fill="rgba(74,192,155,.15)" stroke="rgba(74,192,155,.4)"/>
+              <rect x="65" y="46" width="30" height="50" rx="1" fill="rgba(201,168,76,.15)" stroke="rgba(201,168,76,.4)"/>
+              <rect x="100" y="46" width="60" height="20" rx="1" fill="rgba(245,240,232,.05)" stroke="rgba(245,240,232,.15)"/>
+              <rect x="20" y="81" width="40" height="50" rx="1" fill="rgba(239,68,68,.15)" stroke="rgba(239,68,68,.4)"/>
+              <rect x="65" y="101" width="95" height="30" rx="1" fill="rgba(245,240,232,.05)" stroke="rgba(245,240,232,.15)"/>
+              
+              <circle cx="80" cy="71" r="4" fill="#c9a84c" />
+              <circle cx="80" cy="71" r="12" fill="none" stroke="#c9a84c" stroke-width="1" stroke-dasharray="2 2" />
+    
+              <rect x="180" y="36" width="160" height="130" rx="1.5" fill="rgba(201,168,76,.04)" stroke="rgba(201,168,76,.15)" stroke-width=".8"/>
+              <text x="188" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.6)" letter-spacing="1">BLOCK DETAILS (TOUCHED)</text>
+              <text x="188" y="65" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.4)">Owner:</text><text x="225" y="65" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.9)">Ahmed F.</text>
+              <text x="188" y="79" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.4)">Status:</text><text x="225" y="79" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.9)">Under Const.</text>
+              <text x="188" y="93" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.4)">Services:</text><text x="225" y="93" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.9)">Water, Power</text>
+    
+              <rect x="188" y="108" width="144" height="1" fill="rgba(201,168,76,.2)"/>
+              <text x="188" y="122" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.6)">Comm. Members:</text><text x="248" y="122" font-family="IBM Plex Mono" font-size="6" fill="rgba(74,192,155,.9)">4 Active</text>
+    
+              <rect x="0" y="205" width="350" height="15" fill="rgba(201,168,76,.07)"/>
+              <text x="10" y="215" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">LIVE · SVG MAP ENGINE · TOUCH ENABLED</text>
+            </svg>
+          </div>
+          <div class="gcard-body">
+            <div class="gcard-module">Volunteer · Sudan</div>
+            <div class="gcard-title">Alnaseem City System</div>
+            <div class="gcard-desc">A comprehensive city management system built to handle statistics, core services, and committee members with a highly interactive UI.</div>
+            <div class="gcard-feats">
+              <div class="gcard-feat">Interactive SVG map engine built into the system</div>
+              <div class="gcard-feat">Touch/click blocks to instantly reveal owner details</div>
+              <div class="gcard-feat">Live statistics dashboard and service tracking</div>
+            </div>
+            <div class="gcard-tags">
+              <span class="gcard-tag">Interactive SVG</span>
+              <span class="gcard-tag">Dashboards</span>
+              <span class="gcard-tag">City Mgmt</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="gcard rv d2">
+          <div class="gcard-screen">
+            <svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
+              <rect width="350" height="220" fill="#070b18"/>
+              <rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/>
+              <text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">QURAN CENTER · ADMIN WORKFLOWS</text>
+    
+              <rect x="10" y="36" width="105" height="40" rx="1.5" fill="rgba(74,192,155,.04)" stroke="rgba(74,192,155,.15)" stroke-width=".8"/>
+              <text x="18" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(74,192,155,.6)" letter-spacing="1">STUDENTS</text>
+              <text x="18" y="68" font-family="IBM Plex Mono" font-size="16" fill="rgba(74,192,155,.9)" font-weight="600">450</text>
+    
+              <rect x="122" y="36" width="105" height="40" rx="1.5" fill="rgba(201,168,76,.04)" stroke="rgba(201,168,76,.15)" stroke-width=".8"/>
+              <text x="130" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.6)" letter-spacing="1">CLASSES</text>
+              <text x="130" y="68" font-family="IBM Plex Mono" font-size="16" fill="rgba(201,168,76,.9)" font-weight="600">24</text>
+    
+              <rect x="235" y="36" width="105" height="40" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.08)" stroke-width=".8"/>
+              <text x="243" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.6)" letter-spacing="1">STAFF</text>
+              <text x="243" y="68" font-family="IBM Plex Mono" font-size="16" fill="rgba(213,200,180,.9)" font-weight="600">32</text>
+    
+              <rect x="10" y="85" width="330" height="85" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.06)" stroke-width=".8"/>
+              <text x="18" y="98" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)" letter-spacing="1">TODAY'S WORKFLOWS</text>
+              
+              <rect x="18" y="110" width="230" height="16" rx="1" fill="rgba(74,192,155,.1)" stroke="rgba(74,192,155,.3)" stroke-width=".5"/>
+              <text x="24" y="121" font-family="IBM Plex Mono" font-size="6" fill="rgba(74,192,155,.9)">Morning Recitation logged</text>
+              
+              <rect x="18" y="132" width="230" height="16" rx="1" fill="rgba(245,158,11,.1)" stroke="rgba(245,158,11,.3)" stroke-width=".5"/>
+              <text x="24" y="143" font-family="IBM Plex Mono" font-size="6" fill="rgba(245,158,11,.9)">Attendance pending for Class B</text>
+    
+              <rect x="18" y="154" width="230" height="16" rx="1" fill="rgba(201,168,76,.1)" stroke="rgba(201,168,76,.3)" stroke-width=".5"/>
+              <text x="24" y="165" font-family="IBM Plex Mono" font-size="6" fill="rgba(201,168,76,.9)">Monthly performance report generated</text>
+    
+              <rect x="0" y="205" width="350" height="15" fill="rgba(201,168,76,.07)"/>
+              <text x="10" y="215" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">STAFF MGMT · CLASS SCHEDULING · FULLY DIGITIZED</text>
+            </svg>
+          </div>
+          <div class="gcard-body">
+            <div class="gcard-module">Volunteer · Sudan</div>
+            <div class="gcard-title">Quran Center Operations</div>
+            <div class="gcard-desc">A dedicated management system designed to streamline the Abdullah Bin Abbas Quran Center's daily administrative operations.</div>
+            <div class="gcard-feats">
+              <div class="gcard-feat">Fully digitized student and staff records</div>
+              <div class="gcard-feat">Automated administrative workflows and attendance</div>
+              <div class="gcard-feat">Centralized daily operations command board</div>
+            </div>
+            <div class="gcard-tags">
+              <span class="gcard-tag">Operations</span>
+              <span class="gcard-tag">Workflows</span>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </section>
 </section>
 
 <!-- MARQUEE -->
