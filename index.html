@@ -275,29 +275,23 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
 @keyframes fadeup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes gold-pulse{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 30px rgba(201,168,76,.3)}}
 
-
 </style>
 </head>
 <body>
 
-<!-- Cursor -->
 <div id="cur-outer"></div>
 <div id="cur-inner"></div>
 
-<!-- Starfield -->
 <canvas id="starfield"></canvas>
 
-<!-- Scroll progress -->
 <div id="scroll-progress"></div>
 
-<!-- Visitor counter -->
 <div id="visitor-badge">
   <div class="vb-label">Visitors</div>
   <div class="vb-count" id="vb-num">—</div>
   <div class="vb-live"><div class="vb-dot"></div><span>Live Counter</span></div>
 </div>
 
-<!-- NAV -->
 <nav id="main-nav">
   <a href="#hero" class="nav-logo">A·A</a>
   <div class="nav-links">
@@ -306,11 +300,10 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
     <a href="#gallery">Modules</a>
     <a href="#volunteer-projects">Projects</a>
     <a href="#experience">Career</a>
-    <a href="https://www.aljmaan.dpdns.org/OPERIX_Eco-System_Network/" target="_blank" class="nav-cta">View Live ↗</a>
+    <a href="http://operix.dpdns.org/site" target="_blank" class="nav-cta">Explore Platforms ↗</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-deco-line l1"></div>
   <div class="hero-deco-line l2"></div>
@@ -319,7 +312,7 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
     <h1 class="hero-name">ASIM<br>ALJMA'AN<span class="accent">Builder of Systems. Tamer of Operations.</span></h1>
     <p class="hero-desc">I don't just manage operations — I build the <strong>systems, tools, and teams</strong> that keep running without me. The OPERIX ecosystem is a 9-module ERP platform I designed and built from the ground up, running live in Riyadh.</p>
     <div class="hero-actions">
-      <a href="#ecosystem" class="btn-gold"><span>Explore OPERIX</span></a>
+      <a href="http://operix.dpdns.org/site" target="_blank" class="btn-gold"><span>Explore Platforms</span></a>
       <a href="#contact" class="btn-outline">Let's Connect</a>
     </div>
     <div class="hero-stats">
@@ -462,7 +455,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
     </section>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
     <span>OPERIX HRIS</span><span>·</span><span>OPERIX Operations</span><span>·</span>
@@ -480,7 +472,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
   </div>
 </div>
 
-<!-- ABOUT -->
 <section id="about">
   <div>
     <div class="sec-eyebrow rv">01 — Who I Am</div>
@@ -512,7 +503,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
   </div>
 </section>
 
-<!-- ECOSYSTEM -->
 <section id="ecosystem">
   <div class="sec-eyebrow rv">02 — Platform Architecture</div>
   <h2 class="sec-title rv d1">THE<br><em>ECOSYSTEM</em></h2>
@@ -580,15 +570,16 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
   </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
-  <div class="gallery-header">
-    <div class="sec-eyebrow rv">03 — Module Showcase</div>
-    <h2 class="sec-title rv d1">THE<br><em>MODULES</em></h2>
+  <div class="gallery-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;">
+    <div>
+      <div class="sec-eyebrow rv">03 — Module Showcase</div>
+      <h2 class="sec-title rv d1">THE<br><em>MODULES</em></h2>
+    </div>
+    <a href="http://operix.dpdns.org/site" target="_blank" class="btn-outline rv d2" style="margin-bottom: 1rem;">Explore Platforms Collection ↗</a>
   </div>
   <div class="gallery-scroll">
 
-    <!-- 01 HRIS -->
     <div class="gcard rv d1">
       <div class="gcard-screen">
         <svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
@@ -597,7 +588,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
           <defs><linearGradient id="hg" x1="0" y1="0" x2="350" y2="220" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="rgba(201,168,76,.04)"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
           <rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/>
           <text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">OPERIX HRIS · WORKFORCE BOARD</text>
-          <!-- employee rows -->
           <rect x="10" y="36" width="330" height="17" rx="1" fill="rgba(245,240,232,.025)"/>
           <circle cx="23" cy="44.5" r="4.5" fill="rgba(201,168,76,.35)"/>
           <text x="33" y="48" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.7)">Ahmad K.</text>
@@ -618,21 +608,18 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
           <text x="126" y="90" font-family="IBM Plex Mono" font-size="6" fill="rgba(245,158,11,.9)">LATE</text>
           <text x="165" y="90" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.35)">09:14</text>
           <text x="235" y="90" font-family="IBM Plex Mono" font-size="7" fill="rgba(245,158,11,.6)">-SAR 30</text>
-          <!-- GPS panel -->
           <rect x="10" y="103" width="155" height="50" rx="1.5" fill="rgba(201,168,76,.05)" stroke="rgba(201,168,76,.18)" stroke-width=".8"/>
           <text x="18" y="114" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.6)" letter-spacing="1.5">GPS FENCE STATUS</text>
           <circle cx="35" cy="136" r="9" fill="none" stroke="rgba(201,168,76,.3)" stroke-width="1" stroke-dasharray="4,3"/>
           <circle cx="35" cy="136" r="4" fill="rgba(74,192,155,.5)"/>
           <text x="50" y="132" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.5)">Site A · Active</text>
           <text x="50" y="143" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)">Radius: 200m</text>
-          <!-- Payroll panel -->
           <rect x="175" y="103" width="165" height="50" rx="1.5" fill="rgba(201,168,76,.05)" stroke="rgba(201,168,76,.18)" stroke-width=".8"/>
           <text x="183" y="114" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.6)" letter-spacing="1.5">PAYROLL ESTIMATE</text>
           <text x="183" y="130" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.5)">Total:</text>
           <text x="222" y="130" font-family="IBM Plex Mono" font-size="8" fill="rgba(213,200,180,.9)">SAR 42,800</text>
           <text x="183" y="145" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.4)">Deductions:</text>
           <text x="252" y="145" font-family="IBM Plex Mono" font-size="7" fill="rgba(239,68,68,.7)">-1,240</text>
-          <!-- bottom bar -->
           <rect x="0" y="205" width="350" height="15" fill="rgba(201,168,76,.07)"/>
           <text x="10" y="215" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">LIVE · 42 EMPLOYEES · AUTO-DEDUCTION ON</text>
         </svg>
@@ -651,14 +638,12 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
       </div>
     </div>
 
-    <!-- 02 OPERATIONS -->
     <div class="gcard rv d2">
       <div class="gcard-screen">
         <svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
           <rect width="350" height="220" fill="#070b18"/>
           <rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/>
           <text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">OPERIX OPS · ANPR LIVE</text>
-          <!-- Camera mock -->
           <rect x="10" y="36" width="155" height="100" rx="1.5" fill="rgba(201,168,76,.03)" stroke="rgba(201,168,76,.15)" stroke-width=".8"/>
           <text x="18" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.5)" letter-spacing="1">CAM 01 · GATE A</text>
           <rect x="30" y="70" width="95" height="36" rx="3.5" fill="rgba(245,240,232,.06)" stroke="rgba(245,240,232,.12)" stroke-width=".8"/>
@@ -668,7 +653,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
           <rect x="20" y="88" width="135" height="2" fill="rgba(201,168,76,.35)"/>
           <rect x="44" y="78" width="67" height="14" rx="1" fill="#f5f0e8"/>
           <text x="51" y="89" font-family="IBM Plex Mono" font-size="8" fill="#070b18" font-weight="600">ABC 1234</text>
-          <!-- Ticket panel -->
           <rect x="175" y="36" width="165" height="100" rx="1.5" fill="rgba(74,192,155,.03)" stroke="rgba(74,192,155,.18)" stroke-width=".8"/>
           <text x="183" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(74,192,155,.6)" letter-spacing="1">TICKET GENERATED</text>
           <text x="183" y="63" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.45)">Plate:</text><text x="212" y="63" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.9)">ABC 1234</text>
@@ -676,7 +660,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
           <text x="183" y="91" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.45)">Valet:</text><text x="212" y="91" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.9)">Khalid A.</text>
           <rect x="212" y="98" width="48" height="12" rx="1" fill="rgba(74,192,155,.2)" stroke="rgba(74,192,155,.4)" stroke-width=".5"/>
           <text x="219" y="107" font-family="IBM Plex Mono" font-size="6" fill="rgba(74,192,155,.9)">PARKED</text>
-          <!-- Stats -->
           <rect x="10" y="148" width="330" height="38" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.06)" stroke-width=".8"/>
           <text x="18" y="160" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)" letter-spacing="1">VALET PERFORMANCE</text>
           <text x="18" y="175" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.6)">Khalid A.</text><text x="80" y="175" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.8)">14 ops</text><text x="125" y="175" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.4)">SAR 420</text>
@@ -699,7 +682,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
       </div>
     </div>
 
-    <!-- 03 FMIS -->
     <div class="gcard rv d3">
       <div class="gcard-screen">
         <svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
@@ -748,7 +730,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
       </div>
     </div>
 
-    <!-- 04 IT -->
     <div class="gcard rv d4">
       <div class="gcard-screen">
         <svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
@@ -798,7 +779,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
       </div>
     </div>
 
-    <!-- 05 EXECUTIVE -->
     <div class="gcard rv d5">
       <div class="gcard-screen">
         <svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
@@ -818,7 +798,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
           <circle cx="245" cy="110" r="32" fill="none" stroke="rgba(245,158,11,.55)" stroke-width="7" stroke-dasharray="104 201" stroke-dashoffset="50" transform="rotate(-90 245 110)"/>
           <text x="245" y="106" font-family="IBM Plex Mono" font-size="9" fill="rgba(213,200,180,.9)" text-anchor="middle" font-weight="500">52%</text>
           <text x="245" y="118" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.35)" text-anchor="middle">BUDGET</text>
-          <!-- Alerts -->
           <rect x="295" y="53" width="45" height="80" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.06)" stroke-width=".8"/>
           <text x="300" y="63" font-family="IBM Plex Mono" font-size="5" fill="rgba(213,200,180,.3)">ALERTS</text>
           <rect x="299" y="68" width="37" height="10" rx=".8" fill="rgba(239,68,68,.1)"/>
@@ -827,7 +806,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
           <text x="302" y="90" font-family="IBM Plex Mono" font-size="5" fill="rgba(245,158,11,.8)">Budget 60%</text>
           <rect x="299" y="96" width="37" height="10" rx=".8" fill="rgba(74,192,155,.08)"/>
           <text x="302" y="104" font-family="IBM Plex Mono" font-size="5" fill="rgba(74,192,155,.8)">Payroll done</text>
-          <!-- Board line -->
           <rect x="10" y="158" width="330" height="22" rx="1.5" fill="rgba(201,168,76,.06)" stroke="rgba(201,168,76,.15)" stroke-width=".8"/>
           <text x="18" y="172" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(201,168,76,.65)">Board Report · May 2026 · Auto-generated</text>
           <rect x="286" y="163" width="48" height="12" rx="1" fill="rgba(201,168,76,.18)"/>
@@ -850,7 +828,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
       </div>
     </div>
 
-    <!-- 06 PLANNER -->
     <div class="gcard rv d6">
       <div class="gcard-screen">
         <svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
@@ -899,7 +876,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
   </div>
 </section>
 
-<!-- TIMELINE -->
 <section id="experience">
   <div class="sec-eyebrow rv">04 — Career</div>
   <h2 class="sec-title rv d1">TIME<br><em>LINE</em></h2>
@@ -943,7 +919,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="sec-eyebrow rv">05 — Capabilities</div>
   <h2 class="sec-title rv d1">SKILL<br><em>SET</em></h2>
@@ -985,7 +960,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <div class="sec-eyebrow rv">06 — Academic</div>
   <h2 class="sec-title rv d1">EDUCA<br><em>TION</em></h2>
@@ -1010,7 +984,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-bg-text" aria-hidden="true">OPS</div>
   <div class="sec-eyebrow rv">07 — Contact</div>
@@ -1019,7 +992,7 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
     <a href="mailto:asim@aljmaan.dpdns.org" class="clink primary">Email Asim</a>
     <a href="tel:+966500823643" class="clink">WhatsApp</a>
     <a href="https://linkedin.com/in/asim-aljmaan" target="_blank" class="clink">LinkedIn ↗</a>
-    <a href="https://www.aljmaan.dpdns.org/OPERIX_Eco-System_Network/" target="_blank" class="clink">OPERIX Live ↗</a>
+    <a href="http://operix.dpdns.org/site" target="_blank" class="clink">Explore Platforms ↗</a>
     <span class="clink" style="cursor:default;opacity:.6">Riyadh, Saudi Arabia</span>
   </div>
 </section>
@@ -1029,6 +1002,6 @@ footer span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.12em;tex
   <span>Systems Developer · ERP Architect · Operations Manager</span>
 </footer>
 
-<script>const _0x4693e9=_0x5776;(function(_0x17d09a,_0x35e83f){const _0x2bd54a=_0x5776,_0x1daa68=_0x17d09a();while(!![]){try{const _0x3d950e=-parseInt(_0x2bd54a(0xb8))/0x1+-parseInt(_0x2bd54a(0x9a))/0x2+parseInt(_0x2bd54a(0xc8))/0x3+-parseInt(_0x2bd54a(0x9c))/0x4*(-parseInt(_0x2bd54a(0xa0))/0x5)+-parseInt(_0x2bd54a(0xae))/0x6+parseInt(_0x2bd54a(0xa5))/0x7+-parseInt(_0x2bd54a(0xcb))/0x8*(-parseInt(_0x2bd54a(0xd8))/0x9);if(_0x3d950e===_0x35e83f)break;else _0x1daa68['push'](_0x1daa68['shift']());}catch(_0x337c36){_0x1daa68['push'](_0x1daa68['shift']());}}}(_0x1409,0xe2c62),(function(){const _0x29ad33=_0x5776,_0x4eff36=_0x29ad33(0xdc),_0x15de4c=_0x29ad33(0xc7);let _0x21d044=parseInt(localStorage[_0x29ad33(0xc6)](_0x4eff36)||'0',0xa);!sessionStorage[_0x29ad33(0xc6)](_0x15de4c)&&(_0x21d044++,localStorage[_0x29ad33(0x8b)](_0x4eff36,_0x21d044),sessionStorage[_0x29ad33(0x8b)](_0x15de4c,'1'));const _0x155ab7=document[_0x29ad33(0xe9)](_0x29ad33(0xa1));let _0x36dc45=Math[_0x29ad33(0xb5)](0x0,_0x21d044-0x14);const _0x1adb81=()=>{const _0x2afd89=_0x29ad33;_0x36dc45++,_0x155ab7[_0x2afd89(0x8d)]=_0x36dc45[_0x2afd89(0xf1)]();if(_0x36dc45<_0x21d044)requestAnimationFrame(_0x1adb81);};setTimeout(_0x1adb81,0x258);}()));const curOuter=document[_0x4693e9(0xe9)](_0x4693e9(0xa2)),curInner=document[_0x4693e9(0xe9)](_0x4693e9(0x97));let mx=0x0,my=0x0,ox=0x0,oy=0x0;document[_0x4693e9(0xea)](_0x4693e9(0xe8),_0x3c3270=>{const _0x8582c7=_0x4693e9;mx=_0x3c3270[_0x8582c7(0xaa)],my=_0x3c3270[_0x8582c7(0xb0)],curInner[_0x8582c7(0xe7)][_0x8582c7(0x94)]=mx+'px',curInner[_0x8582c7(0xe7)][_0x8582c7(0xda)]=my+'px';});function lerpCursor(){const _0x26dce1=_0x4693e9;ox+=(mx-ox)*0.12,oy+=(my-oy)*0.12,curOuter[_0x26dce1(0xe7)][_0x26dce1(0x94)]=ox+'px',curOuter[_0x26dce1(0xe7)][_0x26dce1(0xda)]=oy+'px',requestAnimationFrame(lerpCursor);}lerpCursor(),document[_0x4693e9(0xeb)](_0x4693e9(0xd4))[_0x4693e9(0xc4)](_0x2f333f=>{const _0x559a85=_0x4693e9;_0x2f333f[_0x559a85(0xea)](_0x559a85(0x9e),()=>document[_0x559a85(0xec)][_0x559a85(0xc0)][_0x559a85(0xe5)](_0x559a85(0xed))),_0x2f333f[_0x559a85(0xea)](_0x559a85(0x8a),()=>document[_0x559a85(0xec)][_0x559a85(0xc0)][_0x559a85(0xb7)](_0x559a85(0xed)));}),document[_0x4693e9(0xea)](_0x4693e9(0xef),()=>document[_0x4693e9(0xec)][_0x4693e9(0xc0)][_0x4693e9(0xe5)](_0x4693e9(0xbd))),document[_0x4693e9(0xea)](_0x4693e9(0xdb),()=>document[_0x4693e9(0xec)][_0x4693e9(0xc0)][_0x4693e9(0xb7)](_0x4693e9(0xbd)));function _0x1409(){const _0x5977e2=['toLocaleString','mouseleave','setItem','0px\x200px\x20-40px\x200px','textContent','createElement','height','compact','getContext','toggle','.hstat-num','left','scrollHeight','main-nav','cur-inner','overflow','perspective(800px)\x20rotateY(0)\x20rotateX(0)\x20scale(1)','1250672UtBWHg','px;border-radius:50%;background:rgba(255,255,255,.15);transform:translate(-50%,-50%)\x20scale(0);left:','19996yNyoTi','[data-tilt]','mouseenter','.rv','125jMEDGF','vb-num','cur-outer','pow','disconnect','3207757MxoIwy','cssText','random','querySelector','px;top:','clientX','position','fillStyle','.btn-gold,.btn-outline,.clink','3079986TlmZxR','deg)\x20scale(1.02)','clientY','head','@keyframes\x20ripple{to{transform:translate(-50%,-50%)\x20scale(1);opacity:0}}','resize','scroll-progress','max','from','remove','1495706JFHLrz','data-target','unobserve','perspective(800px)\x20rotateY(','click','clicking','transform','px;animation:ripple\x20.6s\x20ease-out\x20forwards;pointer-events:none','classList','observe','appendChild','round','forEach','getAttribute','getItem','aa_portfolio_session','2337285nmKJmf','getBoundingClientRect','target','1864WpNbsf','beginPath','.skill-item','width','isIntersecting','starfield','arc','setAttribute','phase','a,button,.gcard,.acard,.eco-cell,.tcell,.photo-frame','span','clearRect','fill','85014aRJYfT','deg)\x20rotateX(','top','mouseup','aa_portfolio_visits','min','includes','scroll','.hero-stats','rgba(201,168,76,','relative','sin','hidden','add','position:absolute;width:','style','mousemove','getElementById','addEventListener','querySelectorAll','body','hovering','px;height:','mousedown','visible'];_0x1409=function(){return _0x5977e2;};return _0x1409();}const canvas=document[_0x4693e9(0xe9)](_0x4693e9(0xd0)),ctx=canvas[_0x4693e9(0x91)]('2d');let stars=[];function initStars(){const _0x9b9b3c=_0x4693e9;canvas[_0x9b9b3c(0xce)]=innerWidth,canvas[_0x9b9b3c(0x8f)]=innerHeight,stars=Array[_0x9b9b3c(0xb6)]({'length':0xb4},()=>({'x':Math[_0x9b9b3c(0xa7)]()*canvas[_0x9b9b3c(0xce)],'y':Math[_0x9b9b3c(0xa7)]()*canvas[_0x9b9b3c(0x8f)],'r':Math[_0x9b9b3c(0xa7)]()*0.9+0.2,'o':Math[_0x9b9b3c(0xa7)]()*0.7+0.1,'s':Math[_0x9b9b3c(0xa7)]()*0.0004+0.0001,'phase':Math[_0x9b9b3c(0xa7)]()*Math['PI']*0x2}));}function drawStars(_0x407628){const _0x2dc98c=_0x4693e9;ctx[_0x2dc98c(0xd6)](0x0,0x0,canvas[_0x2dc98c(0xce)],canvas[_0x2dc98c(0x8f)]),stars[_0x2dc98c(0xc4)](_0x2dca99=>{const _0x5cc81e=_0x2dc98c,_0x596451=_0x2dca99['o']*(0.5+0.5*Math[_0x5cc81e(0xe3)](_0x407628*_0x2dca99['s']*0x3e8+_0x2dca99[_0x5cc81e(0xd3)]));ctx[_0x5cc81e(0xcc)](),ctx[_0x5cc81e(0xd1)](_0x2dca99['x'],_0x2dca99['y'],_0x2dca99['r'],0x0,Math['PI']*0x2),ctx[_0x5cc81e(0xac)]=_0x5cc81e(0xe1)+_0x596451+')',ctx[_0x5cc81e(0xd7)]();}),requestAnimationFrame(drawStars);}initStars(),requestAnimationFrame(drawStars),window[_0x4693e9(0xea)](_0x4693e9(0xb3),initStars);let pmx=0x0,pmy=0x0;document[_0x4693e9(0xea)](_0x4693e9(0xe8),_0x1c6822=>{const _0x5944c4=_0x4693e9;pmx=_0x1c6822[_0x5944c4(0xaa)]/ innerWidth-0.5,pmy=_0x1c6822[_0x5944c4(0xb0)]/ innerHeight-0.5;}),setInterval(()=>{const _0x3b7cbc=_0x4693e9;stars[_0x3b7cbc(0xc4)](_0x3c9713=>{const _0x14c3dd=_0x3b7cbc;_0x3c9713['x']+=pmx*0.3,_0x3c9713['y']+=pmy*0.3;if(_0x3c9713['x']<0x0)_0x3c9713['x']+=canvas[_0x14c3dd(0xce)];if(_0x3c9713['x']>canvas[_0x14c3dd(0xce)])_0x3c9713['x']-=canvas[_0x14c3dd(0xce)];if(_0x3c9713['y']<0x0)_0x3c9713['y']+=canvas[_0x14c3dd(0x8f)];if(_0x3c9713['y']>canvas[_0x14c3dd(0x8f)])_0x3c9713['y']-=canvas[_0x14c3dd(0x8f)];});},0x32);const prog=document[_0x4693e9(0xe9)](_0x4693e9(0xb4));function _0x5776(_0x5ee229,_0x18a3ce){_0x5ee229=_0x5ee229-0x8a;const _0x140939=_0x1409();let _0x57766b=_0x140939[_0x5ee229];return _0x57766b;}window[_0x4693e9(0xea)](_0x4693e9(0xdf),()=>{const _0x21fd9a=_0x4693e9,_0x482e1e=scrollY/(document[_0x21fd9a(0xec)][_0x21fd9a(0x95)]-innerHeight)*0x64;prog[_0x21fd9a(0xe7)][_0x21fd9a(0xce)]=_0x482e1e+'%';});const nav=document[_0x4693e9(0xe9)](_0x4693e9(0x96));window[_0x4693e9(0xea)](_0x4693e9(0xdf),()=>{const _0x49c141=_0x4693e9;nav[_0x49c141(0xc0)][_0x49c141(0x92)](_0x49c141(0x90),scrollY>0x50);});const obs=new IntersectionObserver(_0x1af3d5=>{const _0x424628=_0x4693e9;_0x1af3d5[_0x424628(0xc4)](_0x287996=>{const _0xf3f114=_0x424628;_0x287996[_0xf3f114(0xcf)]&&(_0x287996[_0xf3f114(0xca)][_0xf3f114(0xc0)][_0xf3f114(0xe5)]('on'),obs[_0xf3f114(0xba)](_0x287996[_0xf3f114(0xca)]));});},{'threshold':0.08,'rootMargin':_0x4693e9(0x8c)});document[_0x4693e9(0xeb)](_0x4693e9(0x9f))[_0x4693e9(0xc4)](_0x357800=>obs[_0x4693e9(0xc1)](_0x357800));const skillObs=new IntersectionObserver(_0x87f31d=>{const _0x10e7a8=_0x4693e9;_0x87f31d[_0x10e7a8(0xc4)](_0x580ccf=>{const _0x2b477f=_0x10e7a8;_0x580ccf[_0x2b477f(0xcf)]&&(_0x580ccf[_0x2b477f(0xca)][_0x2b477f(0xc0)][_0x2b477f(0xe5)](_0x2b477f(0xf0)),skillObs[_0x2b477f(0xba)](_0x580ccf[_0x2b477f(0xca)]));});},{'threshold':0.3});document[_0x4693e9(0xeb)](_0x4693e9(0xcd))[_0x4693e9(0xc4)](_0x90881b=>skillObs[_0x4693e9(0xc1)](_0x90881b)),document[_0x4693e9(0xeb)](_0x4693e9(0x9d))[_0x4693e9(0xc4)](_0x4fa326=>{const _0x5bdc42=_0x4693e9;_0x4fa326[_0x5bdc42(0xea)](_0x5bdc42(0xe8),_0xb913b3=>{const _0x21cb71=_0x5bdc42,_0x2c910b=_0x4fa326[_0x21cb71(0xc9)](),_0x367da0=(_0xb913b3[_0x21cb71(0xaa)]-_0x2c910b[_0x21cb71(0x94)])/_0x2c910b[_0x21cb71(0xce)]-0.5,_0x14d450=(_0xb913b3[_0x21cb71(0xb0)]-_0x2c910b[_0x21cb71(0xda)])/_0x2c910b[_0x21cb71(0x8f)]-0.5;_0x4fa326[_0x21cb71(0xe7)][_0x21cb71(0xbe)]=_0x21cb71(0xbb)+_0x367da0*0xa+_0x21cb71(0xd9)+-_0x14d450*0x8+_0x21cb71(0xaf);}),_0x4fa326[_0x5bdc42(0xea)](_0x5bdc42(0x8a),()=>{const _0x5bbe35=_0x5bdc42;_0x4fa326[_0x5bbe35(0xe7)][_0x5bbe35(0xbe)]=_0x5bbe35(0x99);});});function animateNum(_0x569457,_0x5c98c5,_0x239997=0x708){let _0x312f03=null;const _0x1d59a4=_0xcf68ee=>{const _0x109964=_0x5776;if(!_0x312f03)_0x312f03=_0xcf68ee;const _0x399a4a=Math[_0x109964(0xdd)]((_0xcf68ee-_0x312f03)/_0x239997,0x1),_0x1878a8=0x1-Math[_0x109964(0xa3)](0x1-_0x399a4a,0x4);let _0x21e7b2;if(_0x5c98c5==='9')_0x21e7b2=Math[_0x109964(0xc3)](_0x1878a8*0x9);else{if(_0x5c98c5[_0x109964(0xde)]('×'))_0x21e7b2=Math[_0x109964(0xc3)](_0x1878a8*0x3)+'×';else{if(_0x5c98c5[_0x109964(0xde)]('%'))_0x21e7b2=Math[_0x109964(0xc3)](_0x1878a8*0x64)+'%';else _0x21e7b2=Math[_0x109964(0xc3)](_0x1878a8*parseFloat(_0x5c98c5));}}_0x569457[_0x109964(0x8d)]=_0x21e7b2;if(_0x399a4a<0x1)requestAnimationFrame(_0x1d59a4);else _0x569457[_0x109964(0x8d)]=_0x569457[_0x109964(0xc5)](_0x109964(0xb9));};requestAnimationFrame(_0x1d59a4);}const statNums=document[_0x4693e9(0xeb)](_0x4693e9(0x93));statNums[_0x4693e9(0xc4)](_0x4e8030=>{const _0x535a42=_0x4693e9;_0x4e8030[_0x535a42(0xd2)](_0x535a42(0xb9),_0x4e8030[_0x535a42(0x8d)]),_0x4e8030[_0x535a42(0x8d)]='0';});const heroObs=new IntersectionObserver(_0x4ae63e=>{const _0x2539f2=_0x4693e9;_0x4ae63e[_0x2539f2(0xc4)](_0x4e0855=>{const _0x45634c=_0x2539f2;_0x4e0855[_0x45634c(0xcf)]&&(statNums[_0x45634c(0xc4)](_0x295bab=>animateNum(_0x295bab,_0x295bab[_0x45634c(0xc5)](_0x45634c(0xb9)))),heroObs[_0x45634c(0xa4)]());});},{'threshold':0.5}),heroStats=document[_0x4693e9(0xa8)](_0x4693e9(0xe0));if(heroStats)heroObs[_0x4693e9(0xc1)](heroStats);document[_0x4693e9(0xeb)](_0x4693e9(0xad))[_0x4693e9(0xc4)](_0x31d1c6=>{const _0x12a0c1=_0x4693e9;_0x31d1c6[_0x12a0c1(0xea)](_0x12a0c1(0xbc),_0xafa038=>{const _0x129cab=_0x12a0c1,_0x5b3eab=_0x31d1c6[_0x129cab(0xc9)](),_0x569ad3=document[_0x129cab(0x8e)](_0x129cab(0xd5)),_0x513665=Math[_0x129cab(0xb5)](_0x5b3eab[_0x129cab(0xce)],_0x5b3eab[_0x129cab(0x8f)])*0x2;_0x569ad3[_0x129cab(0xe7)][_0x129cab(0xa6)]=_0x129cab(0xe6)+_0x513665+_0x129cab(0xee)+_0x513665+_0x129cab(0x9b)+(_0xafa038[_0x129cab(0xaa)]-_0x5b3eab[_0x129cab(0x94)])+_0x129cab(0xa9)+(_0xafa038[_0x129cab(0xb0)]-_0x5b3eab[_0x129cab(0xda)])+_0x129cab(0xbf),_0x31d1c6[_0x129cab(0xe7)][_0x129cab(0xab)]=_0x129cab(0xe2),_0x31d1c6[_0x129cab(0xe7)][_0x129cab(0x98)]=_0x129cab(0xe4),_0x31d1c6[_0x129cab(0xc2)](_0x569ad3),setTimeout(()=>_0x569ad3[_0x129cab(0xb7)](),0x2bc);});});const st=document[_0x4693e9(0x8e)](_0x4693e9(0xe7));st[_0x4693e9(0x8d)]=_0x4693e9(0xb2),document[_0x4693e9(0xb1)][_0x4693e9(0xc2)](st);</script>
+<script> const _0x4693e9=_0x5776;(function(_0x17d09a,_0x35e83f){const _0x2bd54a=_0x5776,_0x1daa68=_0x17d09a();while(!![]){try{const _0x3d950e=-parseInt(_0x2bd54a(0xb8))/0x1+-parseInt(_0x2bd54a(0x9a))/0x2+parseInt(_0x2bd54a(0xc8))/0x3+-parseInt(_0x2bd54a(0x9c))/0x4*(-parseInt(_0x2bd54a(0xa0))/0x5)+-parseInt(_0x2bd54a(0xae))/0x6+parseInt(_0x2bd54a(0xa5))/0x7+-parseInt(_0x2bd54a(0xcb))/0x8*(-parseInt(_0x2bd54a(0xd8))/0x9);if(_0x3d950e===_0x35e83f)break;else _0x1daa68['push'](_0x1daa68['shift']());}catch(_0x337c36){_0x1daa68['push'](_0x1daa68['shift']());}}}(_0x1409,0xe2c62),(function(){const _0x29ad33=_0x5776,_0x4eff36=_0x29ad33(0xdc),_0x15de4c=_0x29ad33(0xc7);let _0x21d044=parseInt(localStorage[_0x29ad33(0xc6)](_0x4eff36)||'0',0xa);!sessionStorage[_0x29ad33(0xc6)](_0x15de4c)&&(_0x21d044++,localStorage[_0x29ad33(0x8b)](_0x4eff36,_0x21d044),sessionStorage[_0x29ad33(0x8b)](_0x15de4c,'1'));const _0x155ab7=document[_0x29ad33(0xe9)](_0x29ad33(0xa1));let _0x36dc45=Math[_0x29ad33(0xb5)](0x0,_0x21d044-0x14);const _0x1adb81=()=>{const _0x2afd89=_0x29ad33;_0x36dc45++,_0x155ab7[_0x2afd89(0x8d)]=_0x36dc45[_0x2afd89(0xf1)]();if(_0x36dc45<_0x21d044)requestAnimationFrame(_0x1adb81);};setTimeout(_0x1adb81,0x258);}()));const curOuter=document[_0x4693e9(0xe9)](_0x4693e9(0xa2)),curInner=document[_0x4693e9(0xe9)](_0x4693e9(0x97));let mx=0x0,my=0x0,ox=0x0,oy=0x0;document[_0x4693e9(0xea)](_0x4693e9(0xe8),_0x3c3270=>{const _0x8582c7=_0x4693e9;mx=_0x3c3270[_0x8582c7(0xaa)],my=_0x3c3270[_0x8582c7(0xb0)],curInner[_0x8582c7(0xe7)][_0x8582c7(0x94)]=mx+'px',curInner[_0x8582c7(0xe7)][_0x8582c7(0xda)]=my+'px';});function lerpCursor(){const _0x26dce1=_0x4693e9;ox+=(mx-ox)*0.12,oy+=(my-oy)*0.12,curOuter[_0x26dce1(0xe7)][_0x26dce1(0x94)]=ox+'px',curOuter[_0x26dce1(0xe7)][_0x26dce1(0xda)]=oy+'px',requestAnimationFrame(lerpCursor);}lerpCursor(),document[_0x4693e9(0xeb)](_0x4693e9(0xd4))[_0x4693e9(0xc4)](_0x2f333f=>{const _0x559a85=_0x4693e9;_0x2f333f[_0x559a85(0xea)](_0x559a85(0x9e),()=>document[_0x559a85(0xec)][_0x559a85(0xc0)][_0x559a85(0xe5)](_0x559a85(0xed))),_0x2f333f[_0x559a85(0xea)](_0x559a85(0x8a),()=>document[_0x559a85(0xec)][_0x559a85(0xc0)][_0x559a85(0xb7)](_0x559a85(0xed)));}),document[_0x4693e9(0xea)](_0x4693e9(0xef),()=>document[_0x4693e9(0xec)][_0x4693e9(0xc0)][_0x4693e9(0xe5)](_0x4693e9(0xbd))),document[_0x4693e9(0xea)](_0x4693e9(0xdb),()=>document[_0x4693e9(0xec)][_0x4693e9(0xc0)][_0x4693e9(0xb7)](_0x4693e9(0xbd)));function _0x1409(){const _0x5977e2=['toLocaleString','mouseleave','setItem','0px\x200px\x20-40px\x200px','textContent','createElement','height','compact','getContext','toggle','.hstat-num','left','scrollHeight','main-nav','cur-inner','overflow','perspective(800px)\x20rotateY(0)\x20rotateX(0)\x20scale(1)','1250672UtBWHg','px;border-radius:50%;background:rgba(255,255,255,.15);transform:translate(-50%,-50%)\x20scale(0);left:','19996yNyoTi','[data-tilt]','mouseenter','.rv','125jMEDGF','vb-num','cur-outer','pow','disconnect','3207757MxoIwy','cssText','random','querySelector','px;top:','clientX','position','fillStyle','.btn-gold,.btn-outline,.clink','3079986TlmZxR','deg)\x20scale(1.02)','clientY','head','@keyframes\x20ripple{to{transform:translate(-50%,-50%)\x20scale(1);opacity:0}}','resize','scroll-progress','max','from','remove','1495706JFHLrz','data-target','unobserve','perspective(800px)\x20rotateY(','click','clicking','transform','px;animation:ripple\x20.6s\x20ease-out\x20forwards;pointer-events:none','classList','observe','appendChild','round','forEach','getAttribute','getItem','aa_portfolio_session','2337285nmKJmf','getBoundingClientRect','target','1864WpNbsf','beginPath','.skill-item','width','isIntersecting','starfield','arc','setAttribute','phase','a,button,.gcard,.acard,.eco-cell,.tcell,.photo-frame','span','clearRect','fill','85014aRJYfT','deg)\x20rotateX(','top','mouseup','aa_portfolio_visits','min','includes','scroll','.hero-stats','rgba(201,168,76,','relative','sin','hidden','add','position:absolute;width:','style','mousemove','getElementById','addEventListener','querySelectorAll','body','hovering','px;height:','mousedown','visible'];_0x1409=function(){return _0x5977e2;};return _0x1409();}const canvas=document[_0x4693e9(0xe9)](_0x4693e9(0xd0)),ctx=canvas[_0x4693e9(0x91)]('2d');let stars=[];function initStars(){const _0x9b9b3c=_0x4693e9;canvas[_0x9b9b3c(0xce)]=innerWidth,canvas[_0x9b9b3c(0x8f)]=innerHeight,stars=Array[_0x9b9b3c(0xb6)]({'length':0xb4},()=>({'x':Math[_0x9b9b3c(0xa7)]()*canvas[_0x9b9b3c(0xce)],'y':Math[_0x9b9b3c(0xa7)]()*canvas[_0x9b9b3c(0x8f)],'r':Math[_0x9b9b3c(0xa7)]()*0.9+0.2,'o':Math[_0x9b9b3c(0xa7)]()*0.7+0.1,'s':Math[_0x9b9b3c(0xa7)]()*0.0004+0.0001,'phase':Math[_0x9b9b3c(0xa7)]()*Math['PI']*0x2}));}function drawStars(_0x407628){const _0x2dc98c=_0x4693e9;ctx[_0x2dc98c(0xd6)](0x0,0x0,canvas[_0x2dc98c(0xce)],canvas[_0x2dc98c(0x8f)]),stars[_0x2dc98c(0xc4)](_0x2dca99=>{const _0x5cc81e=_0x2dc98c,_0x596451=_0x2dca99['o']*(0.5+0.5*Math[_0x5cc81e(0xe3)](_0x407628*_0x2dca99['s']*0x3e8+_0x2dca99[_0x5cc81e(0xd3)]));ctx[_0x5cc81e(0xcc)](),ctx[_0x5cc81e(0xd1)](_0x2dca99['x'],_0x2dca99['y'],_0x2dca99['r'],0x0,Math['PI']*0x2),ctx[_0x5cc81e(0xac)]=_0x5cc81e(0xe1)+_0x596451+')',ctx[_0x5cc81e(0xd7)]();}),requestAnimationFrame(drawStars);}initStars(),requestAnimationFrame(drawStars),window[_0x4693e9(0xea)](_0x4693e9(0xb3),initStars);let pmx=0x0,pmy=0x0;document[_0x4693e9(0xea)](_0x4693e9(0xe8),_0x1c6822=>{const _0x5944c4=_0x4693e9;pmx=_0x1c6822[_0x5944c4(0xaa)]/ innerWidth-0.5,pmy=_0x1c6822[_0x5944c4(0xb0)]/ innerHeight-0.5;}),setInterval(()=>{const _0x3b7cbc=_0x4693e9;stars[_0x3b7cbc(0xc4)](_0x3c9713=>{const _0x14c3dd=_0x3b7cbc;_0x3c9713['x']+=pmx*0.3,_0x3c9713['y']+=pmy*0.3;if(_0x3c9713['x']<0x0)_0x3c9713['x']+=canvas[_0x14c3dd(0xce)];if(_0x3c9713['x']>canvas[_0x14c3dd(0xce)])_0x3c9713['x']-=canvas[_0x14c3dd(0xce)];if(_0x3c9713['y']<0x0)_0x3c9713['y']+=canvas[_0x14c3dd(0x8f)];if(_0x3c9713['y']>canvas[_0x14c3dd(0x8f)])_0x3c9713['y']-=canvas[_0x14c3dd(0x8f)];});},0x32);const prog=document[_0x4693e9(0xe9)](_0x4693e9(0xb4));function _0x5776(_0x5ee229,_0x18a3ce){_0x5ee229=_0x5ee229-0x8a;const _0x140939=_0x1409();let _0x57766b=_0x140939[_0x5ee229];return _0x57766b;}window[_0x4693e9(0xea)](_0x4693e9(0xdf),()=>{const _0x21fd9a=_0x4693e9,_0x482e1e=scrollY/(document[_0x21fd9a(0xec)][_0x21fd9a(0x95)]-innerHeight)*0x64;prog[_0x21fd9a(0xe7)][_0x21fd9a(0xce)]=_0x482e1e+'%';});const nav=document[_0x4693e9(0xe9)](_0x4693e9(0x96));window[_0x4693e9(0xea)](_0x4693e9(0xdf),()=>{const _0x49c141=_0x4693e9;nav[_0x49c141(0xc0)][_0x49c141(0x92)](_0x49c141(0x90),scrollY>0x50);});const obs=new IntersectionObserver(_0x1af3d5=>{const _0x424628=_0x4693e9;_0x1af3d5[_0x424628(0xc4)](_0x287996=>{const _0xf3f114=_0x424628;_0x287996[_0xf3f114(0xcf)]&&(_0x287996[_0xf3f114(0xca)][_0xf3f114(0xc0)][_0xf3f114(0xe5)]('on'),obs[_0xf3f114(0xba)](_0x287996[_0xf3f114(0xca)]));});},{'threshold':0.08,'rootMargin':_0x4693e9(0x8c)});document[_0x4693e9(0xeb)](_0x4693e9(0x9f))[_0x4693e9(0xc4)](_0x357800=>obs[_0x4693e9(0xc1)](_0x357800));const skillObs=new IntersectionObserver(_0x87f31d=>{const _0x10e7a8=_0x4693e9;_0x87f31d[_0x10e7a8(0xc4)](_0x580ccf=>{const _0x2b477f=_0x10e7a8;_0x580ccf[_0x2b477f(0xcf)]&&(_0x580ccf[_0x2b477f(0xca)][_0x2b477f(0xc0)][_0x2b477f(0xe5)](_0x2b477f(0xf0)),skillObs[_0x2b477f(0xba)](_0x580ccf[_0x2b477f(0xca)]));});},{'threshold':0.3});document[_0x4693e9(0xeb)](_0x4693e9(0xcd))[_0x4693e9(0xc4)](_0x90881b=>skillObs[_0x4693e9(0xc1)](_0x90881b)),document[_0x4693e9(0xeb)](_0x4693e9(0x9d))[_0x4693e9(0xc4)](_0x4fa326=>{const _0x5bdc42=_0x4693e9;_0x4fa326[_0x5bdc42(0xea)](_0x5bdc42(0xe8),_0xb913b3=>{const _0x21cb71=_0x5bdc42,_0x2c910b=_0x4fa326[_0x21cb71(0xc9)](),_0x367da0=(_0xb913b3[_0x21cb71(0xaa)]-_0x2c910b[_0x21cb71(0x94)])/_0x2c910b[_0x21cb71(0xce)]-0.5,_0x14d450=(_0xb913b3[_0x21cb71(0xb0)]-_0x2c910b[_0x21cb71(0xda)])/_0x2c910b[_0x21cb71(0x8f)]-0.5;_0x4fa326[_0x21cb71(0xe7)][_0x21cb71(0xbe)]=_0x21cb71(0xbb)+_0x367da0*0xa+_0x21cb71(0xd9)+-_0x14d450*0x8+_0x21cb71(0xaf);}),_0x4fa326[_0x5bdc42(0xea)](_0x5bdc42(0x8a),()=>{const _0x5bbe35=_0x5bdc42;_0x4fa326[_0x5bbe35(0xe7)][_0x5bbe35(0xbe)]=_0x5bbe35(0x99);});});function animateNum(_0x569457,_0x5c98c5,_0x239997=0x708){let _0x312f03=null;const _0x1d59a4=_0xcf68ee=>{const _0x109964=_0x5776;if(!_0x312f03)_0x312f03=_0xcf68ee;const _0x399a4a=Math[_0x109964(0xdd)]((_0xcf68ee-_0x312f03)/_0x239997,0x1),_0x1878a8=0x1-Math[_0x109964(0xa3)](0x1-_0x399a4a,0x4);let _0x21e7b2;if(_0x5c98c5==='9')_0x21e7b2=Math[_0x109964(0xc3)](_0x1878a8*0x9);else{if(_0x5c98c5[_0x109964(0xde)]('×'))_0x21e7b2=Math[_0x109964(0xc3)](_0x1878a8*0x3)+'×';else{if(_0x5c98c5[_0x109964(0xde)]('%'))_0x21e7b2=Math[_0x109964(0xc3)](_0x1878a8*0x64)+'%';else _0x21e7b2=Math[_0x109964(0xc3)](_0x1878a8*parseFloat(_0x5c98c5));}}_0x569457[_0x109964(0x8d)]=_0x21e7b2;if(_0x399a4a<0x1)requestAnimationFrame(_0x1d59a4);else _0x569457[_0x109964(0x8d)]=_0x569457[_0x109964(0xc5)](_0x109964(0xb9));};requestAnimationFrame(_0x1d59a4);}const statNums=document[_0x4693e9(0xeb)](_0x4693e9(0x93));statNums[_0x4693e9(0xc4)](_0x4e8030=>{const _0x535a42=_0x4693e9;_0x4e8030[_0x535a42(0xd2)](_0x535a42(0xb9),_0x4e8030[_0x535a42(0x8d)]),_0x4e8030[_0x535a42(0x8d)]='0';});const heroObs=new IntersectionObserver(_0x4ae63e=>{const _0x2539f2=_0x4693e9;_0x4ae63e[_0x2539f2(0xc4)](_0x4e0855=>{const _0x45634c=_0x2539f2;_0x4e0855[_0x45634c(0xcf)]&&(statNums[_0x45634c(0xc4)](_0x295bab=>animateNum(_0x295bab,_0x295bab[_0x45634c(0xc5)](_0x45634c(0xb9)))),heroObs[_0x45634c(0xa4)]());});},{'threshold':0.5}),heroStats=document[_0x4693e9(0xa8)](_0x4693e9(0xe0));if(heroStats)heroObs[_0x4693e9(0xc1)](heroStats);document[_0x4693e9(0xeb)](_0x4693e9(0xad))[_0x4693e9(0xc4)](_0x31d1c6=>{const _0x12a0c1=_0x4693e9;_0x31d1c6[_0x12a0c1(0xea)](_0x12a0c1(0xbc),_0xafa038=>{const _0x129cab=_0x12a0c1,_0x5b3eab=_0x31d1c6[_0x129cab(0xc9)](),_0x569ad3=document[_0x129cab(0x8e)](_0x129cab(0xd5)),_0x513665=Math[_0x129cab(0xb5)](_0x5b3eab[_0x129cab(0xce)],_0x5b3eab[_0x129cab(0x8f)])*0x2;_0x569ad3[_0x129cab(0xe7)][_0x129cab(0xa6)]=_0x129cab(0xe6)+_0x513665+_0x129cab(0xee)+_0x513665+_0x129cab(0x9b)+(_0xafa038[_0x129cab(0xaa)]-_0x5b3eab[_0x129cab(0x94)])+_0x129cab(0xa9)+(_0xafa038[_0x129cab(0xb0)]-_0x5b3eab[_0x129cab(0xda)])+_0x129cab(0xbf),_0x31d1c6[_0x129cab(0xe7)][_0x129cab(0xab)]=_0x129cab(0xe2),_0x31d1c6[_0x129cab(0xe7)][_0x129cab(0x98)]=_0x129cab(0xe4),_0x31d1c6[_0x129cab(0xc2)](_0x569ad3),setTimeout(()=>_0x569ad3[_0x129cab(0xb7)](),0x2bc);});});const st=document[_0x4693e9(0x8e)](_0x4693e9(0xe7));st[_0x4693e9(0x8d)]=_0x4693e9(0xb2),document[_0x4693e9(0xb1)][_0x4693e9(0xc2)](st);</script>
 </body>
 </html>
