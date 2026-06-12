@@ -23,15 +23,15 @@
   --navy:#070b18; --navy2:#0d1428; --navy3:#131a33;
   --ivory:#f5f0e8; --ivory2:#ede5d6; --ivory3:#d4c9b4;
   --steel:#8fa3c4; --steel2:#5c7499;
-  --border-gold:rgba(201,168,76,.22); --border-light:rgba(245,240,232,.08);
-  --glow:rgba(201,168,76,.12);
+  --border-gold:rgba(201,168,76,.3); --border-light:rgba(245,240,232,.1);
+  --glow:rgba(201,168,76,.15);
   --bg-primary:#070b18; --bg-secondary:#0d1428; --bg-tertiary:#131a33;
-  --text-primary:#f5f0e8; --text-secondary:#ede5d6; --text-muted:#8fa3c4;
-  --text-dim:#5c7499; --nav-bg:rgba(7,11,24,.85);
-  --card-bg:rgba(13,20,40,.6); --card-hover:rgba(201,168,76,.04);
-  --shadow-gold:rgba(201,168,76,.15); --shadow-dark:rgba(0,0,0,.5);
+  --text-primary:#ffffff; --text-secondary:#f1f5f9; --text-muted:#cbd5e1;
+  --text-dim:#94a3b8; --nav-bg:rgba(7,11,24,.85);
+  --card-bg:rgba(13,20,40,.6); --card-hover:rgba(201,168,76,.06);
+  --shadow-gold:rgba(201,168,76,.2); --shadow-dark:rgba(0,0,0,.6);
   --noise-opacity:.025; --star-opacity:.5;
-  --scrollbar-track:#0d1428; --scrollbar-thumb:rgba(201,168,76,.3);
+  --scrollbar-track:#0d1428; --scrollbar-thumb:rgba(201,168,76,.4);
 }
 
 /* LIGHT MODE */
@@ -39,15 +39,15 @@
   --navy:#f4f0e8; --navy2:#ebe6da; --navy3:#e0dace;
   --ivory:#1a1a2e; --ivory2:#2d2d44; --ivory3:#4a4a6a;
   --steel:#4a5568; --steel2:#718096;
-  --border-gold:rgba(168,137,58,.28); --border-light:rgba(26,26,46,.1);
-  --glow:rgba(168,137,58,.1);
-  --bg-primary:#f9f6ef; --bg-secondary:#f4f0e8; --bg-tertiary:#ebe6da;
-  --text-primary:#1a1a2e; --text-secondary:#2d2d44; --text-muted:#4a5568;
-  --text-dim:#718096; --nav-bg:rgba(249,246,239,.92);
-  --card-bg:rgba(255,255,255,.7); --card-hover:rgba(168,137,58,.05);
-  --shadow-gold:rgba(168,137,58,.18); --shadow-dark:rgba(0,0,0,.12);
-  --noise-opacity:.018; --star-opacity:.25;
-  --scrollbar-track:#ebe6da; --scrollbar-thumb:rgba(168,137,58,.4);
+  --border-gold:rgba(168,137,58,.4); --border-light:rgba(26,26,46,.15);
+  --glow:rgba(168,137,58,.15);
+  --bg-primary:#f3f4f6; --bg-secondary:#e5e7eb; --bg-tertiary:#d1d5db;
+  --text-primary:#0f172a; --text-secondary:#334155; --text-muted:#475569;
+  --text-dim:#64748b; --nav-bg:rgba(243,244,246,.92);
+  --card-bg:rgba(255,255,255,.8); --card-hover:rgba(168,137,58,.08);
+  --shadow-gold:rgba(168,137,58,.25); --shadow-dark:rgba(0,0,0,.08);
+  --noise-opacity:.02; --star-opacity:.15;
+  --scrollbar-track:#e5e7eb; --scrollbar-thumb:rgba(168,137,58,.6);
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -868,14 +868,13 @@ footer span{
 <canvas id="starfield"></canvas>
 <div id="scroll-progress"></div>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about" data-i18n="nav_about">About</a>
   <a href="#ecosystem" data-i18n="nav_operix">OPERIX</a>
   <a href="#gallery" data-i18n="nav_modules">Modules</a>
   <a href="#volunteer-projects" data-i18n="nav_projects">Projects</a>
   <a href="#experience" data-i18n="nav_career">Career</a>
-  <a href="http://www.operix.dpdns.org" target="_blank" data-i18n="nav_explore">Explore Platforms ↗</a>
+  <a href="https://www.operix-solutions.com" target="_blank" data-i18n="nav_explore">Explore Platforms ↗</a>
   <div class="mobile-menu-controls">
 	<button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme">
 	  <div class="theme-toggle-knob">
@@ -892,7 +891,6 @@ footer span{
   <div class="vb-live"><div class="vb-dot"></div><span data-i18n="live">Live</span></div>
 </div>
 
-<!-- ══ NAV ══ -->
 <nav id="main-nav">
   <a href="#hero" class="nav-logo">A·A</a>
   <div class="nav-links">
@@ -901,29 +899,25 @@ footer span{
 	<a href="#gallery" data-i18n="nav_modules">Modules</a>
 	<a href="#volunteer-projects" data-i18n="nav_projects">Projects</a>
 	<a href="#experience" data-i18n="nav_career">Career</a>
-	<a href="http://operix.dpdns.org/site" target="_blank" class="nav-cta" data-i18n="nav_explore">Explore Platforms ↗</a>
+	<a href="https://www.operix-solutions.com" target="_blank" class="nav-cta" data-i18n="nav_explore">Explore Platforms ↗</a>
   </div>
   <div class="nav-controls">
-	<!-- Language Toggle -->
 	<button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
 	  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 2c.67 0 1.67.83 2.47 2.5H9.53C10.33 4.83 11.33 4 12 4zm-3.68 2.5h7.36c.18.47.34.97.46 1.5H7.86c.12-.53.28-1.03.46-1.5zM4.11 12c0-.5.05-1 .14-1.5h7.75v3H4.25A8 8 0 0 1 4.11 12zm.77 3.5h7.12v2.5H6.93a8.16 8.16 0 0 1-2.05-2.5zm3.12 4.07V18h5.57c-.8 1.67-1.8 2.5-2.57 2.5a7.88 7.88 0 0 1-3-.43zm5.62-.57V15.5h7.12a8.16 8.16 0 0 1-2.05 2.5H13.62zm.88-4V10.5h7.75c.09.5.14 1 .14 1.5a8 8 0 0 1-.14 1.5H14.5zm-.88-5h3.95c.18.47.34.97.46 1.5H14.5V8zm-2-.5H9.53c.18-.47.36-.97.47-1.5h2c.11.53.29 1.03.47 1.5z"/></svg>
 	  <span id="lang-label">عربي</span>
 	</button>
-	<!-- Theme Toggle -->
 	<button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
 	  <div class="theme-toggle-knob">
 		<svg class="moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 		<svg class="sun" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 	  </div>
 	</button>
-	<!-- Hamburger -->
 	<button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
 	  <span></span><span></span><span></span>
 	</button>
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-deco-line l1"></div>
   <div class="hero-deco-line l2"></div>
@@ -932,7 +926,7 @@ footer span{
 	<h1 class="hero-name">ASIM<br>ALJMA'AN<span class="accent" data-i18n="hero_tagline">Builder of Systems. Tamer of Operations.</span></h1>
 	<p class="hero-desc" data-i18n="hero_desc">I don't just manage operations — I build the <strong>systems, tools, and teams</strong> that keep running without me. The OPERIX ecosystem is a 9-module ERP platform I designed and built from the ground up, running live in Riyadh.</p>
 	<div class="hero-actions">
-	  <a href="http://operix.dpdns.org/site" target="_blank" class="btn-gold"><span data-i18n="btn_explore">Explore Platforms</span></a>
+	  <a href="https://www.operix-solutions.com" target="_blank" class="btn-gold"><span data-i18n="btn_explore">Explore Platforms</span></a>
 	  <a href="#contact" class="btn-outline" data-i18n="btn_connect">Let's Connect</a>
 	</div>
 	<div class="hero-stats">
@@ -965,7 +959,6 @@ footer span{
   </div>
 </section>
 
-<!-- ══ VOLUNTEER PROJECTS ══ -->
 <section id="volunteer-projects" style="background:var(--bg-secondary);padding-top:0">
   <div class="gallery-header">
 	<div class="sec-eyebrow rv" data-i18n="vol_eyebrow">Community Work</div>
@@ -1051,7 +1044,6 @@ footer span{
   </div>
 </section>
 
-<!-- ══ MARQUEE ══ -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
 	<span>OPERIX HRIS</span><span>·</span><span>OPERIX Operations</span><span>·</span>
@@ -1069,7 +1061,6 @@ footer span{
   </div>
 </div>
 
-<!-- ══ ABOUT ══ -->
 <section id="about">
   <div>
 	<div class="sec-eyebrow rv" data-i18n="about_eyebrow">01 — Who I Am</div>
@@ -1101,7 +1092,6 @@ footer span{
   </div>
 </section>
 
-<!-- ══ ECOSYSTEM ══ -->
 <section id="ecosystem">
   <div class="sec-eyebrow rv" data-i18n="eco_eyebrow">02 — Platform Architecture</div>
   <h2 class="sec-title rv d1">THE<br><em data-i18n="eco_title">ECOSYSTEM</em></h2>
@@ -1141,17 +1131,15 @@ footer span{
   </div>
 </section>
 
-<!-- ══ GALLERY ══ -->
 <section id="gallery">
   <div class="gallery-header" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;">
 	<div>
 	  <div class="sec-eyebrow rv" data-i18n="gal_eyebrow">03 — Module Showcase</div>
 	  <h2 class="sec-title rv d1">THE<br><em data-i18n="gal_title">MODULES</em></h2>
 	</div>
-	<a href="http://operix.dpdns.org/site" target="_blank" class="btn-outline rv d2" style="margin-bottom:1rem" data-i18n="btn_collection">Explore Platforms Collection ↗</a>
+	<a href="https://www.operix-solutions.com" target="_blank" class="btn-outline rv d2" style="margin-bottom:1rem" data-i18n="btn_collection">Explore Platforms Collection ↗</a>
   </div>
   <div class="gallery-scroll">
-	<!-- HRIS -->
 	<div class="gcard rv d1">
 	  <div class="gcard-screen"><svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg"><rect width="350" height="220" fill="#070b18"/><rect x="0" y="0" width="350" height="220" fill="url(#hg)"/><defs><linearGradient id="hg" x1="0" y1="0" x2="350" y2="220" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="rgba(201,168,76,.04)"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs><rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/><text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">OPERIX HRIS · WORKFORCE BOARD</text><rect x="10" y="36" width="330" height="17" rx="1" fill="rgba(245,240,232,.025)"/><circle cx="23" cy="44.5" r="4.5" fill="rgba(201,168,76,.35)"/><text x="33" y="48" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.7)">Ahmad K.</text><rect x="115" y="38.5" width="42" height="11" rx="1" fill="rgba(74,192,155,.2)" stroke="rgba(74,192,155,.4)" stroke-width=".7"/><text x="124" y="48" font-family="IBM Plex Mono" font-size="6" fill="rgba(74,192,155,.9)">CHECK IN</text><text x="165" y="48" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.35)">08:02</text><text x="235" y="48" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.35)">SAR 280</text><rect x="10" y="57" width="330" height="17" rx="1" fill="rgba(245,240,232,.015)"/><circle cx="23" cy="65.5" r="4.5" fill="rgba(201,168,76,.3)"/><text x="33" y="69" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.7)">Sara M.</text><rect x="115" y="59.5" width="42" height="11" rx="1" fill="rgba(239,68,68,.15)" stroke="rgba(239,68,68,.3)" stroke-width=".7"/><text x="124" y="69" font-family="IBM Plex Mono" font-size="6" fill="rgba(239,68,68,.9)">ABSENT</text><text x="235" y="69" font-family="IBM Plex Mono" font-size="7" fill="rgba(239,68,68,.6)">-SAR 280</text><rect x="10" y="78" width="330" height="17" rx="1" fill="rgba(245,240,232,.025)"/><circle cx="23" cy="86.5" r="4.5" fill="rgba(201,168,76,.35)"/><text x="33" y="90" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.7)">Omar F.</text><rect x="115" y="80.5" width="42" height="11" rx="1" fill="rgba(245,158,11,.15)" stroke="rgba(245,158,11,.3)" stroke-width=".7"/><text x="126" y="90" font-family="IBM Plex Mono" font-size="6" fill="rgba(245,158,11,.9)">LATE</text><text x="165" y="90" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.35)">09:14</text><text x="235" y="90" font-family="IBM Plex Mono" font-size="7" fill="rgba(245,158,11,.6)">-SAR 30</text><rect x="10" y="103" width="155" height="50" rx="1.5" fill="rgba(201,168,76,.05)" stroke="rgba(201,168,76,.18)" stroke-width=".8"/><text x="18" y="114" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.6)" letter-spacing="1.5">GPS FENCE STATUS</text><circle cx="35" cy="136" r="9" fill="none" stroke="rgba(201,168,76,.3)" stroke-width="1" stroke-dasharray="4,3"/><circle cx="35" cy="136" r="4" fill="rgba(74,192,155,.5)"/><text x="50" y="132" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.5)">Site A · Active</text><text x="50" y="143" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)">Radius: 200m</text><rect x="175" y="103" width="165" height="50" rx="1.5" fill="rgba(201,168,76,.05)" stroke="rgba(201,168,76,.18)" stroke-width=".8"/><text x="183" y="114" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.6)" letter-spacing="1.5">PAYROLL ESTIMATE</text><text x="183" y="130" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.5)">Total:</text><text x="222" y="130" font-family="IBM Plex Mono" font-size="8" fill="rgba(213,200,180,.9)">SAR 42,800</text><text x="183" y="145" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.4)">Deductions:</text><text x="252" y="145" font-family="IBM Plex Mono" font-size="7" fill="rgba(239,68,68,.7)">-1,240</text><rect x="0" y="205" width="350" height="15" fill="rgba(201,168,76,.07)"/><text x="10" y="215" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">LIVE · 42 EMPLOYEES · AUTO-DEDUCTION ON</text></svg></div>
 	  <div class="gcard-body">
@@ -1162,7 +1150,6 @@ footer span{
 		<div class="gcard-tags"><span class="gcard-tag">GPS</span><span class="gcard-tag">Payroll</span><span class="gcard-tag">Supabase</span><span class="gcard-tag">PWA</span></div>
 	  </div>
 	</div>
-	<!-- OPS -->
 	<div class="gcard rv d2">
 	  <div class="gcard-screen"><svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg"><rect width="350" height="220" fill="#070b18"/><rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/><text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">OPERIX OPS · ANPR LIVE</text><rect x="10" y="36" width="155" height="100" rx="1.5" fill="rgba(201,168,76,.03)" stroke="rgba(201,168,76,.15)" stroke-width=".8"/><text x="18" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.5)" letter-spacing="1">CAM 01 · GATE A</text><rect x="30" y="70" width="95" height="36" rx="3.5" fill="rgba(245,240,232,.06)" stroke="rgba(245,240,232,.12)" stroke-width=".8"/><rect x="48" y="59" width="59" height="24" rx="2" fill="rgba(245,240,232,.04)" stroke="rgba(245,240,232,.08)" stroke-width=".8"/><circle cx="48" cy="108" r="7" fill="rgba(245,240,232,.1)" stroke="rgba(245,240,232,.18)" stroke-width=".8"/><circle cx="107" cy="108" r="7" fill="rgba(245,240,232,.1)" stroke="rgba(245,240,232,.18)" stroke-width=".8"/><rect x="20" y="88" width="135" height="2" fill="rgba(201,168,76,.35)"/><rect x="44" y="78" width="67" height="14" rx="1" fill="#f5f0e8"/><text x="51" y="89" font-family="IBM Plex Mono" font-size="8" fill="#070b18" font-weight="600">ABC 1234</text><rect x="175" y="36" width="165" height="100" rx="1.5" fill="rgba(74,192,155,.03)" stroke="rgba(74,192,155,.18)" stroke-width=".8"/><text x="183" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(74,192,155,.6)" letter-spacing="1">TICKET GENERATED</text><text x="183" y="63" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.45)">Plate:</text><text x="212" y="63" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.9)">ABC 1234</text><text x="183" y="77" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.45)">Entry:</text><text x="212" y="77" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.9)">14:32</text><text x="183" y="91" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.45)">Valet:</text><text x="212" y="91" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.9)">Khalid A.</text><rect x="212" y="98" width="48" height="12" rx="1" fill="rgba(74,192,155,.2)" stroke="rgba(74,192,155,.4)" stroke-width=".5"/><text x="219" y="107" font-family="IBM Plex Mono" font-size="6" fill="rgba(74,192,155,.9)">PARKED</text><rect x="10" y="148" width="330" height="38" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.06)" stroke-width=".8"/><text x="18" y="160" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)" letter-spacing="1">VALET PERFORMANCE</text><text x="18" y="175" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.6)">Khalid A.</text><text x="80" y="175" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.8)">14 ops</text><text x="125" y="175" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.4)">SAR 420</text><text x="195" y="175" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.6)">Faisal M.</text><text x="255" y="175" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.8)">11 ops</text><text x="296" y="175" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.4)">330</text><rect x="0" y="205" width="350" height="15" fill="rgba(201,168,76,.07)"/><text x="10" y="215" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">LIVE ANPR · GATE AUTO-LOG · QR INVOICING ACTIVE</text></svg></div>
 	  <div class="gcard-body">
@@ -1173,7 +1160,6 @@ footer span{
 		<div class="gcard-tags"><span class="gcard-tag">ANPR</span><span class="gcard-tag">Valet</span><span class="gcard-tag">QR</span><span class="gcard-tag">Live</span></div>
 	  </div>
 	</div>
-	<!-- FMIS -->
 	<div class="gcard rv d3">
 	  <div class="gcard-screen"><svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg"><rect width="350" height="220" fill="#070b18"/><rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/><text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">OPERIX FMIS · FINANCIAL DASHBOARD</text><rect x="10" y="36" width="100" height="46" rx="1.5" fill="rgba(74,192,155,.05)" stroke="rgba(74,192,155,.2)" stroke-width=".8"/><text x="18" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(74,192,155,.6)" letter-spacing="1">ASSETS</text><text x="18" y="70" font-family="IBM Plex Mono" font-size="16" fill="rgba(74,192,155,.9)" font-weight="600">248K</text><rect x="120" y="36" width="100" height="46" rx="1.5" fill="rgba(239,68,68,.05)" stroke="rgba(239,68,68,.2)" stroke-width=".8"/><text x="128" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(239,68,68,.6)" letter-spacing="1">SALARIES</text><text x="128" y="70" font-family="IBM Plex Mono" font-size="16" fill="rgba(239,68,68,.9)" font-weight="600">142K</text><rect x="230" y="36" width="110" height="46" rx="1.5" fill="rgba(245,158,11,.05)" stroke="rgba(245,158,11,.2)" stroke-width=".8"/><text x="238" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(245,158,11,.6)" letter-spacing="1">EXPENSES</text><text x="238" y="70" font-family="IBM Plex Mono" font-size="16" fill="rgba(245,158,11,.9)" font-weight="600">38K</text><rect x="10" y="90" width="330" height="22" rx="1.5" fill="rgba(201,168,76,.07)" stroke="rgba(201,168,76,.22)" stroke-width=".8"/><text x="18" y="105" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(201,168,76,.7)">NET BALANCE (Assets − Sal − Exp):</text><text x="278" y="105" font-family="IBM Plex Mono" font-size="8" fill="rgba(213,200,180,.9)" font-weight="600">68K</text><text x="10" y="127" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)" letter-spacing="1">MONTHLY REVENUE TREND</text><rect x="10" y="148" width="20" height="38" rx="1" fill="rgba(74,192,155,.25)"/><rect x="36" y="140" width="20" height="46" rx="1" fill="rgba(74,192,155,.35)"/><rect x="62" y="133" width="20" height="53" rx="1" fill="rgba(74,192,155,.45)"/><rect x="88" y="124" width="20" height="62" rx="1" fill="rgba(74,192,155,.55)"/><rect x="114" y="118" width="20" height="68" rx="1" fill="rgba(74,192,155,.65)"/><rect x="140" y="128" width="20" height="58" rx="1" fill="rgba(74,192,155,.5)"/><rect x="166" y="112" width="20" height="74" rx="1" fill="rgba(201,168,76,.8)"/><rect x="220" y="128" width="62" height="20" rx="1.5" fill="rgba(74,192,155,.1)" stroke="rgba(74,192,155,.3)" stroke-width=".7"/><text x="230" y="141" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(74,192,155,.9)">↓ EXCEL</text><rect x="290" y="128" width="50" height="20" rx="1.5" fill="rgba(201,168,76,.1)" stroke="rgba(201,168,76,.3)" stroke-width=".7"/><text x="300" y="141" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(201,168,76,.9)">↓ CSV</text><rect x="0" y="205" width="350" height="15" fill="rgba(201,168,76,.07)"/><text x="10" y="215" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">ADMIN ONLY · PROJECT-FILTERED · AUTO-REPORT READY</text></svg></div>
 	  <div class="gcard-body">
@@ -1184,7 +1170,6 @@ footer span{
 		<div class="gcard-tags"><span class="gcard-tag">Finance</span><span class="gcard-tag">Admin</span><span class="gcard-tag">Export</span><span class="gcard-tag">Live KPIs</span></div>
 	  </div>
 	</div>
-	<!-- IT & EXECUTIVE abbreviated cards -->
 	<div class="gcard rv d4">
 	  <div class="gcard-screen"><svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg"><rect width="350" height="220" fill="#070b18"/><rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/><text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">OPERIX IT · ASSET &amp; TICKET BOARD</text><rect x="10" y="36" width="195" height="140" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.07)" stroke-width=".8"/><text x="18" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)" letter-spacing="1">OPEN TICKETS</text><rect x="15" y="53" width="185" height="20" rx="1" fill="rgba(239,68,68,.07)" stroke="rgba(239,68,68,.18)" stroke-width=".5"/><text x="21" y="64" font-family="IBM Plex Mono" font-size="6" fill="rgba(239,68,68,.8)">HIGH</text><text x="52" y="64" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.6)">Server timeout on module 4</text><rect x="15" y="77" width="185" height="20" rx="1" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.15)" stroke-width=".5"/><text x="21" y="88" font-family="IBM Plex Mono" font-size="6" fill="rgba(245,158,11,.8)">MED</text><text x="52" y="88" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.6)">Laptop SN-0042 screen fault</text><rect x="15" y="101" width="185" height="20" rx="1" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.07)" stroke-width=".5"/><text x="21" y="112" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.4)">LOW</text><text x="52" y="112" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.55)">Printer queue stuck · Bay 2</text><rect x="215" y="36" width="125" height="140" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.07)" stroke-width=".8"/><text x="223" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)" letter-spacing="1">ASSET REGISTRY</text><text x="223" y="63" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.55)">Laptops</text><text x="295" y="63" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.8)">24</text><text x="223" y="81" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.55)">Monitors</text><text x="295" y="81" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.8)">18</text><text x="223" y="99" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.55)">Phones</text><text x="295" y="99" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.8)">31</text><text x="223" y="117" font-family="IBM Plex Mono" font-size="7" fill="rgba(213,200,180,.55)">Servers</text><text x="295" y="117" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.8)">3</text><rect x="0" y="205" width="350" height="15" fill="rgba(201,168,76,.07)"/><text x="10" y="215" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">TICKETING · ASSET TRACKING · INFRASTRUCTURE MGMT</text></svg></div>
 	  <div class="gcard-body">
@@ -1195,7 +1180,6 @@ footer span{
 		<div class="gcard-tags"><span class="gcard-tag">Tickets</span><span class="gcard-tag">Assets</span><span class="gcard-tag">IT Ops</span></div>
 	  </div>
 	</div>
-	<!-- Executive -->
 	<div class="gcard rv d5">
 	  <div class="gcard-screen"><svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg"><rect width="350" height="220" fill="#070b18"/><rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/><text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">OPERIX EXECUTIVE · C-LEVEL OVERVIEW</text><text x="10" y="46" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)" letter-spacing="1">OPERATIONAL HEALTH GAUGES</text><circle cx="55" cy="110" r="32" fill="none" stroke="rgba(245,240,232,.06)" stroke-width="7"/><circle cx="55" cy="110" r="32" fill="none" stroke="rgba(74,192,155,.55)" stroke-width="7" stroke-dasharray="127 201" stroke-dashoffset="50" transform="rotate(-90 55 110)"/><text x="55" y="106" font-family="IBM Plex Mono" font-size="9" fill="rgba(213,200,180,.9)" text-anchor="middle" font-weight="500">87%</text><text x="55" y="118" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.35)" text-anchor="middle">ATTENDANCE</text><circle cx="150" cy="110" r="32" fill="none" stroke="rgba(245,240,232,.06)" stroke-width="7"/><circle cx="150" cy="110" r="32" fill="none" stroke="rgba(201,168,76,.65)" stroke-width="7" stroke-dasharray="150 201" stroke-dashoffset="50" transform="rotate(-90 150 110)"/><text x="150" y="106" font-family="IBM Plex Mono" font-size="9" fill="rgba(213,200,180,.9)" text-anchor="middle" font-weight="500">75%</text><text x="150" y="118" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.35)" text-anchor="middle">OPS KPIs</text><circle cx="245" cy="110" r="32" fill="none" stroke="rgba(245,240,232,.06)" stroke-width="7"/><circle cx="245" cy="110" r="32" fill="none" stroke="rgba(245,158,11,.55)" stroke-width="7" stroke-dasharray="104 201" stroke-dashoffset="50" transform="rotate(-90 245 110)"/><text x="245" y="106" font-family="IBM Plex Mono" font-size="9" fill="rgba(213,200,180,.9)" text-anchor="middle" font-weight="500">52%</text><text x="245" y="118" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.35)" text-anchor="middle">BUDGET</text><rect x="10" y="158" width="330" height="22" rx="1.5" fill="rgba(201,168,76,.06)" stroke="rgba(201,168,76,.15)" stroke-width=".8"/><text x="18" y="172" font-family="IBM Plex Mono" font-size="6.5" fill="rgba(201,168,76,.65)">Board Report · May 2026 · Auto-generated</text><rect x="0" y="205" width="350" height="15" fill="rgba(201,168,76,.07)"/><text x="10" y="215" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">EXECUTIVE ACCESS · REAL-TIME · BOARD REPORT READY</text></svg></div>
 	  <div class="gcard-body">
@@ -1206,7 +1190,6 @@ footer span{
 		<div class="gcard-tags"><span class="gcard-tag">C-Level</span><span class="gcard-tag">KPIs</span><span class="gcard-tag">Reports</span></div>
 	  </div>
 	</div>
-	<!-- Planner -->
 	<div class="gcard rv d6">
 	  <div class="gcard-screen"><svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg"><rect width="350" height="220" fill="#070b18"/><rect x="10" y="10" width="330" height="18" rx="1.5" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.3)" stroke-width=".8"/><text x="18" y="22.5" font-family="IBM Plex Mono" font-size="7" fill="rgba(201,168,76,.85)" letter-spacing="2">OPERIX PLANNER · PROJECT BOARDS</text><rect x="10" y="36" width="75" height="145" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.07)" stroke-width=".8"/><text x="18" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(213,200,180,.3)" letter-spacing="1">BACKLOG</text><rect x="14" y="53" width="67" height="22" rx="1" fill="rgba(245,240,232,.03)" stroke="rgba(245,240,232,.07)" stroke-width=".5"/><text x="18" y="63" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.5)">Module test</text><rect x="93" y="36" width="75" height="145" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.07)" stroke-width=".8"/><text x="101" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(245,158,11,.5)" letter-spacing="1">IN PROG</text><rect x="97" y="53" width="67" height="22" rx="1" fill="rgba(245,158,11,.05)" stroke="rgba(245,158,11,.15)" stroke-width=".5"/><text x="101" y="63" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.5)">ANPR upgrade</text><rect x="176" y="36" width="75" height="145" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.07)" stroke-width=".8"/><text x="184" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">REVIEW</text><rect x="259" y="36" width="81" height="145" rx="1.5" fill="rgba(245,240,232,.02)" stroke="rgba(245,240,232,.07)" stroke-width=".8"/><text x="267" y="48" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(74,192,155,.55)" letter-spacing="1">DONE</text><rect x="263" y="53" width="73" height="22" rx="1" fill="rgba(74,192,155,.05)" stroke="rgba(74,192,155,.15)" stroke-width=".5"/><text x="267" y="63" font-family="IBM Plex Mono" font-size="6" fill="rgba(213,200,180,.5)">HRIS launch ✓</text><rect x="0" y="205" width="350" height="15" fill="rgba(201,168,76,.07)"/><text x="10" y="215" font-family="IBM Plex Mono" font-size="5.5" fill="rgba(201,168,76,.55)" letter-spacing="1">KANBAN · MILESTONES · CROSS-TEAM BOARDS</text></svg></div>
 	  <div class="gcard-body">
@@ -1220,7 +1203,6 @@ footer span{
   </div>
 </section>
 
-<!-- ══ EXPERIENCE ══ -->
 <section id="experience">
   <div class="sec-eyebrow rv" data-i18n="exp_eyebrow">04 — Career</div>
   <h2 class="sec-title rv d1">TIME<br><em data-i18n="exp_title">LINE</em></h2>
@@ -1264,7 +1246,6 @@ footer span{
   </div>
 </section>
 
-<!-- ══ SKILLS ══ -->
 <section id="skills">
   <div class="sec-eyebrow rv" data-i18n="skills_eyebrow">05 — Capabilities</div>
   <h2 class="sec-title rv d1">SKILL<br><em data-i18n="skills_title">SET</em></h2>
@@ -1306,7 +1287,6 @@ footer span{
   </div>
 </section>
 
-<!-- ══ EDUCATION ══ -->
 <section id="education">
   <div class="sec-eyebrow rv" data-i18n="edu_eyebrow">06 — Academic</div>
   <h2 class="sec-title rv d1">EDUCA<br><em data-i18n="edu_title">TION</em></h2>
@@ -1331,16 +1311,15 @@ footer span{
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
 <section id="contact">
   <div class="contact-bg-text" aria-hidden="true">OPS</div>
   <div class="sec-eyebrow rv" data-i18n="contact_eyebrow">07 — Contact</div>
   <h2 class="contact-heading rv d1">LET'S<br>BUILD<br><em data-i18n="contact_title">TOGETHER</em></h2>
   <div class="contact-links rv d2">
-	<a href="mailto:asim@aljmaan.dpdns.org" class="clink primary" data-i18n="contact_email">Email Asim</a>
+	<a href="mailto:asim.aljmaan@operix-solutions.com" class="clink primary" data-i18n="contact_email">Email Asim</a>
 	<a href="tel:+966500823643" class="clink" data-i18n="contact_wa">WhatsApp</a>
 	<a href="https://linkedin.com/in/asim-aljmaan" target="_blank" class="clink" data-i18n="contact_li">LinkedIn ↗</a>
-	<a href="http://operix.dpdns.org/site" target="_blank" class="clink" data-i18n="contact_plat">Explore Platforms ↗</a>
+	<a href="https://www.operix-solutions.com" target="_blank" class="clink" data-i18n="contact_plat">Explore Platforms ↗</a>
 	<span class="clink" style="cursor:default;opacity:.6" data-i18n="contact_loc">Riyadh, Saudi Arabia</span>
   </div>
 </section>
@@ -1834,10 +1813,7 @@ if(heroStats) heroObs.observe(heroStats);
 /* ══════════════════════════════════════════════════
    HTTPS REDIRECT
 ══════════════════════════════════════════════════ */
-if(location.protocol!=='https:'&&location.hostname!=='localhost'&&location.hostname!=='127.0.0.1'){
-  location.replace(`https:${location.href.substring(location.protocol.length)}`);
-}
+
 </script>
 </body>
 </html>
-
